@@ -2,8 +2,8 @@
 An UDP-based message system is used for communication between the client ("viewer") and server ("simulator").
 
 ##TODO
-*Separate documentation entry for "messages".
-*Sequence numbers are stored in 32-bit integers, but are said in many places in the documentation to actually just be 24-bit numbers which are zero padded.
+* Separate documentation entry for "messages".
+* Sequence numbers are stored in 32-bit integers, but are said in many places in the documentation to actually just be 24-bit numbers which are zero padded.
 
 ## Packet format
 Every packet begins with a six bytes long header.
