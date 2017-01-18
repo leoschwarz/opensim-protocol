@@ -1,11 +1,14 @@
 # Packets
-An UDP-based message system is used for communication between the client ("viewer") and server ("simulator").
+Packets between the viewer and server are transmitted via UDP.
+Here the structure of such packages is described.
 
 ##TODO
 * Separate documentation entry for "messages".
 * Sequence numbers are stored in 32-bit integers, but are said in many places in the documentation to actually just be 24-bit numbers which are zero padded.
+* How are UDP packets which don't fit into the max size of UDP packets handled. Are they just split up in some way and does each of the new packets have its
+  own headers? Or will we have to detect this somehow?
 
-## Packet format
+## Packet header
 Every packet begins with a six bytes long header.
 
 ```
@@ -25,6 +28,11 @@ Every packet begins with a six bytes long header.
 
 * **Sequence number**: A 32-bit number in big-endian order. They are unique to each connection and each direction, and are incremented on each message sent.
 * **Extra**: Specifies the length of additional extra header information in bytes following directly after this byte. In practice this is always zero. If it were different clients not expecting extra headers can skip this number of bytes.
+
+## Packet body
+The packet body starts with the message number, which is a numeric encoding of the message type. TODO document specifics about these numbers.
+
+After the message number follows the message body. TODO document message encoding.
 
 ## ACKs
 An ack essentially consists of the 32-bit big-endian sequence number of the packet that is to be acknowledged.
