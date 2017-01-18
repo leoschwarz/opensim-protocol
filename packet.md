@@ -21,10 +21,10 @@ Every packet begins with a six bytes long header.
 
 | Flag                | Value       | Description |
 |---------------------|-------------|-------------|
-| `MSG_APPENDED_ACKS` | 0x10        | Set if there are appended acks. See section on ACKs. |
-| `MSG_RESENT`        | 0x20        | Set if the message has been resent because there was no timely ACK even though the message was sent with the `MSG_RELIABLE` flag. |
-| `MSG_RELIABLE`      | 0x40        | Set if an ACK is to be sent on receiving this message. |
-| `MSG_ZEROCODED`     | 0x80        | Set if in the package body (i.e. everything except the header and potentially appended ACKs) zero bytes are compressed. This is achieved by replacing every sequential occurence of one or more zero bytes with first a single zero byte and then a byte counting the number of zero bytes which were replaced by this single zero. |
+| `PACKET_APPENDED_ACKS` | 0x10        | Set if there are appended acks. See section on ACKs. |
+| `PACKET_RESENT`        | 0x20        | Set if the message has been resent because there was no timely ACK even though the message was sent with the `PACKET_RELIABLE` flag. |
+| `PACKET_RELIABLE`      | 0x40        | Set if an ACK is to be sent on receiving this message. |
+| `PACKET_ZEROCODED`     | 0x80        | Set if in the package body (i.e. everything except the header and potentially appended ACKs) zero bytes are compressed. This is achieved by replacing every sequential occurence of one or more zero bytes with first a single zero byte and then a byte counting the number of zero bytes which were replaced by this single zero. |
 
 * **Sequence number**: A 32-bit number in big-endian order. They are unique to each connection and each direction, and are incremented on each message sent.
 * **Extra**: Specifies the length of additional extra header information in bytes following directly after this byte. In practice this is always zero. If it were different clients not expecting extra headers can skip this number of bytes.
@@ -39,7 +39,7 @@ An ack essentially consists of the 32-bit big-endian sequence number of the pack
 
 ACKs can be sent in two ways:
 * PacketAck: This is a specialized packet. TODO.
-* Appended ACKs: If the `MSG_APPENDED_ACKS` flag is set, the very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte.
+* Appended ACKs: If the `PACKET_APPENDED_ACKS` flag is set, the very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte.
 
 # References
 * http://lib.openmetaverse.co/wiki/ACK (accessed 2017-01-17)
