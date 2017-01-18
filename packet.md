@@ -39,7 +39,7 @@ An ack essentially consists of the 32-bit big-endian sequence number of the pack
 
 ACKs can be sent in two ways:
 * PacketAck: This is a specialized packet. TODO.
-* Appended ACKs: The very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte.
+* Appended ACKs: If the `MSG_APPENDED_ACKS` flag is set, the very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte.
 
 # References
 * http://lib.openmetaverse.co/wiki/ACK (accessed 2017-01-17)
