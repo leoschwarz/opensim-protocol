@@ -8,7 +8,7 @@
 
     <block name="CircuitCode" quantity="single">
         <field name="Code" type="U32">
-            <doc>The authentication code provided by the login response.</doc>
+            <doc>The circuit code provided by the login response, authenticating the client.</doc>
         </field>
         <field name="SessionId" type="LLUUID">
             <doc>Temporary id assigned to this session by the simulator on login, used to verify our identity in packets.</doc>

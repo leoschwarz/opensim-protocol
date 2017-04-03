@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<message
+    name="CompleteAgentMovement"
+    frequency_class="low"
+    frequency_number="249"
+    trusted="false"
+    compression="unencoded">
+
+    <block name="AgentData" quantity="single">
+        <field name="AgentID" type="LLUUID">
+            <doc>Agent id of the sender. Notice that "client", "agent" and "avatar" all represent the same thing.</doc>
+        </field>
+        <field name="SessionID" type="LLUUID">
+            <doc>Temporary id assigned to this session by the simulator on login, used to verify our identity in packets.</doc>
+        </field>
+        <field name="CircuitCode" type="U32">
+            <doc>The circuit code provided by the login response, authenticating the client.</doc>
+        </field>
+    </block>
+
+    <doc>
+        Move an agent into the simulator.
+        This is the last packet needed to complete the transition into a new simulator.
+    </doc>
+
+    <sources>
+        <source>Template File</source>
+        <source>`OpenMetaverse/AgentManager.cs`</source>
+    </sources>
+</message>
+
