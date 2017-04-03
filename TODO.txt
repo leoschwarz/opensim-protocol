@@ -1,0 +1,14 @@
+Before spending too much time on certain aspects of the documentation add the following:
+
+XML format:
+* Storing documentation items somewhere where they can be referenced by ID.
+  For example there should only be one entry for `AgentId` which should be includable
+  from the XML files so it only has to be written once and can be updated more easily.
+* Evaluate the different options to link to other documentation entries.
+  It would be especially awesome if this could be combined in a meaningful way with rustdoc.
+
+Other things:
+* Evaluate the feasiblity to organize the messages into submodules/categories.
+  We could either dedicate each message to one such category or use manifest files to
+  declare which messages belong into a group. This would be especially interesting with
+  regards to the codegen.
