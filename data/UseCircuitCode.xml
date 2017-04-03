@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message
+    name="UseCircuitCode"
+    frequency_class="low"
+    frequency_number="3"
+    trusted="false"
+    compression="unencoded">
+
+    <block name="CircuitCode" quantity="single">
+        <field name="Code" type="U32">
+            <doc>The authentication code provided by the login response.</doc>
+        </field>
+        <field name="SessionId" type="LLUUID">
+            <doc>Temporary id assigned to this session by the simulator on login, used to verify our identity in packets.</doc>
+        </field>
+        <field name="ID" type="LLUUID">
+            <doc>Agent id of the sender. Notice that "client", "agent" and "avatar" all represent the same thing.</doc>
+        </field>
+    </block>
+
+    <doc>
+        Provide the recipent with IP address and port information of the sender.
+    </doc>
+
+    <sources>
+        <source>Template File</source>
+        <source>`OpenMetaverse/AgentManager.cs`</source>
+    </sources>
+</message>
+
