@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# Lists all the messages which are not yet included in the messages folder but exist in the template.
+
+# Messages we don't want to document/include.
+IGNORE = []
+
+cdir = File.dirname(__FILE__)
+OUT_DIR = File.join(cdir, "msgxml_out")
+DOC_DIR = File.join(cdir, "..", "messages")
+
+# Generate the files.
+system "./extract_template"
+
+# Compare the directories.
+counter = 0
+Dir[OUT_DIR + "/*.xml"].each do |filename|
+    name = filename.split("/").last
+    if !IGNORE.include?(name) and !File.exist?(File.join(DOC_DIR, name))
+        puts "Missing: #{name}"
+        counter += 1
+    end
+end
+
+puts "\nMissing items: #{counter}"
+
