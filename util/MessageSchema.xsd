@@ -49,8 +49,6 @@
     	<attribute name="quantity">
     		<simpleType>
     			<restriction base="string">
-    				<enumeration value="single"></enumeration>
-    				<enumeration value="variable"></enumeration>
     				<pattern value="single"></pattern>
     				<pattern value="variable"></pattern>
     				<pattern value="multiple (\d+)"></pattern>
