@@ -2,3 +2,7 @@
 pyenv
 venv
 virtenv
+
+# Generator output.
+/util/msgxml_out
+

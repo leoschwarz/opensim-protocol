@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+# This script extracts messages from the Linden message template file and generates
+# xml files in our own format, which can then be further annotated.
+
+require 'nokogiri'
+
+require_relative './src/template_types.rb'
+require_relative './src/template_parser.rb'
+
+# Generate one xml file in the output_dir for each message described in the template_file.
+# If such a file exists already, it will be overriden if and only if override is true.
+def generate_all(template_file, output_dir, override=false)
+    parse_messages(template_file).each do |message|
+        target_file = File.join(output_dir, "#{message.name}.xml")
+        if !File.exist?(target_file) or override
+            File.open(target_file, "w") do |file|
+                file.write(generate_message_xml(message))
+            end
+        end
+    end
+end
+
+def generate_message_xml(message)
+    output  = %{<?xml version="1.0"?>\n}
+    output << %{<message name="#{message.name}"\n}
+    output << %{\tfrequency_class="#{message.frequency.downcase}"\n}
+    output << %{\tfrequency_number="#{message.id}"\n}
+    output << %{\ttrusted="#{message.trusted}"\n}
+    output << %{\tcompression="#{message.encoding}">\n}
+
+    # Blocks
+    message.blocks.each do |block|
+        block_quantity = block.quantity.downcase
+        if block_quantity == "multiple"
+            block_quantity += " #{block.quantity_count}"
+        end
+        output << %{\t<block name="#{block.ll_name}" quantity="#{block_quantity}">\n}
+        block.fields.each do |field|
+            output << %{\t\t<field name="#{field.ll_name}" type="#{field.ll_type}">\n}
+            output << %{\t\t\t<doc>TODO</doc>\n}
+            output << %{\t\t</field>\n}
+        end
+        output << %{\t</block>\n}
+    end
+
+    # Doc
+    output << %{\t<doc>\n}
+    output << %{\t\tTODO:\n}
+    output << %{\t\t#{message.comments}\n}
+    output << %{\t</doc>\n}
+
+    # Sources
+    output << %{\t<sources>\n}
+    output << %{\t\t<source>Template File</source>\n}
+    output << %{\t</sources>\n}
+
+    output << %{</message>\n}
+    pretty_xml output
+end
+
+def pretty_xml(raw)
+    doc = Nokogiri::XML(raw)
+    doc.to_xml(indent: 4, indent_text: " ")
+end
+
+if __FILE__ == $0
+    message_template = File.join(File.dirname(__FILE__), "data", "message_template.msg")
+    outdir = File.join(File.dirname(__FILE__), "msgxml_out")
+    unless Dir.exist? outdir
+        Dir.mkdir outdir
+    end
+    generate_all(message_template, "msgxml_out", true)
+end
+
