@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Apr  4 18:14:40 2017 by generateDS.py version 2.25a.
+# Generated Tue Apr  4 18:36:14 2017 by generateDS.py version 2.25a.
 #
 # Command line options:
 #   ('-o', 'message_xml.py')
@@ -1154,11 +1154,16 @@ class docType(GeneratedsSuper):
     def buildAttributes(self, node, attrs, already_processed):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'doc-include' and child_.text is not None:
-            valuestr_ = child_.text
-            obj_ = self.mixedclass_(MixedContainer.CategorySimple,
-                MixedContainer.TypeString, 'doc-include', valuestr_)
+        if nodeName_ == 'doc-include':
+            obj_ = docRefType.factory()
+            obj_.build(child_)
+            obj_ = self.mixedclass_(MixedContainer.CategoryComplex,
+                MixedContainer.TypeNone, 'doc-include', obj_)
             self.content_.append(obj_)
+            if hasattr(self, 'add_doc-include'):
+              self.add_doc-include(obj_.value)
+            elif hasattr(self, 'set_doc-include'):
+              self.set_doc-include(obj_.value)
         elif nodeName_ == 'doc-link':
             obj_ = docRefType.factory()
             obj_.build(child_)
@@ -1179,9 +1184,9 @@ class docType(GeneratedsSuper):
 class docRefType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, source=None, item=None):
+    def __init__(self, target=None, item=None):
         self.original_tagname_ = None
-        self.source = _cast(None, source)
+        self.target = _cast(None, target)
         self.item = _cast(None, item)
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
@@ -1194,8 +1199,8 @@ class docRefType(GeneratedsSuper):
         else:
             return docRefType(*args_, **kwargs_)
     factory = staticmethod(factory)
-    def get_source(self): return self.source
-    def set_source(self, source): self.source = source
+    def get_target(self): return self.target
+    def set_target(self, target): self.target = target
     def get_item(self): return self.item
     def set_item(self, item): self.item = item
     def hasContent_(self):
@@ -1223,9 +1228,9 @@ class docRefType(GeneratedsSuper):
         else:
             outfile.write('/>%s' % (eol_, ))
     def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='docRefType'):
-        if self.source is not None and 'source' not in already_processed:
-            already_processed.add('source')
-            outfile.write(' source=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.source), input_name='source')), ))
+        if self.target is not None and 'target' not in already_processed:
+            already_processed.add('target')
+            outfile.write(' target=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.target), input_name='target')), ))
         if self.item is not None and 'item' not in already_processed:
             already_processed.add('item')
             outfile.write(' item=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.item), input_name='item')), ))
@@ -1239,10 +1244,10 @@ class docRefType(GeneratedsSuper):
             self.buildChildren(child, node, nodeName_)
         return self
     def buildAttributes(self, node, attrs, already_processed):
-        value = find_attr_value_('source', node)
-        if value is not None and 'source' not in already_processed:
-            already_processed.add('source')
-            self.source = value
+        value = find_attr_value_('target', node)
+        if value is not None and 'target' not in already_processed:
+            already_processed.add('target')
+            self.target = value
         value = find_attr_value_('item', node)
         if value is not None and 'item' not in already_processed:
             already_processed.add('item')
@@ -1255,6 +1260,7 @@ class docRefType(GeneratedsSuper):
 GDSClassesMapping = {
     'block': blockType,
     'doc': docType,
+    'doc-include': docRefType,
     'doc-link': docRefType,
     'field': fieldType,
     'message': messageType,

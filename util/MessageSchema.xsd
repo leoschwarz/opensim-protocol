@@ -99,14 +99,14 @@
 
     <complexType name="docType" mixed="true">
     	<sequence>
-    		<element name="doc-include" type="string"></element>
+    		<element name="doc-include" type="tns:docRefType"></element>
     		<element name="doc-link" type="tns:docRefType"></element>
     	</sequence>
     </complexType>
 
     <complexType name="docRefType">
     	<sequence></sequence>
-    	<attribute name="source" type="string"></attribute>
+    	<attribute name="target" type="string"></attribute>
     	<attribute name="item" type="string"></attribute>
     </complexType>
 </schema>

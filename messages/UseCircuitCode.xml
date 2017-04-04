@@ -8,13 +8,13 @@
 
     <block name="CircuitCode" quantity="single">
         <field name="Code" type="U32">
-            <doc>The circuit code provided by the login response, authenticating the client.</doc>
+            <doc><doc-include target="common/fields.xml" item="circuit_code"/></doc>
         </field>
         <field name="SessionId" type="LLUUID">
-            <doc>Temporary id assigned to this session by the simulator on login, used to verify our identity in packets.</doc>
+            <doc><doc-link target="common/fields.xml" item="session_id"/></doc>
         </field>
         <field name="ID" type="LLUUID">
-            <doc>Agent id of the sender. Notice that "client", "agent" and "avatar" all represent the same thing.</doc>
+            <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the sender.</doc>
         </field>
     </block>
 

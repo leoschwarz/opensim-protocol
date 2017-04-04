@@ -1,0 +1,5 @@
+<strings>
+    <string id="agent_id">The agent id identifies the agent in packets. "client" and "avatar" are synonymous to agent.</string>
+    <string id="circuit_code">The circuit code as provided in the login response. It serves as a proof of authentication and identfies the client.</string>
+    <string id="session_id">Temporary id assigned to this session by the simulator on login, used to verify our identity in packets.</string>
+</strings>
