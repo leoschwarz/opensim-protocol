@@ -25,8 +25,7 @@ Many values can be returned depending on the endpoint, however at least the foll
 
 | Name           | XML-RPC type | Description |
 | -------------- | ------------ | ----------- |
-| `look_at`      | String       | (TODO: Vector encoding.) Unit vector indicating the direction to look at centering the origin at the agent's position.
-                                  (0, 1, 0) is facing straight north, (1, 0, 0) is east, (0,-1, 0) is south and (-1, 0, 0) is west. |
+| `look_at`      | String       | (TODO: Vector encoding.) Unit vector indicating the direction to look at centering the origin at the agent's position.<br>(0, 1, 0) is facing straight north, (1, 0, 0) is east, (0,-1, 0) is south and (-1, 0, 0) is west. |
 | `circuit_code` | Int          | To be used, by the client, as an authentication token which proves that the client just successfully authenticated to the authentication endpoint. |
 | `session_id`   | String       | Temporary id assigned to this session by the simulator on login, used to verify our identity in packets. |
 | `agent_id`     | String       | The agent id identifies the agent in packets. "client" and "avatar" are synonymous to agent. |
@@ -37,7 +36,7 @@ Many values can be returned depending on the endpoint, however at least the foll
 After finishing authentication, the client is supposed to set up a socket and listen on it, then send the following packets to the simulator.
 
 | Packet                         | Sender  | Description                     |
-| ------------------------------ + ------- + ------------------------------- |
+| ------------------------------ | ------- | ------------------------------- |
 | `UseCircuitCode`               | client  | Required to verify prior authentication, sending the circuit code from the login response. |
 | `CompleteAgentMovement`        | client  | Client notifies the simulator that the avatar is coming into the region. |
 | `AgentThrottle`                | client  | TODO, really needed? |
