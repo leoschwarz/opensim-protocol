@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Mon Apr  3 22:00:07 2017 by generateDS.py version 2.25a.
+# Generated Tue Apr  4 18:14:40 2017 by generateDS.py version 2.25a.
 #
 # Command line options:
 #   ('-o', 'message_xml.py')
@@ -11,10 +11,10 @@
 #   MessageSchema.xsd
 #
 # Command line:
-#   /home/leo/Projekte/opensim-protocol/pyenv/bin/generateDS.py -o "message.py" MessageSchema.xsd
+#   /home/leo/Projekte/opensim-protocol/pyenv/bin/generateDS -o "message_xml.py" MessageSchema.xsd
 #
 # Current working directory (os.getcwd()):
-#   data
+#   util
 #
 
 import sys
@@ -656,7 +656,7 @@ def _cast(typ, value):
 #
 
 
-class message(GeneratedsSuper):
+class messageType(GeneratedsSuper):
     subclass = None
     superclass = None
     def __init__(self, name=None, frequency_class=None, frequency_number=None, trusted=None, compression=None, block=None, doc=None, sources=None):
@@ -675,13 +675,13 @@ class message(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, message)
+                CurrentSubclassModule_, messageType)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if message.subclass:
-            return message.subclass(*args_, **kwargs_)
+        if messageType.subclass:
+            return messageType.subclass(*args_, **kwargs_)
         else:
-            return message(*args_, **kwargs_)
+            return messageType(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_block(self): return self.block
     def set_block(self, block): self.block = block
@@ -711,7 +711,7 @@ class message(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='message', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='messageType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -721,15 +721,15 @@ class message(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='message')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='messageType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='message', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='messageType', pretty_print=pretty_print)
             showIndent(outfile, level, pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='message'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='messageType'):
         if self.name is not None and 'name' not in already_processed:
             already_processed.add('name')
             outfile.write(' name=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.name), input_name='name')), ))
@@ -745,7 +745,7 @@ class message(GeneratedsSuper):
         if self.compression is not None and 'compression' not in already_processed:
             already_processed.add('compression')
             outfile.write(' compression=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.compression), input_name='compression')), ))
-    def exportChildren(self, outfile, level, namespace_='tns:', name_='message', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='tns:', name_='messageType', fromsubclass_=False, pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -753,8 +753,7 @@ class message(GeneratedsSuper):
         for block_ in self.block:
             block_.export(outfile, level, namespace_, name_='block', pretty_print=pretty_print)
         if self.doc is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sdoc>%s</%sdoc>%s' % (namespace_, self.gds_encode(self.gds_format_string(quote_xml(self.doc), input_name='doc')), namespace_, eol_))
+            self.doc.export(outfile, level, namespace_, name_='doc', pretty_print=pretty_print)
         if self.sources is not None:
             self.sources.export(outfile, level, namespace_, name_='sources', pretty_print=pretty_print)
     def build(self, node):
@@ -800,15 +799,16 @@ class message(GeneratedsSuper):
             self.block.append(obj_)
             obj_.original_tagname_ = 'block'
         elif nodeName_ == 'doc':
-            doc_ = child_.text
-            doc_ = self.gds_validate_string(doc_, node, 'doc')
-            self.doc = doc_
+            obj_ = docType.factory()
+            obj_.build(child_)
+            self.doc = obj_
+            obj_.original_tagname_ = 'doc'
         elif nodeName_ == 'sources':
             obj_ = sources.factory()
             obj_.build(child_)
             self.sources = obj_
             obj_.original_tagname_ = 'sources'
-# end class message
+# end class messageType
 
 
 class sources(GeneratedsSuper):
@@ -1046,8 +1046,7 @@ class fieldType(GeneratedsSuper):
         else:
             eol_ = ''
         if self.doc is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sdoc>%s</%sdoc>%s' % (namespace_, self.gds_encode(self.gds_format_string(quote_xml(self.doc), input_name='doc')), namespace_, eol_))
+            self.doc.export(outfile, level, namespace_, name_='doc', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -1066,15 +1065,199 @@ class fieldType(GeneratedsSuper):
             self.type_ = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'doc':
-            doc_ = child_.text
-            doc_ = self.gds_validate_string(doc_, node, 'doc')
-            self.doc = doc_
+            obj_ = docType.factory()
+            obj_.build(child_)
+            self.doc = obj_
+            obj_.original_tagname_ = 'doc'
 # end class fieldType
+
+
+class docType(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, doc_include=None, doc_link=None, valueOf_=None, mixedclass_=None, content_=None):
+        self.original_tagname_ = None
+        self.doc_include = doc_include
+        self.doc_link = doc_link
+        self.valueOf_ = valueOf_
+        if mixedclass_ is None:
+            self.mixedclass_ = MixedContainer
+        else:
+            self.mixedclass_ = mixedclass_
+        if content_ is None:
+            self.content_ = []
+        else:
+            self.content_ = content_
+        self.valueOf_ = valueOf_
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, docType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if docType.subclass:
+            return docType.subclass(*args_, **kwargs_)
+        else:
+            return docType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_doc_include(self): return self.doc_include
+    def set_doc_include(self, doc_include): self.doc_include = doc_include
+    def get_doc_link(self): return self.doc_link
+    def set_doc_link(self, doc_link): self.doc_link = doc_link
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
+    def hasContent_(self):
+        if (
+            self.doc_include is not None or
+            self.doc_link is not None or
+            1 if type(self.valueOf_) in [int,float] else self.valueOf_
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='tns:', name_='docType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='docType')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='docType', pretty_print=pretty_print)
+            showIndent(outfile, level, pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='docType'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='tns:', name_='docType', fromsubclass_=False, pretty_print=True):
+        if not fromsubclass_:
+            for item_ in self.content_:
+                item_.export(outfile, level, item_.name, namespace_, pretty_print=pretty_print)
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
+        if node.text is not None:
+            obj_ = self.mixedclass_(MixedContainer.CategoryText,
+                MixedContainer.TypeNone, '', node.text)
+            self.content_.append(obj_)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        if nodeName_ == 'doc-include' and child_.text is not None:
+            valuestr_ = child_.text
+            obj_ = self.mixedclass_(MixedContainer.CategorySimple,
+                MixedContainer.TypeString, 'doc-include', valuestr_)
+            self.content_.append(obj_)
+        elif nodeName_ == 'doc-link':
+            obj_ = docRefType.factory()
+            obj_.build(child_)
+            obj_ = self.mixedclass_(MixedContainer.CategoryComplex,
+                MixedContainer.TypeNone, 'doc-link', obj_)
+            self.content_.append(obj_)
+            if hasattr(self, 'add_doc-link'):
+              self.add_doc-link(obj_.value)
+            elif hasattr(self, 'set_doc-link'):
+              self.set_doc-link(obj_.value)
+        if not fromsubclass_ and child_.tail is not None:
+            obj_ = self.mixedclass_(MixedContainer.CategoryText,
+                MixedContainer.TypeNone, '', child_.tail)
+            self.content_.append(obj_)
+# end class docType
+
+
+class docRefType(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self, source=None, item=None):
+        self.original_tagname_ = None
+        self.source = _cast(None, source)
+        self.item = _cast(None, item)
+    def factory(*args_, **kwargs_):
+        if CurrentSubclassModule_ is not None:
+            subclass = getSubclassFromModule_(
+                CurrentSubclassModule_, docRefType)
+            if subclass is not None:
+                return subclass(*args_, **kwargs_)
+        if docRefType.subclass:
+            return docRefType.subclass(*args_, **kwargs_)
+        else:
+            return docRefType(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def get_source(self): return self.source
+    def set_source(self, source): self.source = source
+    def get_item(self): return self.item
+    def set_item(self, item): self.item = item
+    def hasContent_(self):
+        if (
+
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='tns:', name_='docRefType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='docRefType')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='docRefType', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='docRefType'):
+        if self.source is not None and 'source' not in already_processed:
+            already_processed.add('source')
+            outfile.write(' source=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.source), input_name='source')), ))
+        if self.item is not None and 'item' not in already_processed:
+            already_processed.add('item')
+            outfile.write(' item=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.item), input_name='item')), ))
+    def exportChildren(self, outfile, level, namespace_='tns:', name_='docRefType', fromsubclass_=False, pretty_print=True):
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        value = find_attr_value_('source', node)
+        if value is not None and 'source' not in already_processed:
+            already_processed.add('source')
+            self.source = value
+        value = find_attr_value_('item', node)
+        if value is not None and 'item' not in already_processed:
+            already_processed.add('item')
+            self.item = value
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class docRefType
 
 
 GDSClassesMapping = {
     'block': blockType,
+    'doc': docType,
+    'doc-link': docRefType,
     'field': fieldType,
+    'message': messageType,
 }
 
 
@@ -1102,8 +1285,8 @@ def parse(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'message'
-        rootClass = message
+        rootTag = 'messageType'
+        rootClass = messageType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -1123,8 +1306,8 @@ def parseEtree(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'message'
-        rootClass = message
+        rootTag = 'messageType'
+        rootClass = messageType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -1151,8 +1334,8 @@ def parseString(inString, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'message'
-        rootClass = message
+        rootTag = 'messageType'
+        rootClass = messageType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
@@ -1171,15 +1354,15 @@ def parseLiteral(inFileName, silence=False):
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
     if rootClass is None:
-        rootTag = 'message'
-        rootClass = message
+        rootTag = 'messageType'
+        rootClass = messageType
     rootObj = rootClass.factory()
     rootObj.build(rootNode)
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from message import *\n\n')
-        sys.stdout.write('import message as model_\n\n')
+        sys.stdout.write('#from message_xml import *\n\n')
+        sys.stdout.write('import message_xml as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
@@ -1201,7 +1384,9 @@ if __name__ == '__main__':
 
 __all__ = [
     "blockType",
+    "docRefType",
+    "docType",
     "fieldType",
-    "message",
+    "messageType",
     "sources"
 ]

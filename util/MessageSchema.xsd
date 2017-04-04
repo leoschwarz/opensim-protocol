@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MessageSchema" xmlns:tns="http://www.example.org/MessageSchema" elementFormDefault="qualified">
 
-    <element name="message" type="tns:message"></element>
+    <element name="message" type="tns:messageType"></element>
 
-    <complexType name="message">
+    <complexType name="messageType">
     	<sequence>
     		<element name="block" type="tns:blockType" minOccurs="0" maxOccurs="unbounded"></element>
-    		<element name="doc" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="doc" type="tns:docType" minOccurs="1" maxOccurs="1"></element>
     		<element name="sources" maxOccurs="1" minOccurs="0">
     			<complexType>
     				<sequence>
@@ -59,7 +59,7 @@
 
     <complexType name="fieldType">
     	<sequence>
-    		<element name="doc" type="string" minOccurs="0" maxOccurs="1"></element>
+    		<element name="doc" type="tns:docType" minOccurs="0" maxOccurs="1"></element>
     	</sequence>
     	<attribute name="name" type="string" use="required"></attribute>
     	<attribute name="type" use="required">
@@ -93,5 +93,20 @@
     			</restriction>
     		</simpleType>
     	</attribute>
+    </complexType>
+
+
+
+    <complexType name="docType" mixed="true">
+    	<sequence>
+    		<element name="doc-include" type="string"></element>
+    		<element name="doc-link" type="tns:docRefType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="docRefType">
+    	<sequence></sequence>
+    	<attribute name="source" type="string"></attribute>
+    	<attribute name="item" type="string"></attribute>
     </complexType>
 </schema>
