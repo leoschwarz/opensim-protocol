@@ -1,112 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MessageSchema" xmlns:tns="http://www.example.org/MessageSchema" elementFormDefault="qualified">
 
-    <element name="message" type="tns:messageType"></element>
+	<element name="message" type="tns:messageType"></element>
 
-    <complexType name="messageType">
-    	<sequence>
-    		<element name="block" type="tns:blockType" minOccurs="0" maxOccurs="unbounded"></element>
-    		<element name="doc" type="tns:docType" minOccurs="1" maxOccurs="1"></element>
-    		<element name="sources" maxOccurs="1" minOccurs="0">
-    			<complexType>
-    				<sequence>
-    					<element name="source" type="string" minOccurs="1" maxOccurs="unbounded"></element>
-    				</sequence>
-    			</complexType>
-    		</element>
-    	</sequence>
-    	<attribute name="name" type="string"></attribute>
-    	<attribute name="frequency_class">
-    		<simpleType>
-    			<restriction base="string">
-    				<enumeration value="low"></enumeration>
-    				<enumeration value="medium"></enumeration>
-    				<enumeration value="low"></enumeration>
-    				<enumeration value="fixed"></enumeration>
-    			</restriction>
-    		</simpleType>
-    	</attribute>
-    	<attribute name="frequency_number" type="int"></attribute>
-    	<attribute name="trusted" type="boolean"></attribute>
-    	<attribute name="compression">
-    		<simpleType>
-    			<restriction base="string">
-    				<enumeration value="unencoded"></enumeration>
-    				<enumeration value="zerocoded"></enumeration>
-    			</restriction>
-    		</simpleType>
-    	</attribute>
-    </complexType>
-
-
-    <complexType name="blockType">
-    	<sequence>
-    		<element name="field" type="tns:fieldType" minOccurs="1"
-    			maxOccurs="unbounded">
-    		</element>
-    	</sequence>
-    	<attribute name="name" type="string" use="required"></attribute>
-    	<attribute name="quantity">
-    		<simpleType>
-    			<restriction base="string">
-    				<pattern value="single"></pattern>
-    				<pattern value="variable"></pattern>
-    				<pattern value="multiple (\d+)"></pattern>
-    			</restriction>
-    		</simpleType>
-    	</attribute>
-    </complexType>
-
-    <complexType name="fieldType">
-    	<sequence>
-    		<element name="doc" type="tns:docType" minOccurs="0" maxOccurs="1"></element>
-    	</sequence>
-    	<attribute name="name" type="string" use="required"></attribute>
-    	<attribute name="type" use="required">
-    		<simpleType>
-    			<restriction base="string">
-    				<enumeration value="Null"></enumeration>
-    				<enumeration value="Fixed"></enumeration>
-    				<enumeration value="Variable 1"></enumeration>
-    				<enumeration value="Variable 2"></enumeration>
-    				<enumeration value="U8"></enumeration>
-    				<enumeration value="U16"></enumeration>
-    				<enumeration value="U32"></enumeration>
-    				<enumeration value="U64"></enumeration>
-    				<enumeration value="S8"></enumeration>
-    				<enumeration value="S16"></enumeration>
-    				<enumeration value="S32"></enumeration>
-    				<enumeration value="S64"></enumeration>
-    				<enumeration value="F32"></enumeration>
-    				<enumeration value="F64"></enumeration>
-    				<enumeration value="LLVector3"></enumeration>
-    				<enumeration value="LLVector3d"></enumeration>
-    				<enumeration value="LLVector4"></enumeration>
-    				<enumeration value="LLQuaternion"></enumeration>
-    				<enumeration value="LLUUID"></enumeration>
-    				<enumeration value="BOOL"></enumeration>
-    				<enumeration value="IPADDR"></enumeration>
-    				<enumeration value="IPPORT"></enumeration>
-    				<enumeration value="U16Vec3"></enumeration>
-    				<enumeration value="U16Quat"></enumeration>
-    				<enumeration value="S16Array"></enumeration>
-    			</restriction>
-    		</simpleType>
-    	</attribute>
-    </complexType>
+	<complexType name="messageType">
+		<sequence>
+			<element name="block" type="tns:blockType" minOccurs="0" maxOccurs="unbounded"></element>
+			<element name="doc" type="tns:docType" minOccurs="1" maxOccurs="1"></element>
+			<element name="sources" maxOccurs="1" minOccurs="0">
+				<complexType>
+					<sequence>
+						<element name="source" type="string" minOccurs="1" maxOccurs="unbounded"></element>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+		<attribute name="name" type="string"></attribute>
+		<attribute name="frequency_class">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="low"></enumeration>
+					<enumeration value="medium"></enumeration>
+					<enumeration value="low"></enumeration>
+					<enumeration value="fixed"></enumeration>
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute name="frequency_number" type="int"></attribute>
+		<attribute name="trusted" type="boolean"></attribute>
+		<attribute name="compression">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="unencoded"></enumeration>
+					<enumeration value="zerocoded"></enumeration>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
 
 
+	<complexType name="blockType">
+		<sequence>
+			<element name="field" type="tns:fieldType" minOccurs="1"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="quantity">
+			<simpleType>
+				<restriction base="string">
+					<pattern value="single"></pattern>
+					<pattern value="variable"></pattern>
+					<pattern value="multiple (\d+)"></pattern>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
 
-    <complexType name="docType" mixed="true">
-    	<sequence>
-    		<element name="doc-include" type="tns:docRefType"></element>
-    		<element name="doc-link" type="tns:docRefType"></element>
-    	</sequence>
-    </complexType>
+	<complexType name="fieldType">
+		<sequence>
+			<element name="doc" type="tns:docType" minOccurs="0" maxOccurs="1"></element>
+		</sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="type" use="required">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="Null"></enumeration>
+					<enumeration value="Fixed"></enumeration>
+					<enumeration value="Variable 1"></enumeration>
+					<enumeration value="Variable 2"></enumeration>
+					<enumeration value="U8"></enumeration>
+					<enumeration value="U16"></enumeration>
+					<enumeration value="U32"></enumeration>
+					<enumeration value="U64"></enumeration>
+					<enumeration value="S8"></enumeration>
+					<enumeration value="S16"></enumeration>
+					<enumeration value="S32"></enumeration>
+					<enumeration value="S64"></enumeration>
+					<enumeration value="F32"></enumeration>
+					<enumeration value="F64"></enumeration>
+					<enumeration value="LLVector3"></enumeration>
+					<enumeration value="LLVector3d"></enumeration>
+					<enumeration value="LLVector4"></enumeration>
+					<enumeration value="LLQuaternion"></enumeration>
+					<enumeration value="LLUUID"></enumeration>
+					<enumeration value="BOOL"></enumeration>
+					<enumeration value="IPADDR"></enumeration>
+					<enumeration value="IPPORT"></enumeration>
+					<enumeration value="U16Vec3"></enumeration>
+					<enumeration value="U16Quat"></enumeration>
+					<enumeration value="S16Array"></enumeration>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
 
-    <complexType name="docRefType">
-    	<sequence></sequence>
-    	<attribute name="target" type="string"></attribute>
-    	<attribute name="item" type="string"></attribute>
-    </complexType>
+
+
+	<complexType name="docType" mixed="true">
+		<sequence>
+			<element name="doc-include" type="tns:docRefType" minOccurs="0"></element>
+			<element name="doc-link" type="tns:docRefType" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="docRefType">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="target" type="string"></attribute>
+				<attribute name="item" type="string"></attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
 </schema>
