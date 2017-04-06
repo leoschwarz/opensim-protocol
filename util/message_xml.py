@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Apr  4 18:36:14 2017 by generateDS.py version 2.25a.
+# Generated Thu Apr  6 15:26:50 2017 by generateDS.py version 2.25a.
 #
 # Command line options:
 #   ('-o', 'message_xml.py')
@@ -711,7 +711,7 @@ class messageType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='messageType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='messageType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -843,7 +843,7 @@ class sources(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='sources', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='sources', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -926,7 +926,7 @@ class blockType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='blockType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='blockType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1015,7 +1015,7 @@ class fieldType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='fieldType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='fieldType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1115,7 +1115,7 @@ class docType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='docType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='docType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1184,10 +1184,11 @@ class docType(GeneratedsSuper):
 class docRefType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, target=None, item=None):
+    def __init__(self, target=None, item=None, valueOf_=None):
         self.original_tagname_ = None
         self.target = _cast(None, target)
         self.item = _cast(None, item)
+        self.valueOf_ = valueOf_
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
@@ -1203,14 +1204,16 @@ class docRefType(GeneratedsSuper):
     def set_target(self, target): self.target = target
     def get_item(self): return self.item
     def set_item(self, item): self.item = item
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
     def hasContent_(self):
         if (
-
+            1 if type(self.valueOf_) in [int,float] else self.valueOf_
         ):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='docRefType', namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"', pretty_print=True):
+    def export(self, outfile, level, namespace_='tns:', name_='docRefType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1222,7 +1225,8 @@ class docRefType(GeneratedsSuper):
         already_processed = set()
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='docRefType')
         if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
+            outfile.write('>')
+            outfile.write(self.convert_unicode(self.valueOf_))
             self.exportChildren(outfile, level + 1, namespace_='tns:', name_='docRefType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
@@ -1239,6 +1243,7 @@ class docRefType(GeneratedsSuper):
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
@@ -1301,7 +1306,7 @@ def parse(inFileName, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"',
+            namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"',
             pretty_print=True)
     return rootObj
 
@@ -1350,7 +1355,7 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:tns="http://www.example.org/MessageSchema"')
+            namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"')
     return rootObj
 
 
