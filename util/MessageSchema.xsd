@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MessageSchema" xmlns:tns="http://www.example.org/MessageSchema" elementFormDefault="qualified">
+<schema
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+	targetNamespace="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+	elementFormDefault="qualified">
 
 	<element name="message" type="tns:messageType"></element>
 

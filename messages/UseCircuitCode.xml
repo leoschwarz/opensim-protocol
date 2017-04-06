@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <message
+    xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
     name="UseCircuitCode"
     frequency_class="low"
     frequency_number="3"

@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<message name="AgentThrottle" frequency_class="low" frequency_number="81" trusted="false" compression="zerocoded">
+<message
+    xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+    name="AgentThrottle" frequency_class="low" frequency_number="81" trusted="false" compression="zerocoded">
     <block name="AgentData" quantity="single">
         <field name="AgentID" type="LLUUID">
             <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the client.</doc>
