@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+from lxml import etree
+
+from glob import glob
+from os.path import basename
+
+def validate(show_errors=False):
+    # Load the schema.
+    with open("MessageSchema.xsd", "r") as f:
+        xmlschema_doc = etree.parse(f)
+    xmlschema = etree.XMLSchema(xmlschema_doc)
+
+    # Now validate the message docs.
+    total_counter = 0
+    invalid_message_docs = []
+    for path in glob("../messages/*.xml"):
+        total_counter += 1
+        with open(path, "r") as f:
+            doc = etree.parse(f)
+
+        # Validate
+        if xmlschema.validate(doc):
+            str_valid = "valid"
+        else:
+            str_valid = "invalid"
+            invalid_message_docs.append(path)
+            if show_errors:
+                error = xmlschema.error_log.last_error
+                print(error)
+
+        # Output
+        print("{} : {}".format(basename(path), str_valid))
+
+    print("\nFinished validation.")
+    print("{}/{} XML files are valid.".format(total_counter - len(invalid_message_docs), total_counter))
+
+    if len(invalid_message_docs) != 0:
+        print("\nInvalid files: ")
+        for path in invalid_message_docs:
+            print(basename(path))
+
+if __name__ == "__main__":
+    validate(True)
+
