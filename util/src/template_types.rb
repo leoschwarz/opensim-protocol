@@ -49,7 +49,11 @@ class Field
     end
 
     def ll_type
-        @type
+        if @type == "Variable"
+            "Variable #{@count}"
+        else
+            @type
+        end
     end
 
     def to_s
