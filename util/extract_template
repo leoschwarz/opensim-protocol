@@ -7,6 +7,8 @@ require 'nokogiri'
 require_relative './src/template_types.rb'
 require_relative './src/template_parser.rb'
 
+XML_NAMESPACE="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+
 # Generate one xml file in the output_dir for each message described in the template_file.
 # If such a file exists already, it will be overriden if and only if override is true.
 def generate_all(template_file, output_dir, override=false)
@@ -22,7 +24,8 @@ end
 
 def generate_message_xml(message)
     output  = %{<?xml version="1.0"?>\n}
-    output << %{<message name="#{message.name}"\n}
+    output << %{<message xmlns="#{XML_NAMESPACE}"\n}
+    output << %{\tname="#{message.name}"\n}
     output << %{\tfrequency_class="#{message.frequency.downcase}"\n}
     output << %{\tfrequency_number="#{message.id}"\n}
     output << %{\ttrusted="#{message.trusted}"\n}
