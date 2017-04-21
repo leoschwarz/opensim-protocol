@@ -25,7 +25,7 @@
 				<restriction base="string">
 					<enumeration value="low"></enumeration>
 					<enumeration value="medium"></enumeration>
-					<enumeration value="low"></enumeration>
+					<enumeration value="high"></enumeration>
 					<enumeration value="fixed"></enumeration>
 				</restriction>
 			</simpleType>
