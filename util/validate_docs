@@ -4,7 +4,12 @@ from lxml import etree
 from glob import glob
 from os.path import basename
 
-def validate(show_errors=False):
+# TODO:
+# - Validate strings file.
+# - Check links to `common.xml` and warn on links to other unknown ressources.
+# - Find TODOs in our XML files and notify about them.
+
+def validate_schema(show_errors=False):
     # Load the schema.
     with open("MessageSchema.xsd", "r") as f:
         xmlschema_doc = etree.parse(f)
@@ -40,5 +45,5 @@ def validate(show_errors=False):
             print(basename(path))
 
 if __name__ == "__main__":
-    validate(True)
+    validate_schema(True)
 
