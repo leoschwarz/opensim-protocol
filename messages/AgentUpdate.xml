@@ -14,7 +14,13 @@
             <doc>TODO</doc>
         </field>
         <field name="State" type="U8">
-            <doc>TODO</doc>
+            <doc>
+                Indicates current behavior state:
+
+                0: walking
+                1: mouselook
+                2: typing
+            </doc>
         </field>
         <field name="CameraCenter" type="LLVector3">
             <doc>TODO</doc>
@@ -39,14 +45,11 @@
         </field>
     </block>
     <doc>
+        Camera and agent info sent from viewer to simulator.
+
         TODO:
         /// AgentUpdate - Camera info sent from viewer to simulator
 /// or, more simply, two axes and compute cross product
-/// State data is temporary, indicates current behavior state:
-/// 0 = walking
-///  1 = mouselook
-///  2 = typing
-///
 /// Center is region local (JNC 8.16.2001)
 /// Camera center is region local (JNC 8.29.2001)
     </doc>
