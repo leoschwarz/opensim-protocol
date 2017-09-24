@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- TODO: the value of frequency_number is invalid according to MessageSchema.xsd -->
 <message
     xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
     name="PacketAck"
