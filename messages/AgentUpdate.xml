@@ -41,11 +41,19 @@
             <doc>TODO</doc>
         </field>
         <field name="Flags" type="U8">
-            <doc>TODO</doc>
+            <doc>
+                On/off bits for movement keys which the server then feeds into the physics engine
+                to compute actual movement of the client. The server then sends updates back to the
+                clients (TODO: which packet?).
+
+                The official viewer rapidly polls for currently pressed keys, sets the flags and sends the packet, then resets the flags until the next polling interval.
+
+                TODO: Encoding of the flags.
+            </doc>
         </field>
     </block>
     <doc>
-        Camera and agent info sent from viewer to simulator.
+        Camera and movement info about an agent sent from viewer to simulator.
 
         TODO:
         /// AgentUpdate - Camera info sent from viewer to simulator
@@ -55,5 +63,6 @@
     </doc>
     <sources>
         <source>Template File</source>
+        <source>http://lib.openmetaverse.co/wiki/Movement (2017-09-24)</source>
     </sources>
 </message>
