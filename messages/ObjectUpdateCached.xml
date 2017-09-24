@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectUpdateCached" frequency_class="high" frequency_number="14" trusted="true" compression="unencoded">
+	<block name="RegionData" quantity="single">
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="TimeDilation" type="U16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="CRC" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="UpdateFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectUpdateCached
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>
