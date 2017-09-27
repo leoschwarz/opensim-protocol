@@ -15,7 +15,7 @@
     </block>
     <block name="Throttle" quantity="single">
         <field name="GenCounter" type="U32">
-            <doc>TODO</doc>
+            <doc>Clients can set this value to 0.</doc>
         </field>
         <field name="Throttles" type="Variable 1">
             <doc>
