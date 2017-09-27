@@ -3,9 +3,13 @@ A circuit consists of a two-way UDP connection, where each side is listening on 
 Circuits are possible between viewer and simulator, simulator and simulator, and simulator and utility server. However for now this spec will only cover circuits between a viewer and simulator.
 The notion of trusted and untrusted circuits is not that important in this context, as these circuits are always considered untrusted. Hence messages marked as only acceptable on a trusted circuit are **to be discarded**.
 
+## TODO
+* Using first and last name is bad for obvious internationalization issues. Figure out if there already is a way to authenticate with only the full name and document it if possible.
+* Determine the actually optional fields in the auth request. Indicate optionality or remove the relevant items.
+
 # Authentication
 Before UDP communication can be started, the client has to authenticate to the simulator providing credientals to prove identity.
-This interaction utilizes XML-RPC over HTTP.
+Authentication with an OpenSimulator server takes place over [XML-RPC](http://xmlrpc.scripting.com/spec.html).
 
 ## Request
 Call the `login_to_simulator` method via XML-RPC with at least the following arguments.
