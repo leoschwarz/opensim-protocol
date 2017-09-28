@@ -23,24 +23,23 @@
             </doc>
         </field>
         <field name="CameraCenter" type="LLVector3">
-            <doc>TODO</doc>
+            <doc>Center coordinates of the camera.</doc>
         </field>
         <field name="CameraAtAxis" type="LLVector3">
-            <doc>TODO</doc>
+            <doc>Camera coordinate axis in looking _at_ direction (forward).
+                TODO: Check how these are provided? Most likely unit distance from camera center into the direction of the coordinate axis?
+            </doc>
         </field>
         <field name="CameraLeftAxis" type="LLVector3">
-            <doc>TODO</doc>
+            <doc>Camera coordinate axis, left direction.</doc>
         </field>
         <field name="CameraUpAxis" type="LLVector3">
-            <doc>TODO</doc>
+            <doc>Camera coordinate axis, up direction.</doc>
         </field>
         <field name="Far" type="F32">
             <doc>TODO</doc>
         </field>
         <field name="ControlFlags" type="U32">
-            <doc>TODO</doc>
-        </field>
-        <field name="Flags" type="U8">
             <doc>
                 On/off bits for movement keys which the server then feeds into the physics engine
                 to compute actual movement of the client. The server then sends updates back to the
@@ -79,12 +78,18 @@
                 | 25       |                 | legacy                                                        |                       |
                 | 26       | TURN_LEFT       |                                                               |                       |
                 | 27       | TURN_RIGHT      |                                                               |                       |
-                | 28       | AWAY            |                                                               |                       |
+                | 28       | AWAY            | Set when the avatar is idled or set to away. Note that
+                                               the away animation is activated separately from setting this
+                                               flag.                                                         |                       |
                 | 29       | LBUTTON_DOWN    |                                                               |                       |
                 | 30       | LBUTTON_UP      |                                                               |                       |
                 | 31       | ML_LBUTTON_DOWN |                                                               |                       |
                 | 32       | ML_LBUTTON_UP   |                                                               |                       |
-
+            </doc>
+        </field>
+        <field name="Flags" type="U8">
+            <doc>
+                TODO: what are these?
             </doc>
         </field>
     </block>
