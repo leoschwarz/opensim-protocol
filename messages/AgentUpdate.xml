@@ -48,7 +48,43 @@
 
                 The official viewer rapidly polls for currently pressed keys, sets the flags and sends the packet, then resets the flags until the next polling interval.
 
-                TODO: Encoding of the flags.
+                Flags (encoded as 32 bit integer, in the encoding column the bit number from least significant to most significant bit is listed for each flag):
+                | Encoding | Flag            | Description                                                   | SL keybinding         |
+                |----------|-----------------|---------------------------------------------------------------|-----------------------|
+                | 0x0      | EMPTY           | TODO                                                          |                       |
+                | 0        | MOVE_FWD_POS    | Move forward                                                  | W/Up arrow            |
+                | 1        | MOVE_FWD_NEG    | Move backward                                                 | s/down arrow          |
+                | 2        | MOVE_LEFT_POS   | Move left                                                     | shift-(a/left arrow)  |
+                | 3        | MOVE_LEFT_NEG   | Move right                                                    | shift-(d/right arrow) |
+                | 4        | MOVE_UP_POS     | not flying: jump; flying: move up                             | e                     |
+                | 5        | MOVE_UP_NEG     | not flying: croutch; flying: move down                        | c                     |
+                | 6        |                 | unused                                                        |                       |
+                | 7        |                 | unused                                                        |                       |
+                | 8        |                 | unused                                                        |                       |
+                | 9        |                 | unused                                                        |                       |
+                | 10       | FAST_FWD        | OR-ed with agent_control_fwd_* if the keyboard is being used  | todo                  |
+                | 11       | FAST_LEFT       | OR-ed with agent_control_left_* if the keyboard is being used | todo                  |
+                | 12       | FAST_UP         | OR-ed with agent_control_up_* if the keyboard is being used   | todo                  |
+                | 13       | FLY             | Fly                                                           |                       |
+                | 14       | STOP            | TODO                                                          |                       |
+                | 15       | FINISH_ANIM     | Finish the current animation                                  |                       |
+                | 16       | STAND_UP        | Stand up from the ground or a prim seat                       |                       |
+                | 17       | SIT_ON_GROUND   | Sit on the ground at the current location                     |                       |
+                | 18       | MOUSELOOK       |                                                               |                       |
+                | 19       |                 | legacy                                                        |                       |
+                | 20       |                 | legacy                                                        |                       |
+                | 21       |                 | legacy                                                        |                       |
+                | 22       |                 | legacy                                                        |                       |
+                | 23       |                 | legacy                                                        |                       |
+                | 24       |                 | legacy                                                        |                       |
+                | 25       | TURN_LEFT       |                                                               |                       |
+                | 26       | TURN_RIGHT      |                                                               |                       |
+                | 27       | AWAY            |                                                               |                       |
+                | 28       | LBUTTON_DOWN    |                                                               |                       |
+                | 29       | LBUTTON_UP      |                                                               |                       |
+                | 30       | ML_LBUTTON_DOWN |                                                               |                       |
+                | 31       | ML_LBUTTON_UP   |                                                               |                       |
+
             </doc>
         </field>
     </block>
@@ -64,5 +100,6 @@
     <sources>
         <source>Template File</source>
         <source>http://lib.openmetaverse.co/wiki/Movement (2017-09-24)</source>
+        <source>OpenMetaverse/AgentManagerMovement.cs</source>
     </sources>
 </message>
