@@ -23,7 +23,7 @@
             </doc>
         </field>
         <field name="CameraCenter" type="LLVector3">
-            <doc>Center coordinates of the camera.</doc>
+            <doc>Region local center coordinates of the camera.</doc>
         </field>
         <field name="CameraAtAxis" type="LLVector3">
             <doc>Camera coordinate axis in looking _at_ direction (forward).
