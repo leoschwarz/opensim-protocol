@@ -44,10 +44,8 @@ After finishing authentication, the client is supposed to set up a socket and li
 | `UseCircuitCode`               | client  | Required to verify prior authentication, sending the circuit code from the login response. |
 | `CompleteAgentMovement`        | client  | Client notifies the simulator that the avatar is coming into the region. |
 | `AgentThrottle`                | client  | TODO, really needed? |
-| `AgentUpdate`                  | client  | TODO, really needed? |
+| `AgentUpdate`                  | client  | Continuously sent package to inform the sim about the current agent state, e.g. movement. |
 
-
-* ??? SEND_AGENT_THROTTLE & SEND_AGENT_UPDATES Funktionen
 TODO: What packets does the server send what do we have to expect and wait for?
 
 # References
