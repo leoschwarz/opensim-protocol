@@ -30,7 +30,7 @@
 				</restriction>
 			</simpleType>
 		</attribute>
-		<attribute name="frequency_number" type="int"></attribute>
+		<attribute name="frequency_number" type="string"></attribute>
 		<attribute name="trusted" type="boolean"></attribute>
 		<attribute name="compression">
 			<simpleType>
