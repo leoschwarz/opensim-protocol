@@ -38,8 +38,8 @@ After the message number follows the message body. TODO document message encodin
 An ack essentially consists of the 32-bit big-endian sequence number of the packet that is to be acknowledged.
 
 ACKs can be sent in two ways:
-* PacketAck: This is a specialized packet. TODO.
-* Appended ACKs: If the `PACKET_APPENDED_ACKS` flag is set, the very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte.
+* PacketAck: This is a specialized packet. TODO how many can be sent this way.
+* Appended ACKs: If the `PACKET_APPENDED_ACKS` flag is set, the very last byte of the UDP packet indicates the number of 32-bit ACKs appended just in front of this byte. So this way at most 255 acks can be appended.
 
 # References
 * http://lib.openmetaverse.co/wiki/ACK (accessed 2017-01-17)
