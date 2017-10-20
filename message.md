@@ -13,7 +13,7 @@ The bytes are sent in big endian order.
 Linden message template terminology:
 
 | Frequency | Length | Encoding            |
-| --------- + ------ | ------------------- |
+| --------- | ------ | ------------------- |
 | High      | 1 B    | 0x01-0xfe           |
 | Medium    | 2 B    | 0xff 0x01-0xfe      |
 | Low       | 4 B    | 0xff 0xff 0x00-0xff |
