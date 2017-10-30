@@ -2,3 +2,6 @@
   We could either dedicate each message to one such category or use manifest files to
   declare which messages belong into a group. This would be especially interesting with
   regards to the codegen.
+
+* OpenMetaverse.StructuredData.LLSD provides an implementation of a LLSD reader, which we will
+  most likely need when receiving objects. (But first check if it's still used.)

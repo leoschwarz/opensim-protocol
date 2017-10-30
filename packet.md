@@ -30,7 +30,7 @@ Every packet begins with a six bytes long header.
 * **Extra**: Specifies the length of additional extra header information in bytes following directly after this byte. In practice this is always zero. If it were different clients not expecting extra headers can skip this number of bytes.
 
 ## Packet body
-The packet body starts with the message number, which is a numeric encoding of the message type. TODO document specifics about these numbers.
+The packet body starts with the message number, which is a numeric encoding of the message type, see `message.md` for more information.
 
 After the message number follows the message body. TODO document message encoding.
 

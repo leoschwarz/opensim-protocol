@@ -45,6 +45,10 @@
                 to compute actual movement of the client. The server then sends updates back to the
                 clients (TODO: which packet?).
 
+                TODO:
+                 - If we send a flag and then stop what happens with the agent? According to what I saw
+                   so far the agent derenders but maybe this is also due to bugs in my code.
+
                 The official viewer rapidly polls for currently pressed keys, sets the flags and sends the packet, then resets the flags until the next polling interval.
 
                 Flags (encoded as 32 bit integer, in the encoding column the bit number from least significant to most significant bit is listed for each flag):
