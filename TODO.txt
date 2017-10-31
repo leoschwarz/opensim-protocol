@@ -5,3 +5,5 @@
 
 * OpenMetaverse.StructuredData.LLSD provides an implementation of a LLSD reader, which we will
   most likely need when receiving objects. (But first check if it's still used.)
+
+* LLVFS: LindenLab Virtual File System also looks like a (attention sarcsam) fun thing to implement. If we are lucky this is something we won't have to bother with though, let's hope for the best.
