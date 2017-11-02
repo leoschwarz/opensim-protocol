@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+        name="RequestImage"
+        frequency_class="high"
+        frequency_number="8"
+        trusted="false"
+        compression="unencoded">
+
+    <block name="AgentData" quantity="single">
+        <field name="AgentID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the sender.</doc>
+        </field>
+        <field name="SessionID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="session_id"/></doc>
+        </field>
+    </block>
+    <block name="RequestImage" quantity="variable">
+        <field name="Image" type="LLUUID">
+            <doc>Identifier of the texture to be downloaded.</doc>
+        </field>
+        <field name="DiscardLevel" type="S8">
+            <doc>
+                Specifies how much detail the texture should have.
+
+                0 = Highest available detail version
+                1 = Second highest detail, half the size in each dimension
+
+                TODO: are values > 1 possible?
+            </doc>
+        </field>
+        <field name="DownloadPriority" type="F32">
+            <doc>
+                Priority of this download compared to other requests.
+                A higher value indicates a higher priority.
+            </doc>
+        </field>
+        <field name="Packet" type="U32">
+            <doc>
+                Specifies which part of the file should be transmitted.
+
+                It's not possible to transmit large images in one single message, hence they are split into
+                multiple packets by the server and the client can specify a value ≥ 0 to select a specific
+                chunk of data.
+
+                In the code we find the following definition:
+                last_packet = (mFileSize - FIRST_PACKET_SIZE + MAX_IMG_PACKET_SIZE-1) / MAX_IMG_PACKET_SIZE + 1;
+                where everything in caps is hard coded. (TODO list values)
+            </doc>
+        </field>
+        <field name="Type" type="U8">
+            <doc>
+                0 = NORMAL
+                1 = AVATAR_BAKE
+            </doc>
+        </field>
+    </block>
+    <doc>
+        Used to request textures over UDP from a simulator.
+
+        It's also possible to cancel a texture transmission using this message, by specifying certain values. TODO: which ones (lines 3381-3386)
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>indra/newview/lltexturefetch.cpp (around line 3200)</source>
+    </sources>
+</message>
