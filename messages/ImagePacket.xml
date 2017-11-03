@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd"
+         name="ImagePacket"
+         frequency_class="high"
+         frequency_number="10"
+         trusted="true"
+         compression="unencoded">
+
+    <block name="ImageID" quantity="single">
+        <field name="ID" type="LLUUID">
+            <doc>UUID of the texture.</doc>
+        </field>
+        <field name="Packet" type="U16">
+            <doc>
+                The "packet number" indicates the number of the chunk which was sent.
+            </doc>
+        </field>
+    </block>
+    <block name="ImageData" quantity="single">
+        <field name="Data" type="Variable 2">
+            <doc>Binary data of the image.</doc>
+        </field>
+    </block>
+    <doc>
+        Response to a RequestImage message having >1 packet of data.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>
