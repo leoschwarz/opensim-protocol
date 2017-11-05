@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LayerData" frequency_class="high" frequency_number="11" trusted="true" compression="unencoded">
+    <block name="LayerID" quantity="single">
+        <field name="Type" type="U8">
+            <doc>
+                Describes what kind of layer this is.
+
+                LAND: 'L'
+                WIND: '7'
+                CLOUD: '8'
+                WATER: 'W'
+                AURORA_LAND: 'M'
+                AURORA_WATER: 'X'
+                AURORA_WIND: '9'
+                AURORA_CLOUD: ':'
+            </doc>
+        </field>
+    </block>
+    <block name="LayerData" quantity="single">
+        <field name="Data" type="Variable 2">
+            <doc>
+                Not all layers seem to be encoded in the same way.
+
+                Land layer:
+                getLand().decompressDCTPatch
+
+                TODO: Figure out the encoding of this.
+            
+            </doc>
+        </field>
+    </block>
+    <doc>
+        With this packet the simulator sends information about the region to be rendered.
+
+        TODO:
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>
+            indra/newview/llvlmanager.{cpp,h} (class LLVLData)
+            → this file only provides a means to collect the various binary blobs
+        </source>
+        <source>
+            indra/newview/llviewerregion.{cpp,h}
+            → seems to actually describe how to parse the files
+        </source>
+    </sources>
+</message>

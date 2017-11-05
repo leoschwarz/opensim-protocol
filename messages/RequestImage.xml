@@ -16,16 +16,16 @@
     </block>
     <block name="RequestImage" quantity="variable">
         <field name="Image" type="LLUUID">
-            <doc>Identifier of the texture to be downloaded.</doc>
+            <doc>UUID of the texture to be downloaded.</doc>
         </field>
         <field name="DiscardLevel" type="S8">
             <doc>
                 Specifies how much detail the texture should have.
 
-                0 = Highest available detail version
-                1 = Second highest detail, half the size in each dimension
+                0 = Original version with all detail preserved.
+                1 = Second highest detail, half the size in each dimension.
 
-                TODO: are values > 1 possible?
+                TODO: According to a screenshot values > 1 are possible, however it's unclear what kind of detail they correspond to.
             </doc>
         </field>
         <field name="DownloadPriority" type="F32">
@@ -44,7 +44,12 @@
 
                 In the code we find the following definition:
                 last_packet = (mFileSize - FIRST_PACKET_SIZE + MAX_IMG_PACKET_SIZE-1) / MAX_IMG_PACKET_SIZE + 1;
-                where everything in caps is hard coded. (TODO list values)
+                where everything in caps is hard coded, with the following values:
+
+                FIRST_PACKET_SIZE: 600
+                MAX_IMG_PACKET_SIZE: 1000
+
+                TODO: But I'm still not convinced, is only the first packet 600 bytes long, and every other packet size is 1000 until for the last one? Or is there some other mechanism to communicate the packet sizes. (Also they misleadingly call this packet sizes, but it's more like a chunk size since it seems to only indicate the size of the image payload.)
             </doc>
         </field>
         <field name="Type" type="U8">
