@@ -44,6 +44,10 @@ TODO: Improve this table and remove everything not needed later.
 
 TODO: 
 
+From the UDP message `TeleportFinish` we obtain for OpenSim:
+region_size_x : RegionSizeX as obtainable from OpenSim (Info message)
+region_size_y : RegionSizeY as obtainable from OpenSim
+
 | grids_per_patch_edge | mGridsPerPatchEdge  | WOLRD_PATCH_SIZE = 32 |
 | patches_per_edge     | mPatchesPerEdge     | Number of patches on one side of a region. |
 mPatchesPerEdge = (mGridsPerEdge - 1) / mGridsPerPatchEdge;
