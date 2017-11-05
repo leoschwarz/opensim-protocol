@@ -1,6 +1,6 @@
 # Textures
 ## Encoding
-The default format for textures is JPEG 2000, however it's possible that textures are encoded in one of the following formats, marked by their file name's extension:
+The default encoding for textures is JPEG 2000, however it's possible that textures are encoded in any one of the following formats, marked by their file name's extension:
 
 | Encoding | Extensions           |
 | -------- | -------------------- |
@@ -14,6 +14,17 @@ The default format for textures is JPEG 2000, however it's possible that texture
 ## Fetching
 There are two different ways in which textures are fetched from a simulator, either through HTTP
 or llUDP.
+
+### HTTP
+The request url is constructed according to:
+
+TODO: This is not yet finished because we have to read the capabilities from the region.
+
+base_url := region->getViewerAssetUrl() or else region->getHttpUrl()
+if not empty (base_url):
+    request_url := base_url + "/?texture_id=" + texture_id
+
+### UDP
 
 ## Points raised by inspecting current implementations
 - Texture fetching is probably the most relevant part for bandwidth throttling in the whole
@@ -31,22 +42,27 @@ base_url := region->getViewerAssetUrl() or else region->getHttpUrl()
 if not empty (base_url):
     request_url := base_url + "/?texture_id=" + texture_id
 
-- File format: default Jpeg2000, but LLImageBase::getCodecFromExtension allows to read textures with a different codec also. → TODO checkout which ones that are.
-
-- UDP flow (starting at line 3293)
-→ RequestImage { AgentData, RequestImage { uuid, discardLevel, priority } )}
--> packet = req->mLastPacket + 1
+→ client: RequestImage { AgentData, RequestImage { uuid, discardLevel, priority } )}
+→ server: ImagePacket
 
 request: req->mType, 0 = reset
 
-
+### There are multiple kinds of texture requests (see llviewertexture.h)
+enum FTType
+{
+	FTT_UNKNOWN = -1,
+	FTT_DEFAULT = 0, // standard texture fetched by id.
+	FTT_SERVER_BAKE, // texture produced by appearance service and fetched from there.
+	FTT_HOST_BAKE, // old-style baked texture uploaded by viewer and fetched from avatar's host.
+	FTT_MAP_TILE, // tiles are fetched from map server directly.
+	FTT_LOCAL_FILE // fetch directly from a local file.
+};
 
 
 ## TODO
 - Check what is implemented by OpenSim, does it also implement the HTTP texture service?
   Depending on this the documentation effort could be reduced by only focusing on the relevant
   part of the protocol.
-- Document the encoding. Is it regular JPEG 2000, or something weird? (If it's the former, network clients should not bother with transcoding, as this is a liability of the renderer.)
 - Research what kind of issue BUG-3323/SH-4375 is and what they are trying to fix with the 32 MB heuristic?
 - Figure out where to get the url or object handle/id to retrieve the textures from. (Region data/udp messages/or where)
 - Accessible listing of sources.
