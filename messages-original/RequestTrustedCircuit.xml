@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestTrustedCircuit" frequency_class="low" frequency_number="394" trusted="true" compression="unencoded">
+	<doc>
+		TODO:
+		/// RequestTrustedCircuit
+/// If the destination does not trust the sender, a Deny is sent back.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

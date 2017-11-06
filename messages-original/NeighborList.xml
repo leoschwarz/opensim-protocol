@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="NeighborList" frequency_class="high" frequency_number="3" trusted="true" compression="unencoded">
+	<block name="NeighborBlock" quantity="multiple 4">
+		<field name="IP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="Port" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="PublicIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="PublicPort" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Neighbor List - Passed anytime neighbors change
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarSitResponse" frequency_class="high" frequency_number="21" trusted="true" compression="zerocoded">
+	<block name="SitObject" quantity="single">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="SitTransform" quantity="single">
+		<field name="AutoPilot" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="SitPosition" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="SitRotation" type="LLQuaternion">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraEyeOffset" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraAtOffset" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="ForceMouselook" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarSitResponse - response to a request to sit on an object
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

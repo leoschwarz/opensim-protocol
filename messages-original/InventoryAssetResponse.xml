@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="InventoryAssetResponse" frequency_class="low" frequency_number="283" trusted="true" compression="unencoded">
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AssetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IsReadable" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// response to RequestInventoryAsset
+/// lluuid will be null if agentid in the request above cannot read asset
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

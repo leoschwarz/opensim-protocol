@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UserReportInternal" frequency_class="low" frequency_number="21" trusted="true" compression="zerocoded">
+	<block name="ReportData" quantity="single">
+		<field name="ReportType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ReporterID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ViewerPosition" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentPosition" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="ScreenshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastOwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreatorID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuserID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuseRegionName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuseRegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Summary" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Details" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="VersionString" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// complaint/bug-report - sim -&gt; dataserver. see UserReport for details.
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

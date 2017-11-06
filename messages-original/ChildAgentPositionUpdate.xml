@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ChildAgentPositionUpdate" frequency_class="high" frequency_number="27" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="ViewerCircuitCode" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentVel" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Center" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Size" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="AtAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LeftAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="UpAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="ChangedGrid" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

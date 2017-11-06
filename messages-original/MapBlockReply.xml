@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MapBlockReply" frequency_class="low" frequency_number="409" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="variable">
+		<field name="X" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="Y" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Access" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="WaterHeight" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Agents" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="MapImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; viewer
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

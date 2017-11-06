@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CloseCircuit" frequency_class="fixed" frequency_number="0xFFFFFFFD" trusted="false" compression="unencoded">
+	<doc>
+		TODO:
+		/// CloseCircuit - Tells the recipient's messaging system to close the descibed circuit
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

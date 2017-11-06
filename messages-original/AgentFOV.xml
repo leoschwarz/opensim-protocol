@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentFOV" frequency_class="low" frequency_number="82" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CircuitCode" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="FOVBlock" quantity="single">
+		<field name="GenCounter" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="VerticalAngle" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentFOV - Update to agent's field of view, angle is vertical, single F32 float in radians
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

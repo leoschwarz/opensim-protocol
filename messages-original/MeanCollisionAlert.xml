@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MeanCollisionAlert" frequency_class="low" frequency_number="136" trusted="true" compression="zerocoded">
+	<block name="MeanCollision" quantity="variable">
+		<field name="Victim" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Perp" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Time" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Mag" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// MeanCollisionAlert
+/// Specifies the text to be posted in an alert dialog
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UpdateSimulator" frequency_class="low" frequency_number="17" trusted="true" compression="unencoded">
+	<block name="SimulatorInfo" quantity="single">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Updates SimName, EstateID and SimAccess using RegionID as a key
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

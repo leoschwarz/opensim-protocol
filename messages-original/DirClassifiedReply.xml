@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DirClassifiedReply" frequency_class="low" frequency_number="41" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryReplies" quantity="variable">
+		<field name="ClassifiedID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ClassifiedFlags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreationDate" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ExpirationDate" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceForListing" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="StatusData" quantity="variable">
+		<field name="Status" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DirClassifiedReply dataserver-&gt;sim-&gt;viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

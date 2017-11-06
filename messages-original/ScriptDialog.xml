@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptDialog" frequency_class="low" frequency_number="190" trusted="true" compression="zerocoded">
+	<block name="Data" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FirstName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="ChatChannel" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Buttons" quantity="variable">
+		<field name="ButtonLabel" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="OwnerData" quantity="variable">
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ScriptDialog
+/// sim -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

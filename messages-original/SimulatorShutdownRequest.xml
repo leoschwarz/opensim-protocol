@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimulatorShutdownRequest" frequency_class="low" frequency_number="13" trusted="true" compression="unencoded">
+	<doc>
+		TODO:
+		/// Simulator Shutdown Request - Tells spaceserver that a simulator is trying to shutdown
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AddCircuitCode" frequency_class="low" frequency_number="2" trusted="true" compression="unencoded">
+	<block name="CircuitCode" quantity="single">
+		<field name="Code" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// space-&gt;sim
+/// sim-&gt;sim
+/// AddCircuitCode - Tells the recipient's messaging system that this code
+/// is for a legal circuit
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

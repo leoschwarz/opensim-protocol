@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="FormFriendship" frequency_class="low" frequency_number="299" trusted="true" compression="unencoded">
+	<block name="AgentBlock" quantity="single">
+		<field name="SourceID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="DestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

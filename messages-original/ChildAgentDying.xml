@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ChildAgentDying" frequency_class="low" frequency_number="240" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Obituary for child agents - make sure the parent know the child is dead
+/// This way, children can be reliably restarted
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

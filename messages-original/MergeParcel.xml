@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MergeParcel" frequency_class="low" frequency_number="223" trusted="true" compression="unencoded">
+	<block name="MasterParcelData" quantity="single">
+		<field name="MasterID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="SlaveParcelData" quantity="variable">
+		<field name="SlaveID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver
+/// Merges some of the database information for parcels (dwell).
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

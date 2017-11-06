@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentDropGroup" frequency_class="low" frequency_number="390" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentDropGroup
+/// Updates the viewer / simulator that an agent is no longer part of a group
+/// dataserver -&gt; simulator -&gt; viewer
+/// dataserver -&gt; userserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

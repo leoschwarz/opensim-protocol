@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectScale" frequency_class="low" frequency_number="92" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Scale" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DEPRECATED: ObjectScale
+/// == Old Behavior ==
+/// Set the scale on objects
+///
+/// == Reason for deprecation ==
+/// Unused code path was removed in the move to Havok4
+/// Object position, scale and rotation messages were already unified
+/// to MultipleObjectUpdate and this message was unused cruft.
+///
+/// == New Location ==
+/// MultipleObjectUpdate can be used instead.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

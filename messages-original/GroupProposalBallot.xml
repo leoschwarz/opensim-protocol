@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupProposalBallot" frequency_class="low" frequency_number="364" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ProposalData" quantity="single">
+		<field name="ProposalID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="VoteCast" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupProposalBallot
+/// viewer -&gt; simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

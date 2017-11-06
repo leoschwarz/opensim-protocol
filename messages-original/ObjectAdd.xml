@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectAdd" frequency_class="medium" frequency_number="1" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="single">
+		<field name="PCode" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Material" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AddFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathCurve" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileCurve" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathBegin" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathEnd" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathScaleX" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathScaleY" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathShearX" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathShearY" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTwist" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTwistBegin" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathRadiusOffset" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTaperX" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTaperY" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathRevolutions" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathSkew" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileBegin" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileEnd" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileHollow" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="BypassRaycast" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayStart" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEnd" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayTargetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEndIsIntersection" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Scale" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Rotation" type="LLQuaternion">
+			<doc>TODO</doc>
+		</field>
+		<field name="State" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

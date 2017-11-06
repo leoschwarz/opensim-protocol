@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarTextureUpdate" frequency_class="low" frequency_number="4" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TexturesChanged" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="WearableData" quantity="variable">
+		<field name="CacheID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextureIndex" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="HostName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TextureData" quantity="variable">
+		<field name="TextureID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarTextureUpdate
+/// simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

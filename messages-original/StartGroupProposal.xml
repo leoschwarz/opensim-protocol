@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="StartGroupProposal" frequency_class="low" frequency_number="363" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ProposalData" quantity="single">
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Quorum" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Majority" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Duration" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProposalText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// StartGroupProposal
+/// viewer -&gt; simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

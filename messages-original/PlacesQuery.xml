@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="PlacesQuery" frequency_class="low" frequency_number="29" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TransactionData" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// PlacesQuery
+/// Used for getting a list of places for the group land panel
+/// and the user land holdings panel.  NOT for the directory.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

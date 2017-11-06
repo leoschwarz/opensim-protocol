@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TransferInventoryAck" frequency_class="low" frequency_number="296" trusted="true" compression="zerocoded">
+	<block name="InfoBlock" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="InventoryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver -&gt; sim
+/// InventoryID is the id of the inventory object that the end user
+/// should discard if they deny the transfer.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

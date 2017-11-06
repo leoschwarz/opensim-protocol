@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentThrottle" frequency_class="low" frequency_number="81" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CircuitCode" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Throttle" quantity="single">
+		<field name="GenCounter" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Throttles" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentThrottle
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

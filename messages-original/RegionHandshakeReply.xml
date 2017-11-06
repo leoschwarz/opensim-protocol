@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionHandshakeReply" frequency_class="low" frequency_number="149" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionInfo" quantity="single">
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RegionHandshakeReply
+/// viewer -&gt; sim
+/// reliable
+/// Sent after viewer has initialized the (pre-existing)
+/// LLViewerRegion with the name, access level, etc. and
+/// has loaded the cache for the region.
+/// After the simulator receives this, it will start sending
+/// data about objects.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

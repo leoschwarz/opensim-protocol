@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarInterestsReply" frequency_class="low" frequency_number="172" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AvatarID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PropertiesData" quantity="single">
+		<field name="WantToMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="WantToText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SkillsMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SkillsText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="LanguagesText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

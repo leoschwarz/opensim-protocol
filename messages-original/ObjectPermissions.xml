@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectPermissions" frequency_class="low" frequency_number="105" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="HeaderData" quantity="single">
+		<field name="Override" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Field" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Set" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Mask" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectPermissions
+/// Field - see llpermissionsflags.h
+/// If Set is true, tries to turn on bits in mask.
+/// If set is false, tries to turn off bits in mask.
+/// BUG: This just forces the permissions field.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

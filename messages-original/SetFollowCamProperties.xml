@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SetFollowCamProperties" frequency_class="low" frequency_number="159" trusted="true" compression="unencoded">
+	<block name="ObjectData" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="CameraProperty" quantity="variable">
+		<field name="Type" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Value" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SetFollowCamProperties
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

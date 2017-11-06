@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DataHomeLocationRequest" frequency_class="low" frequency_number="67" trusted="true" compression="zerocoded">
+	<block name="Info" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="KickedFromEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AgentInfo" quantity="single">
+		<field name="AgentEffectiveMaturity" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DataHomeLocationRequest sim-&gt;data
+/// Request
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

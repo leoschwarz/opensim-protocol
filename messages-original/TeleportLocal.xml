@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TeleportLocal" frequency_class="low" frequency_number="64" trusted="true" compression="unencoded">
+	<block name="Info" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="TeleportFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// TeleportLocal
+/// sim -&gt; viewer reply telling the viewer that we've successfully TP'd
+/// to somewhere else within the sim
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

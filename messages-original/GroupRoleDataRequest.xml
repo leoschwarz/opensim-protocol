@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupRoleDataRequest" frequency_class="low" frequency_number="371" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="GroupData" quantity="single">
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupRoleDataRequest
+/// viewer -&gt; simulator -&gt; dataserver
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="BuyObjectInventory" frequency_class="low" frequency_number="103" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// buy object inventory. If the transaction succeeds, it will add
+/// inventory to the agent, and potentially remove the original.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

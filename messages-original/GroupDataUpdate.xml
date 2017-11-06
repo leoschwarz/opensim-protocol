@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupDataUpdate" frequency_class="low" frequency_number="388" trusted="true" compression="zerocoded">
+	<block name="AgentGroupData" quantity="variable">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentPowers" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupTitle" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupDataUpdate
+/// This is a bunch of group data that needs to be appropriatly routed based on presence info.
+/// dataserver -&gt; simulator
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

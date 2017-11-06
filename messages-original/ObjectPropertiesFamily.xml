@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectPropertiesFamily" frequency_class="medium" frequency_number="10" trusted="true" compression="zerocoded">
+	<block name="ObjectData" quantity="single">
+		<field name="RequestFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="BaseMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EveryoneMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NextOwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnershipCost" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SaleType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastOwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectPropertiesFamily
+/// Medium because potentially driven by mouse hover events.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="EventLocationReply" frequency_class="low" frequency_number="308" trusted="true" compression="zerocoded">
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="EventData" quantity="single">
+		<field name="Success" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

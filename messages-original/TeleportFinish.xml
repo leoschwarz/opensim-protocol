@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TeleportFinish" frequency_class="low" frequency_number="69" trusted="true" compression="unencoded">
+	<block name="Info" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimPort" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="SeedCapability" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="TeleportFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// TeleportFinish sim-&gt;viewer
+/// called when all of the information has been collected and readied for
+/// the agent.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

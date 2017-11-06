@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SendPostcard" frequency_class="low" frequency_number="412" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AssetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="PosGlobal" type="LLVector3d">
+			<doc>TODO</doc>
+		</field>
+		<field name="To" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="From" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Subject" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Msg" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="AllowPublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaturePublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		///-----------------------------------------------------------------------------
+/// Postcard messages
+///-----------------------------------------------------------------------------
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

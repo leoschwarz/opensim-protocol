@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptDataRequest" frequency_class="low" frequency_number="337" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="variable">
+		<field name="Hash" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="RequestType" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Request" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Script on simulator asks dataserver for information
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

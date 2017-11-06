@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TransferRequest" frequency_class="low" frequency_number="153" trusted="false" compression="zerocoded">
+	<block name="TransferInfo" quantity="single">
+		<field name="TransferID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ChannelType" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SourceType" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Priority" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Params" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Request a new transfer (target-&gt;source)
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

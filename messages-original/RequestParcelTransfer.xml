@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestParcelTransfer" frequency_class="low" frequency_number="220" trusted="true" compression="zerocoded">
+	<block name="Data" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TransactionTime" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SourceID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="DestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="TransactionType" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Amount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="BillableArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ActualArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Final" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionData" quantity="single">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridX" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridY" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver
+/// This message is used to check if a user can buy a parcel. If
+/// successful, the transaction is approved through a money balance reply
+/// with the same transaction id.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

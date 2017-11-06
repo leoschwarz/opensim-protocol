@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimulatorReady" frequency_class="low" frequency_number="9" trusted="true" compression="zerocoded">
+	<block name="SimulatorBlock" quantity="single">
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TelehubBlock" quantity="single">
+		<field name="HasTelehub" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="TelehubPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SimulatorReady - indicates the sim has finished loading its state
+/// and is ready to receive updates from others
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

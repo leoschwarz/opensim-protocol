@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ViewerFrozenMessage" frequency_class="low" frequency_number="137" trusted="true" compression="unencoded">
+	<block name="FrozenData" quantity="single">
+		<field name="Data" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ViewerFrozenMessage
+/// Specifies the text to be posted in an alert dialog
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

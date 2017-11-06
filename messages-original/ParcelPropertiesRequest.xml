@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelPropertiesRequest" frequency_class="medium" frequency_number="11" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="SequenceID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="West" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="South" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="East" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="North" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapSelection" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelPropertiesRequest
+/// SequenceID should be -1 or -2, and is echoed back in the
+/// parcel properties message.
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GrantUserRights" frequency_class="low" frequency_number="320" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Rights" quantity="variable">
+		<field name="AgentRelated" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RelatedRights" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Sent from viewer to simulator to set user rights. This message will be
+/// relayed up to the dataserver through a PUT. If that
+/// succeeds, an UpdateUserRights will be relayed to the originating
+/// viewer, and a presence lookup will be performed to find
+/// agent-related and the same PUT will be issued to the sim host if
+/// they are online.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

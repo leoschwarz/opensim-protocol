@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="EventGodDelete" frequency_class="low" frequency_number="183" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="EventData" quantity="single">
+		<field name="EventID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryStart" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// EventGodDelete
+/// viewer -&gt; simulator
+/// simulator -&gt; dataserver
+/// QueryData is used to resend a search result after the deletion
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

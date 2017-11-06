@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="Error" frequency_class="low" frequency_number="423" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="single">
+		<field name="Code" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Token" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="System" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Data" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Generic Error -- this is used for sending an error message
+/// to a UDP recipient. The lowest common denominator is to at least
+/// log the message. More sophisticated receivers can do something
+/// smarter, for example, a money transaction failure can put up a
+/// more user visible UI widget.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarAppearance" frequency_class="low" frequency_number="158" trusted="true" compression="zerocoded">
+	<block name="Sender" quantity="single">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IsTrial" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="single">
+		<field name="TextureEntry" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="VisualParam" quantity="variable">
+		<field name="ParamValue" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarAppearance - Update visual params
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

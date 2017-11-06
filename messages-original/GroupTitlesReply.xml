@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupTitlesReply" frequency_class="low" frequency_number="376" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="GroupData" quantity="variable">
+		<field name="Title" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="RoleID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Selected" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupTitlesReply
+/// dataserver -&gt; simulator -&gt; viewer
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

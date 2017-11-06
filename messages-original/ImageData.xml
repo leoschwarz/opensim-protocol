@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ImageData" frequency_class="high" frequency_number="9" trusted="true" compression="unencoded">
+	<block name="ImageID" quantity="single">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Codec" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Size" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Packets" type="U16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ImageData" quantity="single">
+		<field name="Data" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ImageData - sent to viewer to transmit information about an image
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

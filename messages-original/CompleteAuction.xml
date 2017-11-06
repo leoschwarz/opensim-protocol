@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CompleteAuction" frequency_class="low" frequency_number="231" trusted="true" compression="unencoded">
+	<block name="ParcelData" quantity="variable">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver
+/// Tell the dataserver that an auction has completed.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

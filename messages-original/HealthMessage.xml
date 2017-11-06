@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="HealthMessage" frequency_class="low" frequency_number="138" trusted="true" compression="zerocoded">
+	<block name="HealthData" quantity="single">
+		<field name="Health" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Health Message
+/// Tells viewer what agent health is
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

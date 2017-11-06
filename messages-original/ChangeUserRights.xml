@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ChangeUserRights" frequency_class="low" frequency_number="321" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Rights" quantity="variable">
+		<field name="AgentRelated" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RelatedRights" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// This message is sent from the simulator to the viewer to indicate a
+/// targets granted rights. This is only sent to the originator of the
+/// request and the target agent if it is a modify or map
+/// right. Adding/removing online status rights will show up as an
+/// online/offline notification.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentCachedTexture" frequency_class="low" frequency_number="384" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SerialNum" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="WearableData" quantity="variable">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextureIndex" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentCachedTexture
+/// viewer queries for cached textures on dataserver (via simulator)
+/// viewer -&gt; simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

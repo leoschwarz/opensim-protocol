@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RemoveAttachment" frequency_class="low" frequency_number="332" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AttachmentBlock" quantity="single">
+		<field name="AttachmentPoint" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Simulator informs Dataserver that attachment has been taken off
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ViewerEffect" frequency_class="medium" frequency_number="17" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Effect" quantity="variable">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Duration" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Color" type="Fixed">
+			<doc>TODO</doc>
+		</field>
+		<field name="TypeData" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ViewerEffect
+/// Viewer side effect that's sent from one viewer, and broadcast to other agents nearby
+/// viewer--&gt;sim (single effect created by viewer)
+/// sim--&gt;viewer (multiple effects that can be seen by viewer)
+/// the AgentData block used for authentication for viewer--&gt;sim messages
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

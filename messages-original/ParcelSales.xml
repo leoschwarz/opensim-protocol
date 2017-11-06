@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelSales" frequency_class="low" frequency_number="226" trusted="true" compression="unencoded">
+	<block name="ParcelData" quantity="variable">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="BuyerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver -&gt; simulator
+/// tell a particular simulator to finish parcel sale.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

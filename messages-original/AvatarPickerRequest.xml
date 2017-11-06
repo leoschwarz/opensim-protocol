@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarPickerRequest" frequency_class="low" frequency_number="26" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="single">
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarPickerRequest
+/// Get a list of names to select a person
+/// viewer -&gt; sim -&gt; data
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

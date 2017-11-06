@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ImprovedInstantMessage" frequency_class="low" frequency_number="254" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="MessageBlock" quantity="single">
+		<field name="FromGroup" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="ToAgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Offline" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Dialog" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Timestamp" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="FromAgentName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="BinaryBucket" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ImprovedInstantMessage
+/// This message can potentially route all over the place
+/// ParentEstateID: parent estate id of the source estate
+/// RegionID: region id of the source of the IM.
+/// Position: position of the sender in region local coordinates
+/// Dialog	see llinstantmessage.h for values
+/// ID		May be used by dialog. Interpretation depends on context.
+/// BinaryBucket May be used by some dialog types
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

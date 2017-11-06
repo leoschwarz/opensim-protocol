@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DirPopularReply" frequency_class="low" frequency_number="53" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryReplies" quantity="variable">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Dwell" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DEPRECATED: DirPopularReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SetScriptRunning" frequency_class="low" frequency_number="245" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Script" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Running" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SetScriptRunning - makes a script active or inactive (Enable may be
+/// true or false)
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ViewerStats" frequency_class="low" frequency_number="131" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="StartTime" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RunTime" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimFPS" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="FPS" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentsInView" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Ping" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="MetersTraveled" type="F64">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionsVisited" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SysRAM" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SysOS" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SysCPU" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SysGPU" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="DownloadTotals" quantity="single">
+		<field name="World" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Objects" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Textures" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="NetStats" quantity="multiple 2">
+		<field name="Bytes" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Packets" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Compressed" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Savings" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="FailStats" quantity="single">
+		<field name="SendPacket" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Dropped" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Resent" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="FailedResends" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OffCircuit" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Invalid" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="MiscStats" quantity="variable">
+		<field name="Type" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Value" type="F64">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UpdateParcel" frequency_class="low" frequency_number="221" trusted="true" compression="zerocoded">
+	<block name="ParcelData" quantity="single">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupOwned" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="Status" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MusicURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionX" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionY" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ActualArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="BillableArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ShowDir" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="IsForSale" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="UserLocation" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AuthorizedBuyerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AllowPublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaturePublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt;dataserver
+/// This message is used to send up complete parcel properties for
+/// persistance in the database.
+/// If you add something here, you should probably also change the
+/// simulator's database update query on startup.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

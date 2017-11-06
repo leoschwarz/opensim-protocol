@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RezObject" frequency_class="low" frequency_number="293" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RezData" quantity="single">
+		<field name="FromTaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="BypassRaycast" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayStart" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEnd" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayTargetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEndIsIntersection" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RezSelected" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RemoveItem" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EveryoneMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NextOwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="single">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreatorID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="BaseMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EveryoneMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NextOwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupOwned" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="InvType" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SaleType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreationDate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="CRC" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// This message is sent from viewer -&gt; simulator when the viewer wants
+/// to rez an object out of inventory.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CoarseLocationUpdate" frequency_class="medium" frequency_number="6" trusted="true" compression="unencoded">
+	<block name="Location" quantity="variable">
+		<field name="X" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Y" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Z" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Index" quantity="single">
+		<field name="You" type="S16">
+			<doc>TODO</doc>
+		</field>
+		<field name="Prey" type="S16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AgentData" quantity="variable">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// The CoarseLocationUpdate message is sent to notify the viewer of
+/// the location of mappable objects in the region. 1 meter resolution is
+/// sufficient for this. The index block is used to show where you are,
+/// and where someone you are tracking is located. They are -1 if not
+/// applicable.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

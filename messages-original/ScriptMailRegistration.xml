@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptMailRegistration" frequency_class="low" frequency_number="418" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="TargetIP" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="TargetPort" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="TaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ScriptMailRegistration
+/// Simulator -&gt; dataserver
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

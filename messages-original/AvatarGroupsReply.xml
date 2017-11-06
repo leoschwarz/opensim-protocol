@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarGroupsReply" frequency_class="low" frequency_number="173" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AvatarID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="GroupData" quantity="variable">
+		<field name="GroupPowers" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="AcceptNotices" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupTitle" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupInsigniaID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="NewGroupData" quantity="single">
+		<field name="ListInProfile" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarGroupsReply
+/// dataserver -&gt; simulator
+/// simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

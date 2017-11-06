@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupRoleUpdate" frequency_class="low" frequency_number="378" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RoleData" quantity="variable">
+		<field name="RoleID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Title" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Powers" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="UpdateType" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupRoleUpdate
+/// viewer -&gt; simulator -&gt; dataserver
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

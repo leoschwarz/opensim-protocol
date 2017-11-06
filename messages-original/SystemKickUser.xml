@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SystemKickUser" frequency_class="low" frequency_number="166" trusted="true" compression="unencoded">
+	<block name="AgentInfo" quantity="variable">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SystemKickUser
+/// user-&gt;space, reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

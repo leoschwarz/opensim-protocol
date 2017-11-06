@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ClassifiedInfoReply" frequency_class="low" frequency_number="44" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="single">
+		<field name="ClassifiedID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreatorID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreationDate" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ExpirationDate" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Desc" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstate" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="PosGlobal" type="LLVector3d">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ClassifiedFlags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceForListing" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ClassifiedInfoReply
+/// dataserver -&gt; simulator
+/// simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

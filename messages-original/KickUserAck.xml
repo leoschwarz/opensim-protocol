@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="KickUserAck" frequency_class="low" frequency_number="164" trusted="true" compression="unencoded">
+	<block name="UserInfo" quantity="single">
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ack sent from the simulator up to the main database so that login
+/// can continue.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

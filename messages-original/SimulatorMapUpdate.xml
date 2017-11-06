@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimulatorMapUpdate" frequency_class="low" frequency_number="5" trusted="true" compression="unencoded">
+	<block name="MapData" quantity="single">
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SimulatorMapUpdate
+/// simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

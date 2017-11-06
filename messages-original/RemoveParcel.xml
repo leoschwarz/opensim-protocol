@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RemoveParcel" frequency_class="low" frequency_number="222" trusted="true" compression="unencoded">
+	<block name="ParcelData" quantity="variable">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver or space -&gt;sim
+/// This message is used to tell the dataserver that a parcel has been
+/// removed.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

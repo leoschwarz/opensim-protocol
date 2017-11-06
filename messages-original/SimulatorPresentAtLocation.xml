@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimulatorPresentAtLocation" frequency_class="low" frequency_number="11" trusted="true" compression="unencoded">
+	<block name="SimulatorPublicHostBlock" quantity="single">
+		<field name="Port" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimulatorIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridX" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridY" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="NeighborBlock" quantity="multiple 4">
+		<field name="IP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="Port" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="SimulatorBlock" quantity="single">
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TelehubBlock" quantity="variable">
+		<field name="HasTelehub" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="TelehubPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SimulatorPresentAtLocation - indicates that the sim is present at a grid
+/// location and passes what it believes its neighbors are
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

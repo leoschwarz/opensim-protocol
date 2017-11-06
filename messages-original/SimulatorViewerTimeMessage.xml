@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimulatorViewerTimeMessage" frequency_class="low" frequency_number="150" trusted="true" compression="unencoded">
+	<block name="TimeInfo" quantity="single">
+		<field name="UsecSinceStart" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="SecPerDay" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SecPerYear" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SunDirection" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="SunPhase" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SunAngVelocity" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

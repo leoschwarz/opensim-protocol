@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectGroup" frequency_class="low" frequency_number="101" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectGroup
+/// To make the object part of no group, set GroupID = LLUUID::null.
+/// This call only works if objectid.ownerid == agentid.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

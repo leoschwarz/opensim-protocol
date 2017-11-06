@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarPropertiesUpdate" frequency_class="low" frequency_number="174" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PropertiesData" quantity="single">
+		<field name="ImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FLImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AboutText" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="FLAboutText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="AllowPublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaturePublish" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarPropertiesUpdate
+/// viewer -&gt; simulator
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

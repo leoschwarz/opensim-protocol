@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DenyTrustedCircuit" frequency_class="low" frequency_number="393" trusted="false" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="EndPointID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DenyTrustedCircuit
+/// Sent :
+/// - in response to failed CreateTrustedCircuit
+/// - to force the remote end-point to try to establish a trusted circuit
+/// - the reception of a trusted message on a non-trusted circuit
+/// This allows us to re-auth a circuit if it gets closed due to timeouts or network failures.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

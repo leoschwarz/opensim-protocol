@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarPicksReply" frequency_class="low" frequency_number="178" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TargetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="variable">
+		<field name="PickID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="PickName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarPicksReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// Send the header information for this avatar's picks
+/// This fills in the tabs of the Picks panel.
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ViewerStartAuction" frequency_class="low" frequency_number="228" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// viewer -&gt; sim
+/// start an auction. viewer fills in the appropriate date, simulator
+/// validates and fills in the rest of the information to start an auction
+/// on a parcel. Processing currently requires that AgentID is a god.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

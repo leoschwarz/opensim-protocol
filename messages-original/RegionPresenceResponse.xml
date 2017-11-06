@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionPresenceResponse" frequency_class="low" frequency_number="16" trusted="true" compression="zerocoded">
+	<block name="RegionData" quantity="variable">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="InternalRegionIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="ExternalRegionIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionPort" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="ValidUntil" type="F64">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver -&gt; sim
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

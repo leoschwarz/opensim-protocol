@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="NameValuePair" frequency_class="low" frequency_number="329" trusted="true" compression="unencoded">
+	<block name="TaskData" quantity="single">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="NameValueData" quantity="variable">
+		<field name="NVPair" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// NameValuePair - if the specific task exists on simulator, add or replace this name value pair
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

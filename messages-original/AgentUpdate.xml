@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentUpdate" frequency_class="high" frequency_number="4" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="BodyRotation" type="LLQuaternion">
+			<doc>TODO</doc>
+		</field>
+		<field name="HeadRotation" type="LLQuaternion">
+			<doc>TODO</doc>
+		</field>
+		<field name="State" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraCenter" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraAtAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraLeftAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="CameraUpAxis" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Far" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ControlFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentUpdate - Camera info sent from viewer to simulator
+/// or, more simply, two axes and compute cross product
+/// State data is temporary, indicates current behavior state:
+///	0 = walking
+///  1 = mouselook
+///  2 = typing
+///
+/// Center is region local (JNC 8.16.2001)
+/// Camera center is region local (JNC 8.29.2001)
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

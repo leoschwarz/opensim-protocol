@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ChatFromViewer" frequency_class="low" frequency_number="80" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ChatData" quantity="single">
+		<field name="Message" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Channel" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ChatFromViewer
+/// Specifies the text to be said and the "type",
+/// normal speech, shout, whisper.
+/// with the specified radius
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

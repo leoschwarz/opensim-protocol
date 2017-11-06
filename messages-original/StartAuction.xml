@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="StartAuction" frequency_class="low" frequency_number="229" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver
+/// Once all of the data has been gathered,
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

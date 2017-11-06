@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptControlChange" frequency_class="low" frequency_number="189" trusted="true" compression="unencoded">
+	<block name="Data" quantity="variable">
+		<field name="TakeControls" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="Controls" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PassToAgent" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ScriptControlChange
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

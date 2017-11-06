@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="KillChildAgents" frequency_class="low" frequency_number="242" trusted="true" compression="unencoded">
+	<block name="IDBlock" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// KillChildAgents - A new agent has connected to the simulator . . . make sure that any old child cameras are blitzed
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

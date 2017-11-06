@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="PlacesReply" frequency_class="low" frequency_number="30" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TransactionData" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="variable">
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Desc" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ActualArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="BillableArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="GlobalX" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GlobalY" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GlobalZ" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Dwell" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Price" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// PlacesReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// If the user has specified a location, use that to compute
+/// global x,y,z.  Otherwise, use center of the AABB.
+/// reliable
+///{	ProductSKU		Variable	1	}
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

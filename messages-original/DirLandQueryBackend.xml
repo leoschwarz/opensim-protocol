@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DirLandQueryBackend" frequency_class="low" frequency_number="49" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchType" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Price" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Area" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="QueryStart" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Godlike" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DirLandQueryBackend sim-&gt;dataserver
+/// Special query for the land for sale/auction panel.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

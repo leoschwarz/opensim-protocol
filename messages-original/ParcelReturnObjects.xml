@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelReturnObjects" frequency_class="low" frequency_number="199" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ReturnType" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TaskIDs" quantity="variable">
+		<field name="TaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="OwnerIDs" quantity="variable">
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelReturnObjects
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

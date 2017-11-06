@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LogDwellTime" frequency_class="low" frequency_number="18" trusted="true" compression="unencoded">
+	<block name="DwellInfo" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Duration" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionX" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionY" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AvgAgentsInView" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AvgViewerFPS" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// record dwell time.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

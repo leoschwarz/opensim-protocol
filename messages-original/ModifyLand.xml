@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ModifyLand" frequency_class="low" frequency_number="124" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ModifyBlock" quantity="single">
+		<field name="Action" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="BrushSize" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Seconds" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Height" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="variable">
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="West" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="South" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="East" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="North" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ModifyBlockExtended" quantity="variable">
+		<field name="BrushSize" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ModifyLand - sent to modify a piece of land on a simulator.
+/// viewer -&gt; sim
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

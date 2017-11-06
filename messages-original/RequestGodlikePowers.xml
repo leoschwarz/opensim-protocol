@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestGodlikePowers" frequency_class="low" frequency_number="257" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RequestBlock" quantity="single">
+		<field name="Godlike" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="Token" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Set godlike to 1 if you want to become godlike.
+/// Set godlike to 0 if you want to relinquish god powers.
+/// viewer -&gt; simulator -&gt; dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

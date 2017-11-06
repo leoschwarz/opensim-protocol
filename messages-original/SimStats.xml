@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SimStats" frequency_class="low" frequency_number="140" trusted="true" compression="unencoded">
+	<block name="Region" quantity="single">
+		<field name="RegionX" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionY" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectCapacity" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Stat" quantity="variable">
+		<field name="StatID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="StatValue" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PidStat" quantity="single">
+		<field name="PID" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Simulator statistics packet (goes out to viewer and dataserver/spaceserver)
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

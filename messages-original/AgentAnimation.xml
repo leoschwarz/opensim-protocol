@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentAnimation" frequency_class="high" frequency_number="5" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AnimationList" quantity="variable">
+		<field name="AnimID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="StartAnim" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PhysicalAvatarEventList" quantity="variable">
+		<field name="TypeData" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentAnimation - Update animation state
+/// viewer --&gt; simulator
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

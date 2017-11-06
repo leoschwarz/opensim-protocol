@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectDeGrab" frequency_class="low" frequency_number="119" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="single">
+		<field name="LocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="SurfaceInfo" quantity="variable">
+		<field name="UVCoord" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="STCoord" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="FaceIndex" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Normal" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Binormal" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectDeGrab
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

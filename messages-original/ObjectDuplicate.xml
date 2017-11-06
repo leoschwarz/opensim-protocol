@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectDuplicate" frequency_class="low" frequency_number="90" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="SharedData" quantity="single">
+		<field name="Offset" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="DuplicateFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectDuplicate
+/// viewer -&gt; simulator
+/// Makes a copy of a set of objects, offset by a given amount
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

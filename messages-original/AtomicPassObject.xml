@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AtomicPassObject" frequency_class="high" frequency_number="28" trusted="true" compression="unencoded">
+	<block name="TaskData" quantity="single">
+		<field name="TaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AttachmentNeedsSave" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// This message is sent how objects get passed between regions.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

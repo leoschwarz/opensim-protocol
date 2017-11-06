@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TeleportRequest" frequency_class="low" frequency_number="62" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Info" quantity="single">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// TeleportRequest
+/// viewer -&gt; sim specifying exact teleport destination
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelJoin" frequency_class="low" frequency_number="210" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="West" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="South" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="East" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="North" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelJoin - Take all parcels which are owned by agent and inside
+/// rectangle, and make them 1 parcel if they all are leased.
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestImage" frequency_class="high" frequency_number="8" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RequestImage" quantity="variable">
+		<field name="Image" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="DiscardLevel" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="DownloadPriority" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Packet" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

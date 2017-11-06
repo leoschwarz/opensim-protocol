@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptSensorRequest" frequency_class="low" frequency_number="247" trusted="true" compression="zerocoded">
+	<block name="Requester" quantity="single">
+		<field name="SourceID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchDir" type="LLQuaternion">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Range" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Arc" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="SearchRegions" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ScriptSensorRequest - causes the receiving sim to run a script sensor and return the results
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

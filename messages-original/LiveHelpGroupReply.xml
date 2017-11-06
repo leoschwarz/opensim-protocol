@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LiveHelpGroupReply" frequency_class="low" frequency_number="380" trusted="true" compression="unencoded">
+	<block name="ReplyData" quantity="single">
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Selection" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Send down the group
+/// dataserver -&gt; userserver
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

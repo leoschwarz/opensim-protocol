@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectOwner" frequency_class="low" frequency_number="100" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="HeaderData" quantity="single">
+		<field name="Override" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectOwner
+/// To make public, set OwnerID to LLUUID::null.
+/// TODO: Eliminate god-bit. Maybe not. God-bit is ok, because it's
+/// known on the server.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

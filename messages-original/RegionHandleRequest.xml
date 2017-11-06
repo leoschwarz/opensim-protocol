@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionHandleRequest" frequency_class="low" frequency_number="309" trusted="false" compression="unencoded">
+	<block name="RequestBlock" quantity="single">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// get information about landmarks. Used by viewers for determining
+/// the location of a landmark, and by simulators for teleport
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UUIDNameReply" frequency_class="low" frequency_number="236" trusted="true" compression="unencoded">
+	<block name="UUIDNameBlock" quantity="variable">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FirstName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// UUIDNameReply
+/// Translate a UUID into first and last names
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

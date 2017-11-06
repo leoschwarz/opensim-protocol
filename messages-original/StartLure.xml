@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="StartLure" frequency_class="low" frequency_number="70" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Info" quantity="single">
+		<field name="LureType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TargetData" quantity="variable">
+		<field name="TargetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// StartLure viewer-&gt;sim
+/// Sent from viewer to the local simulator to lure target id to near
+/// agent id. This will generate an instant message that will be routed
+/// through the space server and out to the userserver. When that IM
+/// goes through the userserver and the TargetID is online, the
+/// userserver will send an InitializeLure to the spaceserver. When that
+/// packet is acked, the original instant message is finally forwarded to
+/// TargetID.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

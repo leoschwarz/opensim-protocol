@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LiveHelpGroupRequest" frequency_class="low" frequency_number="379" trusted="true" compression="unencoded">
+	<block name="RequestData" quantity="single">
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Request the members of the live help group needed for requesting agent.
+/// userserver -&gt; dataserver
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelPropertiesUpdate" frequency_class="low" frequency_number="198" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Desc" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MusicURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaAutoScale" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="PassPrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PassHours" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AuthBuyerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="UserLocation" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="UserLookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LandingType" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

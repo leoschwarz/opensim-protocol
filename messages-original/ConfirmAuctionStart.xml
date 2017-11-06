@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ConfirmAuctionStart" frequency_class="low" frequency_number="230" trusted="true" compression="unencoded">
+	<block name="AuctionData" quantity="single">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AuctionID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver -&gt; sim
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LogoutReply" frequency_class="low" frequency_number="253" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="variable">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// LogoutReply
+/// it's ok for the viewer to quit.
+/// sim -&gt; viewer
+/// reliable
+/// Includes inventory items to update with new asset ids
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

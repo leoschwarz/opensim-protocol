@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestObjectPropertiesFamily" frequency_class="medium" frequency_number="5" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="single">
+		<field name="RequestFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RequestObjectPropertiesFamily
+/// Ask for extended information, such as creator, permissions, resources, etc.
+/// Medium frequency because it is driven by mouse hovering over objects, which
+/// occurs at high rates.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ActivateGroup" frequency_class="low" frequency_number="368" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// used to switch an agent's currently active group.
+/// viewer -&gt; simulator -&gt; dataserver -&gt; AgentDataUpdate...
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelDivide" frequency_class="low" frequency_number="211" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="West" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="South" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="East" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="North" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelDivide
+/// If the selection is a subsection of exactly one parcel,
+/// chop out that section and make a new parcel of it.
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectUpdate" frequency_class="high" frequency_number="12" trusted="true" compression="zerocoded">
+	<block name="RegionData" quantity="single">
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="TimeDilation" type="U16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="State" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="FullID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CRC" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PCode" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Material" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ClickAction" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Scale" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectData" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="UpdateFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathCurve" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileCurve" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathBegin" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathEnd" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathScaleX" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathScaleY" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathShearX" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathShearY" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTwist" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTwistBegin" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathRadiusOffset" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTaperX" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathTaperY" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathRevolutions" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="PathSkew" type="S8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileBegin" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileEnd" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileHollow" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextureEntry" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextureAnim" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="NameValue" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Data" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Text" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextColor" type="Fixed">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="PSBlock" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ExtraParams" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Sound" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Gain" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Radius" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="JointType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="JointPivot" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="JointAxisOrAnchor" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// joint info -- is sent in the update of each joint-child-root
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

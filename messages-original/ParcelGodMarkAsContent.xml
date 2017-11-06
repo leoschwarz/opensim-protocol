@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelGodMarkAsContent" frequency_class="low" frequency_number="227" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// viewer -&gt; sim
+/// mark parcel and double secret agent content on parcel as owned by
+/// governor/maint and adjusts permissions approriately. Godlike request.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CreateLandmarkForEvent" frequency_class="low" frequency_number="306" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="EventData" quantity="single">
+		<field name="EventID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryBlock" quantity="single">
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// give agent a landmark for an event.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

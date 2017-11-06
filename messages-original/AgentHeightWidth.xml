@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentHeightWidth" frequency_class="low" frequency_number="83" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CircuitCode" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="HeightWidthBlock" quantity="single">
+		<field name="GenCounter" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Height" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="Width" type="U16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentHeightWidth - Update to height and aspect, sent as height/width to save space
+/// Usually sent when window resized or created
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

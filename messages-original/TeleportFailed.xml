@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TeleportFailed" frequency_class="low" frequency_number="74" trusted="true" compression="unencoded">
+	<block name="Info" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Reason" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AlertInfo" quantity="variable">
+		<field name="Message" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ExtraParams" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// TeleportFailed somewhere-&gt;sim-&gt;viewer
+/// announce failure of teleport request
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

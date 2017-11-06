@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestMultipleObjects" frequency_class="medium" frequency_number="3" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="CacheMissType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RequestMultipleObjects
+/// viewer -&gt; simulator
+/// reliable
+///
+/// When the viewer gets a local_id/crc for an object that
+/// it either doesn't have, or doesn't have the current version
+/// of, it sends this upstream get get an update.
+///
+/// CacheMissType 0 =&gt; full object (viewer doesn't have it)
+/// CacheMissType 1 =&gt; CRC mismatch only
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

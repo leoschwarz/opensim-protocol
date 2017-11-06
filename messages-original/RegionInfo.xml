@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionInfo" frequency_class="low" frequency_number="142" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionInfo" quantity="single">
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimAccess" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaxAgents" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="BillableFactor" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectBonusFactor" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="WaterHeight" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TerrainRaiseLimit" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TerrainLowerLimit" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PricePerMeter" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RedirectGridX" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RedirectGridY" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="UseEstateSun" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="SunHour" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionInfo2" quantity="single">
+		<field name="ProductSKU" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProductName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaxAgents32" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="HardMaxAgents" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="HardMaxObjects" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RegionInfo
+/// Used to populate UI for both region/estate floater
+/// and god tools floater
+/// sim -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

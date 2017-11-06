@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ChatFromSimulator" frequency_class="low" frequency_number="139" trusted="true" compression="unencoded">
+	<block name="ChatData" quantity="single">
+		<field name="FromName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SourceID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SourceType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ChatType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Audible" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Message" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ChatFromSimulator
+/// Chat text to appear on a user's screen
+/// Position is region local.
+/// Viewer can optionally use position to animate
+/// If audible is CHAT_NOT_AUDIBLE, message will not be valid
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

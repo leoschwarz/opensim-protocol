@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MuteListUpdate" frequency_class="low" frequency_number="318" trusted="true" compression="unencoded">
+	<block name="MuteData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Filename" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver-&gt; userserver -&gt; viewer to move around the mute list
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

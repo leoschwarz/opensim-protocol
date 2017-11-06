@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="PurgeInventoryDescendents" frequency_class="low" frequency_number="285" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="single">
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// This is how you remove inventory when you're not even sure what it
+/// is - only it's parenting.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

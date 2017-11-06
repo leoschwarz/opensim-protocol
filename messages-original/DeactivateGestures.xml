@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DeactivateGestures" frequency_class="low" frequency_number="317" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="variable">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GestureFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Tell the database some gestures are no longer active
+/// viewer -&gt; sim -&gt; data
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

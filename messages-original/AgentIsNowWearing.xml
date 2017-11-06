@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentIsNowWearing" frequency_class="low" frequency_number="383" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="WearableData" quantity="variable">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="WearableType" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		///
+/// AgentIsNowWearing
+/// (a.k.a. "Here's what I'm wearing now.")
+/// viewer-&gt;sim-&gt;dataserver
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

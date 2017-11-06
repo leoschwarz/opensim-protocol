@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SetStartLocationRequest" frequency_class="low" frequency_number="324" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="StartLocationData" quantity="single">
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationPos" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationLookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SetStartLocationRequest
+/// viewer -&gt; sim
+/// failure checked at sim and triggers ImprovedInstantMessage
+/// success triggers SetStartLocation
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

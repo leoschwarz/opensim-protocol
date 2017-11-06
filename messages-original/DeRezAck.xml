@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DeRezAck" frequency_class="low" frequency_number="292" trusted="true" compression="unencoded">
+	<block name="TransactionData" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Success" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// This message is sent when a derez succeeds, but there's no way to
+/// know, since no inventory is created on the viewer. For example, when
+/// saving into task inventory.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

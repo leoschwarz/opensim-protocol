@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupAccountSummaryReply" frequency_class="low" frequency_number="354" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="MoneyData" quantity="single">
+		<field name="RequestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IntervalDays" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="CurrentInterval" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="StartDate" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Balance" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalCredits" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalDebits" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectTaxCurrent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LightTaxCurrent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LandTaxCurrent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupTaxCurrent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelDirFeeCurrent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectTaxEstimate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LightTaxEstimate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LandTaxEstimate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupTaxEstimate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelDirFeeEstimate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NonExemptMembers" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastTaxDate" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="TaxDate" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver -&gt; simulator -&gt; viewer
+/// Reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

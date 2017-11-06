@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelMediaUpdate" frequency_class="low" frequency_number="420" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="MediaURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaAutoScale" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="DataBlockExtended" quantity="single">
+		<field name="MediaType" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaDesc" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaWidth" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaHeight" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaLoop" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelMediaUpdate
+/// Sends a parcel media update to a single user
+/// For global updates use the parcel manager.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

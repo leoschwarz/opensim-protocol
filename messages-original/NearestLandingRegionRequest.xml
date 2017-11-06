@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="NearestLandingRegionRequest" frequency_class="low" frequency_number="144" trusted="true" compression="unencoded">
+	<block name="RequestingRegionData" quantity="single">
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		///NearestLandingRegionRequest
+///sim-&gt;dataserver
+///Sent from the region to the data server
+///to request the most up to date region for the requesting
+///region to redirect teleports to
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

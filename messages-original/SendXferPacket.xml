@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SendXferPacket" frequency_class="high" frequency_number="18" trusted="false" compression="unencoded">
+	<block name="XferID" quantity="single">
+		<field name="ID" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="Packet" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="DataPacket" quantity="single">
+		<field name="Data" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SendXferPacket - send an additional packet of an arbitrary xfer from sim -&gt; viewer
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

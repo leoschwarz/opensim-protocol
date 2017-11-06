@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SystemMessage" frequency_class="low" frequency_number="404" trusted="true" compression="zerocoded">
+	<block name="MethodData" quantity="single">
+		<field name="Method" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Invoice" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Digest" type="Fixed">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParamList" quantity="variable">
+		<field name="Parameter" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Generalized system message. Each Requst has its own protocol for
+/// the StringData block format and contents.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

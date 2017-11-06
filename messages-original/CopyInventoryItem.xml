@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CopyInventoryItem" frequency_class="low" frequency_number="269" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="variable">
+		<field name="CallbackID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OldAgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OldItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="NewFolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="NewName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// copy inventory item by item id to specified destination folder,
+/// send out bulk inventory update when done.
+///
+/// Inventory items are only unique for {agent, inv_id} pairs;
+/// the OldItemID needs to be paired with the OldAgentID to
+/// produce a unique inventory item.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

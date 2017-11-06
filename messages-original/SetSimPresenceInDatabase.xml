@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SetSimPresenceInDatabase" frequency_class="low" frequency_number="23" trusted="true" compression="unencoded">
+	<block name="SimData" quantity="single">
+		<field name="RegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="HostName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridX" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GridY" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AgentCount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TimeToLive" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Status" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SetSimPresenceInDatabase
+/// updates the "presence" table in the database to ensure
+/// that a given simulator is present and valid for a set amount of
+/// time
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

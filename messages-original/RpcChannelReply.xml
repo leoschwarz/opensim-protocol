@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RpcChannelReply" frequency_class="low" frequency_number="414" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="TaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ChannelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RpcServer allocated a session for the script
+/// ChannelID will be the NULL UUID if unable to register
+/// dataserver -&gt; simulator
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

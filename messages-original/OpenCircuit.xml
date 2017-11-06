@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="OpenCircuit" frequency_class="fixed" frequency_number="0xFFFFFFFC" trusted="false" compression="unencoded">
+	<block name="CircuitInfo" quantity="single">
+		<field name="IP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="Port" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// OpenCircuit - Tells the recipient's messaging system to open the descibed circuit
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

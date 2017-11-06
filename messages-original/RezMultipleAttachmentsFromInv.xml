@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RezMultipleAttachmentsFromInv" frequency_class="low" frequency_number="396" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="HeaderData" quantity="single">
+		<field name="CompoundMsgID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalObjects" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="FirstDetachAll" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AttachmentPt" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EveryoneMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NextOwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

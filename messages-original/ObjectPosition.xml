@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectPosition" frequency_class="medium" frequency_number="4" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DEPRECATED: ObjectPosition
+/// == Old Behavior ==
+/// Set the position on objects
+///
+/// == Reason for deprecation ==
+/// Unused code path was removed in the move to Havok4
+/// Object position, scale and rotation messages were already unified
+/// to MultipleObjectUpdate and this message was unused cruft.
+///
+/// == New Location ==
+/// MultipleObjectUpdate can be used instead.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

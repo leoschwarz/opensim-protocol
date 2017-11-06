@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UpdateMuteListEntry" frequency_class="low" frequency_number="263" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="MuteData" quantity="single">
+		<field name="MuteID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="MuteName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MuteType" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="MuteFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// update/add someone in the mute list
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

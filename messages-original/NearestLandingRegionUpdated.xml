@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="NearestLandingRegionUpdated" frequency_class="low" frequency_number="146" trusted="true" compression="unencoded">
+	<block name="RegionData" quantity="single">
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		///NearestLandingPointUpdated
+///sim-&gt;dataserver
+///Sent from a region to the data server
+///to have the dataserver note/clear in the db
+///that the region has updated it's nearest landing point
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

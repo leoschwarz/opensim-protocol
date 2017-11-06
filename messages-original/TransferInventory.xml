@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="TransferInventory" frequency_class="low" frequency_number="295" trusted="true" compression="zerocoded">
+	<block name="InfoBlock" quantity="single">
+		<field name="SourceID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="DestID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryBlock" quantity="variable">
+		<field name="InventoryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Type" type="S8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; dataserver
+/// sent during agent to agent inventory transfers
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

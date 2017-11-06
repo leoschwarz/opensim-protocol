@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GodUpdateRegionInfo" frequency_class="low" frequency_number="143" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionInfo" quantity="single">
+		<field name="SimName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParentEstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="BillableFactor" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PricePerMeter" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RedirectGridX" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RedirectGridY" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GodUpdateRegionInfo
+/// Sent from viewer to sim after a god has changed some
+/// of the parameters in the god tools floater
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

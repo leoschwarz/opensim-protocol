@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelProperties" frequency_class="high" frequency_number="23" trusted="true" compression="zerocoded">
+	<block name="ParcelData" quantity="single">
+		<field name="RequestResult" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SequenceID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapSelection" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="SelfCount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OtherCount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PublicCount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IsGroupOwned" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="AuctionID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ClaimDate" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ClaimPrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RentPrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AABBMin" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="AABBMax" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="Bitmap" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Area" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Status" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimWideMaxPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimWideTotalPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaxPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OtherPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SelectedPrims" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelPrimBonus" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OtherCleanTime" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ParcelFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Desc" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MusicURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="MediaAutoScale" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="PassPrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PassHours" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AuthBuyerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SnapshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="UserLocation" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="UserLookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LandingType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionPushOverride" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionDenyAnonymous" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionDenyIdentified" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionDenyTransacted" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="AgeVerificationBlock" quantity="single">
+		<field name="RegionDenyAgeUnverified" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

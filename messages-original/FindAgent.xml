@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="FindAgent" frequency_class="low" frequency_number="256" trusted="false" compression="unencoded">
+	<block name="AgentBlock" quantity="single">
+		<field name="Hunter" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Prey" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SpaceIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="LocationBlock" quantity="variable">
+		<field name="GlobalX" type="F64">
+			<doc>TODO</doc>
+		</field>
+		<field name="GlobalY" type="F64">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// FindAgent - used to find an agent's global position. I used a
+/// variable sized LocationBlock so that the message can be recycled with
+/// minimum new messages and handlers.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

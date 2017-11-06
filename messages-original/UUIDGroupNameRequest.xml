@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UUIDGroupNameRequest" frequency_class="low" frequency_number="237" trusted="false" compression="unencoded">
+	<block name="UUIDNameBlock" quantity="variable">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// UUIDGroupNameRequest
+/// Translate a UUID into a group name
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

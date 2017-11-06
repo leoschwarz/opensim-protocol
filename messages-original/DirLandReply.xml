@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DirLandReply" frequency_class="low" frequency_number="50" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryData" quantity="single">
+		<field name="QueryID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="QueryReplies" quantity="variable">
+		<field name="ParcelID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Auction" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="ForSale" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ActualArea" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// DirLandReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// reliable
+///{	ProductSKU		Variable 1	}
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

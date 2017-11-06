@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelOverlay" frequency_class="low" frequency_number="196" trusted="true" compression="zerocoded">
+	<block name="ParcelData" quantity="single">
+		<field name="SequenceID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Data" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelOverlay
+/// We send N packets per region to the viewer.
+/// N = 4, currently.  At 256x256 meter regions, 4x4 meter parcel grid,
+/// there are 4096 parcel units per region.  At N = 4, that's 1024 units
+/// per packet, allowing 8 bit bytes.
+/// sim -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

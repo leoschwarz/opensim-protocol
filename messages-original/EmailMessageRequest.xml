@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="EmailMessageRequest" frequency_class="low" frequency_number="335" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FromAddress" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Subject" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Script on simulator asks dataserver if there are any email messages
+/// waiting.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

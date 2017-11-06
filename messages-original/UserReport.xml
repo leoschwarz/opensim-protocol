@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="UserReport" frequency_class="low" frequency_number="133" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ReportData" quantity="single">
+		<field name="ReportType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="CheckFlags" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="ScreenshotID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuserID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuseRegionName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="AbuseRegionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Summary" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Details" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="VersionString" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// complaint/bug-report
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

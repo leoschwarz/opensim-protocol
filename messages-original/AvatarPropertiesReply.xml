@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AvatarPropertiesReply" frequency_class="low" frequency_number="171" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AvatarID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PropertiesData" quantity="single">
+		<field name="ImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FLImageID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="PartnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="AboutText" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="FLAboutText" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="BornOn" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProfileURL" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="CharterMember" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AvatarPropertiesReply
+/// dataserver -&gt; simulator
+/// simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

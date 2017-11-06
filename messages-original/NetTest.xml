@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="NetTest" frequency_class="low" frequency_number="326" trusted="false" compression="unencoded">
+	<block name="NetBlock" quantity="single">
+		<field name="Port" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// NetTest - This goes back and forth to the space server because of
+/// problems determining the port
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

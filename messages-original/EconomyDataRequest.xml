@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="EconomyDataRequest" frequency_class="low" frequency_number="24" trusted="false" compression="unencoded">
+	<doc>
+		TODO:
+		/// once we use local stats, this will include a region handle
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

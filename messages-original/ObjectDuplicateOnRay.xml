@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectDuplicateOnRay" frequency_class="low" frequency_number="91" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayStart" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEnd" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="BypassRaycast" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayEndIsIntersection" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="CopyCenters" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="CopyRotates" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RayTargetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="DuplicateFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectDuplicateOnRay
+/// viewer -&gt; simulator
+/// Makes a copy of an object, using the add object raycast
+/// code to abut it to other objects.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

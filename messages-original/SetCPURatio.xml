@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SetCPURatio" frequency_class="low" frequency_number="327" trusted="false" compression="unencoded">
+	<block name="Data" quantity="single">
+		<field name="Ratio" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// SetChildCount - Sent to launcher to adjust nominal child count
+/// Simulator sends this increase the sim/cpu ratio on startup
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="EconomyData" frequency_class="low" frequency_number="25" trusted="true" compression="zerocoded">
+	<block name="Info" quantity="single">
+		<field name="ObjectCapacity" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectCount" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceEnergyUnit" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceObjectClaim" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PricePublicObjectDecay" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PricePublicObjectDelete" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceParcelClaim" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceParcelClaimFactor" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceUpload" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceRentLight" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TeleportMinPrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TeleportPriceExponent" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EnergyEfficiency" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceObjectRent" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceObjectScaleFactor" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceParcelRent" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="PriceGroupCreate" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// dataserver to sim, response w/ econ data
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

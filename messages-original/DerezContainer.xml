@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="DerezContainer" frequency_class="low" frequency_number="104" trusted="true" compression="zerocoded">
+	<block name="Data" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Delete" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; viewer
+/// Used to propperly handle buying asset containers
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

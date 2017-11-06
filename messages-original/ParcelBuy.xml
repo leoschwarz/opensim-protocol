@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelBuy" frequency_class="low" frequency_number="213" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="single">
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="IsGroupOwned" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="RemoveContribution" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Final" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ParcelData" quantity="single">
+		<field name="Price" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Area" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelBuy - change the owner of a patch of land.
+/// viewer -&gt; sim
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

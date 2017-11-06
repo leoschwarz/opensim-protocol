@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CrossedRegion" frequency_class="medium" frequency_number="7" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="RegionData" quantity="single">
+		<field name="SimIP" type="IPADDR">
+			<doc>TODO</doc>
+		</field>
+		<field name="SimPort" type="IPPORT">
+			<doc>TODO</doc>
+		</field>
+		<field name="RegionHandle" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="SeedCapability" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Info" quantity="single">
+		<field name="Position" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+		<field name="LookAt" type="LLVector3">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// CrossedRegion - new way to tell a viewer it has gone across a region
+/// boundary
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

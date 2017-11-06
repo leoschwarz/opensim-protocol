@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="PacketAck" frequency_class="fixed" frequency_number="0xFFFFFFFB" trusted="false" compression="unencoded">
+	<block name="Packets" quantity="variable">
+		<field name="ID" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Packet Ack - Ack a list of packets sent reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

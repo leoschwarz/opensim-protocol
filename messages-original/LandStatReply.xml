@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="LandStatReply" frequency_class="low" frequency_number="422" trusted="true" compression="unencoded">
+	<block name="RequestData" quantity="single">
+		<field name="ReportType" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="RequestFlags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalObjectCount" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="ReportData" quantity="variable">
+		<field name="TaskLocalID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationX" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationY" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocationZ" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Score" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="TaskName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// LandStatReply
+/// Sent by the simulator in response to LandStatRequest
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AttachedSound" frequency_class="medium" frequency_number="13" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="SoundID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Gain" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AttachedSound - Sent by simulator to viewer to play sound attached with an object
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

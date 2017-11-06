@@ -72,6 +72,6 @@ if __FILE__ == $0
     unless Dir.exist? outdir
         Dir.mkdir outdir
     end
-    generate_all(message_template, "msgxml_out", true)
+    generate_all(message_template, "../messages-original", true)
 end
 

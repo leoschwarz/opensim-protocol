@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SaveAssetIntoInventory" frequency_class="low" frequency_number="272" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="single">
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="NewAssetID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		///
+/// Sim outgoing only (to dataserver, to viewer)
+/// NOT viewer to sim, sim should not have handler, ever
+/// This message is currently only uses objects, so the viewer ignores
+/// the asset id.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

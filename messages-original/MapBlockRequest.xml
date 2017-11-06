@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MapBlockRequest" frequency_class="low" frequency_number="407" trusted="false" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EstateID" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Godlike" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="PositionData" quantity="single">
+		<field name="MinX" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaxX" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="MinY" type="U16">
+			<doc>TODO</doc>
+		</field>
+		<field name="MaxY" type="U16">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// viewer -&gt; sim
+/// This message is sent up from the viewer to get a list
+/// of the sims in a specified region.
+/// Returns: MapBlockReply
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

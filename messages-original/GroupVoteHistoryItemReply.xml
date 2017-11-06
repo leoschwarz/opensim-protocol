@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupVoteHistoryItemReply" frequency_class="low" frequency_number="362" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="TransactionData" quantity="single">
+		<field name="TransactionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TotalNumItems" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="HistoryItemData" quantity="single">
+		<field name="VoteID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="TerseDateID" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="StartDateTime" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="EndDateTime" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="VoteInitiator" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="VoteType" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="VoteResult" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Majority" type="F32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Quorum" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="ProposalText" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="VoteItem" quantity="variable">
+		<field name="CandidateID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="VoteCast" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="NumVotes" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupVoteHistoryItemReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

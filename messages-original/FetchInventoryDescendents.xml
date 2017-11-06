@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="FetchInventoryDescendents" frequency_class="low" frequency_number="277" trusted="false" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SessionID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="InventoryData" quantity="single">
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SortOrder" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="FetchFolders" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="FetchItems" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Get inventory segment.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

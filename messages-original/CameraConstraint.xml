@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CameraConstraint" frequency_class="high" frequency_number="22" trusted="true" compression="zerocoded">
+	<block name="CameraCollidePlane" quantity="single">
+		<field name="Plane" type="LLVector4">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// CameraConstraint - new camera distance limit (based on collision with objects)
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

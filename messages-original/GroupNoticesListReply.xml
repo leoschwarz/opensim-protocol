@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="GroupNoticesListReply" frequency_class="low" frequency_number="59" trusted="true" compression="unencoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="Data" quantity="variable">
+		<field name="NoticeID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Timestamp" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="FromName" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="Subject" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+		<field name="HasAttachment" type="BOOL">
+			<doc>TODO</doc>
+		</field>
+		<field name="AssetType" type="U8">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// GroupNoticesListReply
+/// dataserver -&gt; simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

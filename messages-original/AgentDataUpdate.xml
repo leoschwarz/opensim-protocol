@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentDataUpdate" frequency_class="low" frequency_number="387" trusted="true" compression="zerocoded">
+	<block name="AgentData" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FirstName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupTitle" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="ActiveGroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupPowers" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AgentDataUpdate
+/// Updates a viewer or simulator's impression of agent-specific information.
+/// Used, for example, when an agent's group changes.
+/// dataserver -&gt; simulator -&gt; viewer
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

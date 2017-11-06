@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelMediaCommandMessage" frequency_class="low" frequency_number="419" trusted="true" compression="unencoded">
+	<block name="CommandBlock" quantity="single">
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Command" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Time" type="F32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ParcelMediaCommandMessage
+/// Sends a parcel media command
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

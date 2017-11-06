@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestPayPrice" frequency_class="low" frequency_number="161" trusted="false" compression="unencoded">
+	<block name="ObjectData" quantity="single">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// RequestPayPrice
+/// viewer -&gt; sim
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

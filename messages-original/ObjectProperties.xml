@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ObjectProperties" frequency_class="medium" frequency_number="9" trusted="true" compression="zerocoded">
+	<block name="ObjectData" quantity="variable">
+		<field name="ObjectID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreatorID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="CreationDate" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="BaseMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="GroupMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="EveryoneMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="NextOwnerMask" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="OwnershipCost" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="SaleType" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="SalePrice" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="AggregatePerms" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AggregatePermTextures" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="AggregatePermTexturesOwner" type="U8">
+			<doc>TODO</doc>
+		</field>
+		<field name="Category" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="InventorySerial" type="S16">
+			<doc>TODO</doc>
+		</field>
+		<field name="ItemID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FolderID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="FromTaskID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="LastOwnerID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Name" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="Description" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="TouchName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="SitName" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+		<field name="TextureID" type="Variable 1">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// ObjectProperties
+/// Extended information such as creator, permissions, etc.
+/// Medium because potentially driven by mouse hover events.
+///		{	TaxRate			F32	}	// F32
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

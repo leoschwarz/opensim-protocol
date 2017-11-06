@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CreateTrustedCircuit" frequency_class="low" frequency_number="392" trusted="false" compression="unencoded">
+	<block name="DataBlock" quantity="single">
+		<field name="EndPointID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Digest" type="Fixed">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// CreateTrustedCircuit
+/// Sent to establish a trust relationship between two components.
+/// Only sent in response to a DenyTrustedCircuit message.
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

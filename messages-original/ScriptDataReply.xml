@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ScriptDataReply" frequency_class="low" frequency_number="338" trusted="true" compression="unencoded">
+	<block name="DataBlock" quantity="variable">
+		<field name="Hash" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="Reply" type="Variable 2">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// Data server responds with data
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

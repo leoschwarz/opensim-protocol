@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="SubscribeLoad" frequency_class="low" frequency_number="7" trusted="true" compression="unencoded">
+	<doc>
+		TODO:
+		/// SubscribeLoad
+/// spaceserver -&gt; simulator
+/// reliable
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ParcelAccessListReply" frequency_class="low" frequency_number="216" trusted="true" compression="zerocoded">
+	<block name="Data" quantity="single">
+		<field name="AgentID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="SequenceID" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+		<field name="LocalID" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<block name="List" quantity="variable">
+		<field name="ID" type="LLUUID">
+			<doc>TODO</doc>
+		</field>
+		<field name="Time" type="S32">
+			<doc>TODO</doc>
+		</field>
+		<field name="Flags" type="U32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// sim -&gt; viewer
+/// ParcelAccessListReply
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>
