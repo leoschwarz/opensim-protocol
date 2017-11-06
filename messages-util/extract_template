@@ -39,7 +39,12 @@ def generate_message_xml(message)
         end
         output << %{\t<block name="#{block.ll_name}" quantity="#{block_quantity}">\n}
         block.fields.each do |field|
-            output << %{\t\t<field name="#{field.ll_name}" type="#{field.ll_type}">\n}
+            if field.ll_type.include? "Fixed"
+                output << %{\t\t<field name="#{field.ll_name}" type="#{field.ll_type} #{field.count}">\n}
+            else
+                output << %{\t\t<field name="#{field.ll_name}" type="#{field.ll_type}">\n}
+            end
+
             output << %{\t\t\t<doc>TODO</doc>\n}
             output << %{\t\t</field>\n}
         end

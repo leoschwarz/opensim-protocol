@@ -4,7 +4,7 @@
 		<field name="EndPointID" type="LLUUID">
 			<doc>TODO</doc>
 		</field>
-		<field name="Digest" type="Fixed">
+		<field name="Digest" type="Fixed 32">
 			<doc>TODO</doc>
 		</field>
 	</block>

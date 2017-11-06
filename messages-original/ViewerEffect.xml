@@ -21,7 +21,7 @@
 		<field name="Duration" type="F32">
 			<doc>TODO</doc>
 		</field>
-		<field name="Color" type="Fixed">
+		<field name="Color" type="Fixed 4">
 			<doc>TODO</doc>
 		</field>
 		<field name="TypeData" type="Variable 1">

@@ -111,7 +111,7 @@
         <field name="Text" type="Variable 1">
             <doc>TODO</doc>
         </field>
-        <field name="TextColor" type="Fixed">
+        <field name="TextColor" type="Fixed 4">
             <doc>TODO</doc>
         </field>
         <field name="MediaURL" type="Variable 1">

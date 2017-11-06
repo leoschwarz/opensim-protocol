@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Sat Sep 30 19:22:34 2017 by generateDS.py version 2.28b.
-# Python 3.6.2 (default, Jul 20 2017, 03:52:27)  [GCC 7.1.1 20170630]
+# Generated Mon Nov  6 17:53:04 2017 by generateDS.py version 2.28.2.
+# Python 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
 #
 # Command line options:
 #   ('-o', 'message_xml.py')
@@ -12,10 +12,10 @@
 #   MessageSchema.xsd
 #
 # Command line:
-#   /home/leo/Projekte/opensim-protocol/util/pyenv/bin/generateDS.py -o "message_xml.py" MessageSchema.xsd
+#   /mnt/leo/Projekte/opensim-protocol/messages-util/pyenv/bin/generateDS -o "message_xml.py" MessageSchema.xsd
 #
 # Current working directory (os.getcwd()):
-#   util
+#   messages-util
 #
 
 import sys
@@ -1166,7 +1166,7 @@ class docType(GeneratedsSuper):
         if (
             self.doc_include is not None or
             self.doc_link is not None or
-            1 if type(self.valueOf_) in [int,float] else self.valueOf_
+            (1 if type(self.valueOf_) in [int,float] else self.valueOf_)
         ):
             return True
         else:
@@ -1198,6 +1198,14 @@ class docType(GeneratedsSuper):
         if not fromsubclass_:
             for item_ in self.content_:
                 item_.export(outfile, level, item_.name, namespace_, pretty_print=pretty_print)
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.doc_include is not None:
+            self.doc_include.export(outfile, level, namespace_, name_='doc-include', pretty_print=pretty_print)
+        if self.doc_link is not None:
+            self.doc_link.export(outfile, level, namespace_, name_='doc-link', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -1267,7 +1275,7 @@ class docRefType(GeneratedsSuper):
     def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
     def hasContent_(self):
         if (
-            1 if type(self.valueOf_) in [int,float] else self.valueOf_
+            (1 if type(self.valueOf_) in [int,float] else self.valueOf_)
         ):
             return True
         else:
@@ -1325,11 +1333,6 @@ class docRefType(GeneratedsSuper):
 
 
 GDSClassesMapping = {
-    'block': blockType,
-    'doc': docType,
-    'doc-include': docRefType,
-    'doc-link': docRefType,
-    'field': fieldType,
     'message': messageType,
 }
 
