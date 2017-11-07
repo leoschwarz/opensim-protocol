@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Nov  7 12:39:31 2017 by generateDS.py version 2.28.2.
+# Generated Tue Nov  7 12:52:15 2017 by generateDS.py version 2.28.2.
 # Python 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
 #
 # Command line options:
@@ -764,8 +764,7 @@ class stringsType(GeneratedsSuper):
         else:
             eol_ = ''
         for string_ in self.string:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sstring>%s</%sstring>%s' % (namespace_, self.gds_encode(self.gds_format_string(quote_xml(string_), input_name='string')), namespace_, eol_))
+            string_.export(outfile, level, namespace_, name_='string', pretty_print=pretty_print)
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -777,13 +776,14 @@ class stringsType(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         if nodeName_ == 'string':
-            string_ = child_.text
-            string_ = self.gds_validate_string(string_, node, 'string')
-            self.string.append(string_)
+            obj_ = stringType.factory()
+            obj_.build(child_)
+            self.string.append(obj_)
+            obj_.original_tagname_ = 'string'
 # end class stringsType
 
 
-class messageType(GeneratedsSuper):
+class stringType(GeneratedsSuper):
     subclass = None
     superclass = None
     def __init__(self, id=None):
@@ -792,13 +792,13 @@ class messageType(GeneratedsSuper):
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
-                CurrentSubclassModule_, messageType)
+                CurrentSubclassModule_, stringType)
             if subclass is not None:
                 return subclass(*args_, **kwargs_)
-        if messageType.subclass:
-            return messageType.subclass(*args_, **kwargs_)
+        if stringType.subclass:
+            return stringType.subclass(*args_, **kwargs_)
         else:
-            return messageType(*args_, **kwargs_)
+            return stringType(*args_, **kwargs_)
     factory = staticmethod(factory)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
@@ -809,8 +809,8 @@ class messageType(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='tns:', name_='messageType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/schema/StringsSchema.xsd"', pretty_print=True):
-        imported_ns_def_ = GenerateDSNamespaceDefs_.get('messageType')
+    def export(self, outfile, level, namespace_='tns:', name_='stringType', namespacedef_='xmlns:tns="https://leoschwarz.github.io/opensim-protocol/schema/StringsSchema.xsd"', pretty_print=True):
+        imported_ns_def_ = GenerateDSNamespaceDefs_.get('stringType')
         if imported_ns_def_ is not None:
             namespacedef_ = imported_ns_def_
         if pretty_print:
@@ -822,18 +822,18 @@ class messageType(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='messageType')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='stringType')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='messageType', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='tns:', name_='stringType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='messageType'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='tns:', name_='stringType'):
         if self.id is not None and 'id' not in already_processed:
             already_processed.add('id')
             outfile.write(' id=%s' % (self.gds_encode(self.gds_format_string(quote_attrib(self.id), input_name='id')), ))
-    def exportChildren(self, outfile, level, namespace_='tns:', name_='messageType', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='tns:', name_='stringType', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -849,7 +849,7 @@ class messageType(GeneratedsSuper):
             self.id = value
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
-# end class messageType
+# end class stringType
 
 
 GDSClassesMapping = {
@@ -979,6 +979,6 @@ if __name__ == '__main__':
 
 
 __all__ = [
-    "messageType",
+    "stringType",
     "stringsType"
 ]

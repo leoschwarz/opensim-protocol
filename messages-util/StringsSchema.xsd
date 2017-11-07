@@ -6,15 +6,14 @@
 	elementFormDefault="qualified">
 
 	<element name="strings" type="tns:stringsType" />
-	<element name="string" type="tns:stringType" />
 
 	<complexType name="stringsType">
 		<sequence>
-			<element name="string" type="tns:stringType" maxOccurs="unbounded"/>
+			<element name="string" type="tns:stringType" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
 
-	<complexType name="messageType">
+	<complexType name="stringType">
 		<attribute name="id" type="string" use="required"></attribute>
 	</complexType>
 </schema>
