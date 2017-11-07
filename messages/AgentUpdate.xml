@@ -52,6 +52,7 @@
                 The official viewer rapidly polls for currently pressed keys, sets the flags and sends the packet, then resets the flags until the next polling interval.
 
                 Flags (encoded as 32 bit integer, in the encoding column the bit number from least significant to most significant bit is listed for each flag):
+
                 | Encoding | Flag            | Description                                                   | SL keybinding         |
                 |----------|-----------------|---------------------------------------------------------------|-----------------------|
                 | 0x0      | EMPTY           | TODO                                                          |                       |
@@ -82,9 +83,7 @@
                 | 25       |                 | legacy                                                        |                       |
                 | 26       | TURN_LEFT       |                                                               |                       |
                 | 27       | TURN_RIGHT      |                                                               |                       |
-                | 28       | AWAY            | Set when the avatar is idled or set to away. Note that
-                                               the away animation is activated separately from setting this
-                                               flag.                                                         |                       |
+                | 28       | AWAY            | Set when the avatar is idled or set to away. Note that the away animation is activated separately from setting this flag. |  |
                 | 29       | LBUTTON_DOWN    |                                                               |                       |
                 | 30       | LBUTTON_UP      |                                                               |                       |
                 | 31       | ML_LBUTTON_DOWN |                                                               |                       |
