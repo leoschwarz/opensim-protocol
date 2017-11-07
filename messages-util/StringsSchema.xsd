@@ -14,6 +14,10 @@
 	</complexType>
 
 	<complexType name="stringType">
-		<attribute name="id" type="string" use="required"></attribute>
+		<simpleContent>
+			<extension base="string">
+				<attribute name="id" type="string" use="required"></attribute>
+			</extension>
+		</simpleContent>
 	</complexType>
 </schema>

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Nov  7 12:52:15 2017 by generateDS.py version 2.28.2.
+# Generated Tue Nov  7 12:59:38 2017 by generateDS.py version 2.28.2.
 # Python 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
 #
 # Command line options:
@@ -786,9 +786,10 @@ class stringsType(GeneratedsSuper):
 class stringType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, id=None):
+    def __init__(self, id=None, valueOf_=None):
         self.original_tagname_ = None
         self.id = _cast(None, id)
+        self.valueOf_ = valueOf_
     def factory(*args_, **kwargs_):
         if CurrentSubclassModule_ is not None:
             subclass = getSubclassFromModule_(
@@ -802,9 +803,11 @@ class stringType(GeneratedsSuper):
     factory = staticmethod(factory)
     def get_id(self): return self.id
     def set_id(self, id): self.id = id
+    def get_valueOf_(self): return self.valueOf_
+    def set_valueOf_(self, valueOf_): self.valueOf_ = valueOf_
     def hasContent_(self):
         if (
-
+            (1 if type(self.valueOf_) in [int,float] else self.valueOf_)
         ):
             return True
         else:
@@ -824,7 +827,8 @@ class stringType(GeneratedsSuper):
         already_processed = set()
         self.exportAttributes(outfile, level, already_processed, namespace_, name_='stringType')
         if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
+            outfile.write('>')
+            outfile.write(self.convert_unicode(self.valueOf_))
             self.exportChildren(outfile, level + 1, namespace_='tns:', name_='stringType', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
@@ -838,6 +842,7 @@ class stringType(GeneratedsSuper):
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
+        self.valueOf_ = get_all_text_(node)
         for child in node:
             nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
             self.buildChildren(child, node, nodeName_)
