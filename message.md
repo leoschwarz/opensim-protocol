@@ -21,5 +21,24 @@ Linden message template terminology:
 
 Note hat Low and Fixed frequency messages describe the same range of messages and Fixed is kept only for legacy reasons.
 
+# Data Types
+
+| Name           | Description |
+| -------------- | ----------- |
+| Fixed (\d+)    | A byte array with fixed size specified in the spec. |
+| Variable 1     | A byte array, with the first byte determining the number of bytes that follow. |
+| Variable 2     | A byte array, with the first two bytes (little endian unsigned) determining the number of bytes that follow. |
+| U8,U16,U32,U64 | Unsigned integers in litte-endian order. |
+| S8,S16,S32,S64 | Signed integers in little-endian order. |
+| F32, F64       | Floating point numbers (little-endian order). |
+| LLVector3      | Triplet of F32, 12 bytes long. |
+| LLVector3d     | Triplet of F64, 24 bytes long. |
+| LLVector4      | Quadruple of F32, 16 bytes long. |
+| LLQuaternion   | Unit quaternion transmitted as triplet of F32. |
+| LLUUID         | UUID in binary format, 16 bytes long. |
+| BOOL           | 0 or 1, one byte long. |
+| IPADDR         | IPv4 address, 4 bytes long. |
+| IPPort         | U16 specifying a port number. |
+
 # Sources:
 * http://wiki.secondlife.com/wiki/Message (accessed 2017-04-03)
