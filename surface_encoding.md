@@ -8,31 +8,11 @@ This file aims to provide an overview over the various kinds of region data avai
   → The viewer uses this information so that cache data can be stored at a relevant
     location on the disk.
 
-# Layer kinds
-There are multiple kinds of layers. OpenSimulator implements the Aurora large region protocol extension of the original protocol,
-in essence the Aurora layers are used for [Varregions](http://opensimulator.org/wiki/Varregion).
-
-| Name         | Code (u8) | Large Region |
-| ------------ | --------- | ------------ |
-| LAND         | 'L' (76)  | false        |
-| WIND         | '7' (55)  | special      |
-| CLOUD        | '8' (56)  | no patches?  |
-| WATER        | 'W' (87)  | no patches?  |
-| AURORA_LAND  | 'M' (77)  | true         |
-| AURORA_WIND  | 'X' (88)  | special      |
-| AURORA_CLOUD | '9' (57)  | no patches?  |
-| AURORA_WATER | ':' (58)  | no patches?  |
-
-TODO: My current understanding is very limited, I only looked at (→ see newview/llvlmanager.cpp unpackData), so likely the layers other than
-      LAND and WIND are used too but rather processed directly instead of first feeding it into the unpackData method.
-
 # Land encoding
-TODO: how is ordering of the patches achieved
+Land surface data is encoded using discrete cosine transformation.
+In the following sections the encoding of data and algorithms for inverting the transformation are described.
 
-For example the data could look like:
-```
-group_header patch_header patch patch patch patch_header patch patch patch_header patch 97u8
-```
+The binary data for a patch encompasses first a group_header, followed by a sequence of patch_header and patch_data, each described in the succinct sections:
 
 ## patch_group_header
 Every level data patch has a group header, regardless of which layer is described.
@@ -45,9 +25,6 @@ Every level data patch has a group header, regardless of which layer is describe
 ```
 
 ## patch_header
-word_bits := quantity_wbits & 0xf + 2
-
-TODO: quantity_wbits, word_bits
 
 There are normal patches and large patches. They differ in the surface area size. Here
 the main difference is the length of patch_x, patch_y which are both 5 bit for normal
@@ -60,13 +37,17 @@ size regions and both 16 bit for large size regions.
 +----------------+-----------+--------+-------------+-------------+
 ```
 
-assert! i,j < mPatchesPerEdge (TODO: mPatchesPerEdge)
+quantity_wbits has two main functions:
 
-If quantity_wbits equals 97u8, it means all data has been transmitted.
+- if it equals the value 97u8 (0b0110_0001) it signals that there are no more patches following
+- the first for bits equal `quant - 2` and the last for bits equal `word_bits - 2`, when this
+  expansion is done the full value of quantity_wbits is not needed anymore.
 
 
-patch areas:
-i,j : what are these?
+assert! patch_x, patch_y < mPatchesPerEdge (TODO: mPatchesPerEdge)
+→ FIXME: This assertion currently doesn't hold in the Rust implementation.
+
+TOOD: Meaning of (patch_x, patch_y)
 
 mPatchesPerEdge = (mGridsPerEdge - 1) / mGridsPerPatchEdge;
 mNumberOfPatches = mPatchesPerEdge
@@ -99,15 +80,15 @@ interchangeably.
 LARGE_PATCH_SIZE = 32
 
 ### Matrices
-The following expressions for matrix elements assume zero based indexing.
+The following expressions for matrix elements assume zero based indexing and are stored in col major order in the original C++ code.
 
-patch_dequantize_table: F32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix → stored col major in LL code
+patch_dequantize_table: F32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix
 patch_dequantize_table[i, j] = 1. + 2. * (i+j) for 0 ≤ (i,j) < patch_size;
 
-patch_icosines: F32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix → stored col major in LL code
+patch_icosines: F32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix
 patch_icosines[i, j] = cos( (2. * i + 1.) * j * PI/(2. * size) );
 
-decopy_matrix: S32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix → stored col major in LL code,
+decopy_matrix: S32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix
 looks like:
 
 +-+-+-+
@@ -134,9 +115,11 @@ if patch_size == 16
 else
     idct_patch_large(block) 
 
-// TODO: stride makes this part more complicated than it has to:
+// TODO simplify mult and addval expressions as much as possible.
 F32 mult = ooq * patch_range; // TODO
-F32 addval = // TODO
+    where F32 ooq = 1.f/(1 << quant);
+F32 addval = mult * ((F32) 1 << (quant - 1)) + dc_offset;
+
 for (S32 j=0; j < patch_size; j++)
     for (S32 i=0; i < patch_size; ++i)
         patch[j*stride + i] = block[j*size + i] * mult + addval;

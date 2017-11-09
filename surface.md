@@ -31,6 +31,24 @@ L = meters_per_grid
 One more row and column are stored in the north and the east to serve as a buffer, to bridge the gap
 rendering adjacent surface entities, as indicated in the drawing.
 
+## Layer types
+There are multiple kinds of layers, which describe different aspects of surface information and are encoded and compressed differently.
+The [Varregion](http://opensimulator.org/wiki/Varregion) extension in OpenSim was originally developed in a fork called Aurora Sim and for the sake of documenting the protocol we stick to this naming.
+The following types of layers are known:
+
+| Name         | Code (u8) | Large Region |
+| ------------ | --------- | ------------ |
+| LAND         | 'L' (76)  | false        |
+| WIND         | '7' (55)  | special      |
+| CLOUD        | '8' (56)  | no patches?  |
+| WATER        | 'W' (87)  | no patches?  |
+| AURORA_LAND  | 'M' (77)  | true         |
+| AURORA_WIND  | 'X' (88)  | special      |
+| AURORA_CLOUD | '9' (57)  | no patches?  |
+| AURORA_WATER | ':' (58)  | no patches?  |
+
+TODO: Currently only LAND and AURORA_LAND data is going to be described in further detail, however the other layers are also important and should be covered somewhere.
+
 ## Parameters
 The following parameters are going to be used in the description of the encoding of surface data:
 
