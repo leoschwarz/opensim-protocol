@@ -54,8 +54,19 @@ The following parameters are going to be used in the description of the encoding
 
 TODO: Improve this table and remove everything not needed later.
 
-| name                 | LL viewer             | description |
-| -----------------    | --------------------- | ----------- |
+In the Rust code the following parameters are used:
+
+| Name (in spec)        | LL viewer             | description |
+| --------------------- | --------------------- | ----------- |
+| patches_per_edge      | mPatchesPerEdge       | Number of patches on one side of a region. 16 or 32 depending on region size. |
+| patches_per_region    | mNumberOfPatches      | patches_per_edge * patches_per_edge |
+
+
+Other variables are used in the code, however ideally they can be expressed in terms of patches_per_edge, like it was already done for patches_per_region.
+
+TODO: Figure out what mGridsPerEdge is
+→ value provided by LLSurface::create(S32 grids_per_edge, ...) however it's unclear who even calls this function.
+
 | cell_count_per_edge  | mGridsPerEdge         | M in the above drawing. |
 | cell_width           | mMetersPerGrid        | Length of one grid cell. `meters_per_grid = width / (grids_per_edge - 1)`  |
 | surface_width        | width, mMetersPerEdge | Length of the surface into one direction in meters. |
@@ -67,12 +78,16 @@ region_size_x : RegionSizeX as obtainable from OpenSim (Info message)
 region_size_y : RegionSizeY as obtainable from OpenSim
 
 | grids_per_patch_edge | mGridsPerPatchEdge  | WOLRD_PATCH_SIZE = 32 |
-| patches_per_edge     | mPatchesPerEdge     | Number of patches on one side of a region. |
 mPatchesPerEdge = (mGridsPerEdge - 1) / mGridsPerPatchEdge;
-| number_of_patches    | mNumberOfPaches     |  |
 | min_z                | mMinZ               | Minimum z for this region (during the session) |
 | max_z                | mMaxZ               | Maximum z for this region (during the session) |
 
+## Encoding
+Different layers are encoded differently.
+
+For the LAND and AURORA_LAND layers a variant of DCT (discrete cosine transform) is used.
+
+TODO: expand
 
 # Sources
 - newview/llsurface.{cpp, h}

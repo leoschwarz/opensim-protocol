@@ -16,6 +16,7 @@ The binary data for a patch encompasses first a group_header, followed by a sequ
 
 ## patch_group_header
 Every level data patch has a group header, regardless of which layer is described.
+All multi-bytes values are to be read in little endian order, if they don't align with full bytes [TODO].
 
 ```
 +------------+------------+------------+------------+
@@ -80,6 +81,8 @@ interchangeably.
 LARGE_PATCH_SIZE = 32
 
 ### Matrices
+TODO: There is still some confusion about the stride header value used when computing the output, and whether we really have to use the same size matrices for any of the two region sizes or if this is just a relict of ungeneric code? (Right now I feel like it might be mostly the latter issue.)
+
 The following expressions for matrix elements assume zero based indexing and are stored in col major order in the original C++ code.
 
 patch_dequantize_table: F32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix
@@ -90,7 +93,7 @@ patch_icosines[i, j] = cos( (2. * i + 1.) * j * PI/(2. * size) );
 
 decopy_matrix: S32[LARGE_PATCH_SIZE * LARGE_PATCH_SIZE] matrix
 looks like:
-
+```text
 +-+-+-+
 |0|2|3|
 +-+-+-+
@@ -98,12 +101,14 @@ looks like:
 +-+-+-+
 |5|6|8|
 +-+-+-+
+```
 
 Note that for a larger matrix 6, 7, 8 would be at different positions, since after 5 the numbering wouldn't continue to the right side but to the lower side befor going up-right diagonally.
 
 expression: Either compute by walking through the matrix, like it was done in build_decopy_matrix, or maybe find some nice expression based on Cantor's pairing formula (but reverse every uneven diagonal).
 
 ### decompress_patch
+```text
 patch_in: S32[patch_size * patch_size];
 patch_out: F32[patch_size * patch_size];
 
@@ -123,14 +128,13 @@ F32 addval = mult * ((F32) 1 << (quant - 1)) + dc_offset;
 for (S32 j=0; j < patch_size; j++)
     for (S32 i=0; i < patch_size; ++i)
         patch[j*stride + i] = block[j*size + i] * mult + addval;
+```
 
 #### idct_patch:
+
+```text
 NORMAL_PATCH_SIZE = 16;
 LARGE_PATCH_SIZE = 32;
-
-bonus points if this can be implemented using generics where the generic type just returns the patch size
-and the code will be generated replacing the patch size with the corresponding value
-→ can this be done in Rust using associated constants?
 
 // Can be used generically for large regions too by substituting NORMAL_PATCH_SIZE := LARGE_PATCH_SIZE
 idct_patch(F32 * block)
@@ -160,12 +164,10 @@ idct_line(data_in, data_out, line)
             total += data_in[line_offset + x] * patch_icosines[n + x * NORMAL_PATCH_SIZE];
         data_out[line_offset + n] = total * (2. / NORMAL_PATCH_SIZE);
     }
-
-
-
-
+```
 
 # Methods of interest
+
 Examine these further:
 
 
