@@ -2,6 +2,12 @@
 This spec describes how surface information (land elevation, water, etc) is encoded.
 
 ## Geometry
+Terrain data of a region is encoded in patches of either size 16x16m (normal regions) or 32x32m (large regions).
+Furthermore all regions have a square shape.
+→ TODO: The OpenSim code (`TerrainData.cs`) doesn't really mention 32x32m patch sizes at all?
+        → Mentions in `TerrainCompressor.cs`, especially `CreatePatchFromTerrainData`.
+→ TODO: The OpenSim code (`TerrainCompressor.cs`) provides better documentation than the viewer.
+
 Each surface entity describes a square shape region.
 A surface can have up to 8 optional neighbors in all directions (N, NE, E, SE, S, SW, W, NW).
 
@@ -25,8 +31,11 @@ A surface can have up to 8 optional neighbors in all directions (N, NE, E, SE, S
         i --->         South                                O------> x
 ```
 
-M = grids_per_edge = 2^n + 1 where n is a natural number,
+M = patches_per_edge = 2^n + 1 where n is a natural number,
 L = meters_per_grid
+
+//M = grids_per_edge = 2^n + 1 where n is a natural number,
+//L = meters_per_grid
 
 One more row and column are stored in the north and the east to serve as a buffer, to bridge the gap
 rendering adjacent surface entities, as indicated in the drawing.
@@ -64,6 +73,11 @@ In the Rust code the following parameters are used:
 
 Other variables are used in the code, however ideally they can be expressed in terms of patches_per_edge, like it was already done for patches_per_region.
 
+| Name (in spec)        | LL viewer             | Description |
+| --------------------- | --------------------- | ----------- |
+|                       | grids_per_region_edge | region_size_x |
+|                       | grids_per_patch_edge  | WORLD_PATCH_SIZE = 32 |
+
 TODO: Figure out what mGridsPerEdge is
 → value provided by LLSurface::create(S32 grids_per_edge, ...) however it's unclear who even calls this function.
 
@@ -77,7 +91,12 @@ From the UDP message `TeleportFinish` we obtain for OpenSim:
 region_size_x : RegionSizeX as obtainable from OpenSim (Info message)
 region_size_y : RegionSizeY as obtainable from OpenSim
 
-| grids_per_patch_edge | mGridsPerPatchEdge  | WOLRD_PATCH_SIZE = 32 |
+TODO: there are other sources according to the OpenSim wiki also:
+    EnableSimulator event message: add integers 'RegionSizeX' and 'RegionSizeY'
+    CrossRegion event message: add integers 'RegionSizeX' and 'RegionSizeY' to 'RegionData' section.
+    TeleportFinish event message: add integers 'RegionSizeX' and 'RegionSizeY' to 'Info' section.
+    EstablishAgentCommunication event message: add integers 'region-size-x' and 'region-size-y'. 
+
 mPatchesPerEdge = (mGridsPerEdge - 1) / mGridsPerPatchEdge;
 | min_z                | mMinZ               | Minimum z for this region (during the session) |
 | max_z                | mMaxZ               | Maximum z for this region (during the session) |

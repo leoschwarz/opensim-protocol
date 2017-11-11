@@ -33,7 +33,7 @@ size regions and both 16 bit for large size regions.
 
 ```
 +----------------+-----------+--------+-------------+-------------+
-| quantity_wbits | dc_offset | range  | patch_x     | patch_y     |
+| quantity_wbits | dc_offset | range  | patch_y     | patch_x     |
 | 8 bit          | 32 bit    | 16 bit | 5 or 16 bit | 5 or 16 bit |
 +----------------+-----------+--------+-------------+-------------+
 ```
