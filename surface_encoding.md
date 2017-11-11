@@ -32,10 +32,10 @@ the main difference is the length of patch_x, patch_y which are both 5 bit for n
 size regions and both 16 bit for large size regions.
 
 ```
-+----------------+-----------+--------+-------------+-------------+
-| quantity_wbits | dc_offset | range  | patch_y     | patch_x     |
-| 8 bit          | 32 bit    | 16 bit | 5 or 16 bit | 5 or 16 bit |
-+----------------+-----------+--------+-------------+-------------+
++----------------+-----------------+--------+-------------+-------------+
+| quantity_wbits | dc_offset [f32] | range  | patch_y     | patch_x     |
+| 8 bit          | 32 bit          | 16 bit | 5 or 16 bit | 5 or 16 bit |
++----------------+-----------------+--------+-------------+-------------+
 ```
 
 quantity_wbits has two main functions:
@@ -44,6 +44,10 @@ quantity_wbits has two main functions:
 - the first for bits equal `quant - 2` and the last for bits equal `word_bits - 2`, when this
   expansion is done the full value of quantity_wbits is not needed anymore.
 
+dc_offset: zmin;
+range: (zmax - zmin) + 1.0
+
+aber: RegionBreite=256, /16 (m pro Patch) → 16 Patches pro Achse es gibt aber 32... (Oder wie gross ist meine Region???)
 
 assert! patch_x, patch_y < mPatchesPerEdge (TODO: mPatchesPerEdge)
 → FIXME: This assertion currently doesn't hold in the Rust implementation.
@@ -59,10 +63,10 @@ terminates prematurely. (TODO: Is it possible that some patches don't exist, or 
 mean that they weren't transmitted yet?)
 
 ```
-+---------+---------+---------+---------------+
-| exists  | not_eob | sign    | value         |
-| 1 bit   | 1 bit   | 1 bit   | 8 bit         |
-+---------+---------+---------+---------------+
++---------+---------+---------+------------------------------------------+
+| exists  | not_eob | sign    | value [u32]                              |
+| 1 bit   | 1 bit   | 1 bit   | word_bits (probably up to 31 or 32 bits) |
++---------+---------+---------+------------------------------------------+
 ```
 
 If exists=0, this patch is zero, the following 3 fields are not specified and the next patch block follows immediately, in that case skip the following information.
@@ -120,10 +124,8 @@ if patch_size == 16
 else
     idct_patch_large(block) 
 
-// TODO simplify mult and addval expressions as much as possible.
-F32 mult = ooq * patch_range; // TODO
-    where F32 ooq = 1.f/(1 << quant);
-F32 addval = mult * ((F32) 1 << (quant - 1)) + dc_offset;
+F32 mult = (F32)patch_range / (F32)(1 << quant);
+F32 addval = (F32)patch_range / 2. + dc_offset
 
 for (S32 j=0; j < patch_size; j++)
     for (S32 i=0; i < patch_size; ++i)
