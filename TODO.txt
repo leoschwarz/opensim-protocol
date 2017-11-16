@@ -3,7 +3,7 @@
   declare which messages belong into a group. This would be especially interesting with
   regards to the codegen.
 
-* OpenMetaverse.StructuredData.LLSD provides an implementation of a LLSD reader, which we will
-  most likely need when receiving objects. (But first check if it's still used.)
+* OpenMetaverse.StructuredData.LLSD : Clean implementation of a LLSD reader/writer.
+  At least the reader will be needed since mesh data is encoded with LLSD.
 
 * LLVFS: LindenLab Virtual File System also looks like a (attention sarcsam) fun thing to implement. If we are lucky this is something we won't have to bother with though, let's hope for the best.
