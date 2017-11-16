@@ -1,7 +1,20 @@
 # Surface
-This spec describes how surface information (land elevation, water, etc) is encoded.
+This spec describes how surface information/terrain data (land elevation, water, etc) is encoded.
 
-## Geometry
+## Normal and large regions
+There exist two kind of simulator regions, varying in their encoding and size.
+
+The older *normal regions* have a fixed size of 256×256m, while the newer *large regions* (also VarRegion, in the past developed by the now defunct AuroraSim project) which are always square sized but can have any side length in {256N meters: N∈{1,...,32}}.
+
+## Land data
+The land data consists of a height map of the entire region.
+
+This data is split into so called (square shaped) patches, which are laid out in a grid over the region.
+
+TODO:
+- Difference between 16x16 and 32x32 patches.
+- Real size (in meters) of the patches.
+
 Terrain data of a region is encoded in patches of either size 16x16m (normal regions) or 32x32m (large regions).
 Furthermore all regions have a square shape.
 → TODO: The OpenSim code (`TerrainData.cs`) doesn't really mention 32x32m patch sizes at all?
