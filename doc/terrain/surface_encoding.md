@@ -8,11 +8,6 @@ This file aims to provide an overview over the various kinds of region data avai
   → The viewer uses this information so that cache data can be stored at a relevant
     location on the disk.
 
-TODO: cleanup.
-Normal regions are 256x256m large encoded by 16x16 patches.
-Large regions are 256Nx256N m large, where N is a natural number in {1, ..., 32}, so the
-maximum region size is 8192.
-
 # Land encoding
 Land surface data is encoded using discrete cosine transformation.
 In the following sections the encoding of data and algorithms for inverting the transformation are described.

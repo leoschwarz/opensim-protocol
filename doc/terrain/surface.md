@@ -1,29 +1,32 @@
-# Surface
-This spec describes how surface information/terrain data (land elevation, water, etc) is encoded.
+# Terrain Data
+This document describes how terrain data (land elevation, water, etc) is encoded.
 
-## Normal and large regions
-There exist two kind of simulator regions, varying in their encoding and size.
+There are two kinds of simulator regions in OpenSimulator, varying in their encoding and size. Regardless all regions are square shaped.
 
-The older *normal regions* have a fixed size of 256×256m, while the newer *large regions* (also VarRegion, in the past developed by the now defunct AuroraSim project) which are always square sized but can have any side length in {256N meters: N∈{1,...,32}}.
+*Normal regions* have a fixed size of 256x256m, while so called [VarRegions](http://opensimulator.org/wiki/Varregion) can have any side length in {256N meters: N∈{1,...,32}}.
+
+## Layer types
+
+| Name      | Code (u8) |
+| --------- | --------- |
+| LAND      | 'L' (76)  |
+| WIND      | '7' (55)  |
+| CLOUD     | '8' (56)  |
+| WATER     | 'W' (87)  |
+| VAR_LAND  | 'M' (77)  |
+| VAR_WIND  | 'X' (88)  |
+| VAR_CLOUD | '9' (57)  |
+| VAR_WATER | ':' (58)  |
 
 ## Land data
-The land data consists of a height map of the entire region.
+The land data consists of a heightmap of the entire region.
 
-This data is split into so called (square shaped) patches, which are laid out in a grid over the region.
+This data is split into so called (square shaped) patches, which are laid out in a regular grid over the region.
 
-TODO:
-- Difference between 16x16 and 32x32 patches.
-- Real size (in meters) of the patches.
+- *Normal regions* are described by 16x16 patches of size 16x16m each, where the patches store one value per square meter.
+- *VarRegions* are described by as many 32x32m patches as are needed to describe the full region, here for each patch there is also one value per square meter.
 
-Terrain data of a region is encoded in patches of either size 16x16m (normal regions) or 32x32m (large regions).
-Furthermore all regions have a square shape.
-→ TODO: The OpenSim code (`TerrainData.cs`) doesn't really mention 32x32m patch sizes at all?
-        → Mentions in `TerrainCompressor.cs`, especially `CreatePatchFromTerrainData`.
-→ TODO: The OpenSim code (`TerrainCompressor.cs`) provides better documentation than the viewer.
-
-Each surface entity describes a square shape region.
-A surface can have up to 8 optional neighbors in all directions (N, NE, E, SE, S, SW, W, NW).
-
+TODO: The part until the next section is not yet finished.
 ```
                                    North
                  ___________________________________  _______
@@ -53,23 +56,6 @@ L = meters_per_grid
 One more row and column are stored in the north and the east to serve as a buffer, to bridge the gap
 rendering adjacent surface entities, as indicated in the drawing.
 
-## Layer types
-There are multiple kinds of layers, which describe different aspects of surface information and are encoded and compressed differently.
-The [Varregion](http://opensimulator.org/wiki/Varregion) extension in OpenSim was originally developed in a fork called Aurora Sim and for the sake of documenting the protocol we stick to this naming.
-The following types of layers are known:
-
-| Name         | Code (u8) | Large Region |
-| ------------ | --------- | ------------ |
-| LAND         | 'L' (76)  | false        |
-| WIND         | '7' (55)  | special      |
-| CLOUD        | '8' (56)  | no patches?  |
-| WATER        | 'W' (87)  | no patches?  |
-| AURORA_LAND  | 'M' (77)  | true         |
-| AURORA_WIND  | 'X' (88)  | special      |
-| AURORA_CLOUD | '9' (57)  | no patches?  |
-| AURORA_WATER | ':' (58)  | no patches?  |
-
-TODO: Currently only LAND and AURORA_LAND data is going to be described in further detail, however the other layers are also important and should be covered somewhere.
 
 ## Parameters
 The following parameters are going to be used in the description of the encoding of surface data:
@@ -120,8 +106,4 @@ Different layers are encoded differently.
 For the LAND and AURORA_LAND layers a variant of DCT (discrete cosine transform) is used.
 
 TODO: expand
-
-# Sources
-- newview/llsurface.{cpp, h}
-- newview/llviewerregion.cpp (LLViewerRegion::LLViewerRegion)
 
