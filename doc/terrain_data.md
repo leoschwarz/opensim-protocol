@@ -50,6 +50,29 @@ TODO: Describe partial values (u10) somewhere.
 +----------------+-----------------+--------+-------------+-------------+
 ```
 
+- One instance per patch.
+- quantity_wbits:
+-- If it equals 97 (0b0110_0001), it means no further patches are encoded.
+-- Otherwise the first 4 bits equal `quant - 2` and the last 4 bits equal `word_bits - 2`.
+   Only `quant` and `word_bits` will be needed in the following sections.
+- dc_offset = z_min
+- range = (z_max - z_min) + 1.0
+- patch_x, patch_y < patches_per_region_edge
+
+Followed by a sequence of up to patch_size² patch_value instances.
+
+#### patch_value
+```text
++---------+---------+---------+-------------------------------+
+| exists  | not_eob | sign    | value [u32]                   |
+| 1 bit   | 1 bit   | 1 bit   | word_bits bit (up to 18 bits) |
++---------+---------+---------+-------------------------------+
+```
+
+- If `exists=0`, the following 3 fields are not expressed, the value is zero, and the next patch_value follows.
+- If `not_eob=1` there is a value, otherwise no more patch_value instances for this patch will follow and can be all set to zero.
+- If `sign=1` parse the value as unsigned number and add the negative sign, otherwise leave the number positive.
+
 
 Here the encoding of the patch
 Different layers are encoded differently.
