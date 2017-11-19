@@ -1,7 +1,3 @@
-This is to be integrated into the surface.md file at a later time.
-
-This file aims to provide an overview over the various kinds of region data available, where they can be retrieved and how they are encoded.
-
 - There are RegionInfo and RegionHandshake messages which provide various information,
   see LLViewerRegion::unpackRegionHandshake, however so far to me it's not clear how to
   get that response from the viewer, does the client have to send the handshake first?
