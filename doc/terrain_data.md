@@ -28,7 +28,7 @@ The data is first split into square shaped patches, aligned in a regular grid ov
 
 The data is compressed using discrete cosine transformation. The following subsections explain how to retrieve the original data.
 
-### Encoding
+### Binary encoding
 Multi byte values are encoded in little endian fashion.
 TODO: Describe partial values (u10) somewhere.
 
@@ -73,15 +73,30 @@ Followed by a sequence of up to patch_size² patch_value instances.
 - If `not_eob=1` there is a value, otherwise no more patch_value instances for this patch will follow and can be all set to zero.
 - If `sign=1` parse the value as unsigned number and add the negative sign, otherwise leave the number positive.
 
+### Inverting the discrete cosine transform
+#### Tables
+The following matrices of size patch_size×patch_size are needed when decoding.
 
-Here the encoding of the patch
-Different layers are encoded differently.
+```text
+patch_dequantize[i, j] = 1. + 2. * (i+j) for 0 ≤ (i,j) < patch_size;
+patch_icosines[i, j] = cos( (2. * i + 1.) * j * PI/(2. * size) );
+```
 
-For the LAND and AURORA_LAND layers a variant of DCT (discrete cosine transform) is used.
+`decopy_matrix` is filled with fields numbered in a snake movement as in this sketch:
+```text
++-+-+-+
+|0|2|3|
++-+-+-+
+|1|4|7|
++-+-+-+
+|5|6|8|
++-+-+-+
+```
 
-TODO: expand
+#### Decompress patch
 
- TODO: move to right place
+
+TODO: move to right place and expand/correct
 Each surface entity describes a square shape region.
 A surface can have up to 8 optional neighbors in all directions (N, NE, E, SE, S, SW, W, NW).
 
