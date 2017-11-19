@@ -3,7 +3,7 @@
 There are two main types of regions in OpenSimulator.
 
 - *Normal regions*: These always have a side length of 256m.
-- [*VarRegion*](http://opensimulator.org/wiki/Varregion): These can have any side length k×256m where k in {1, ..., 32}.
+- [*VarRegion*](http://opensimulator.org/wiki/Varregion): These can have any side length k×256m where k in {1, ..., 32}. (256m to 8192m.)
 
 Regions are always square. They mainly differ in how the terrain data is encoded for them, which is mostly due to historic circumstance.
 
@@ -26,7 +26,39 @@ These layers encode a heightmap of the region, where there is one height value f
 
 The data is first split into square shaped patches, aligned in a regular grid over the region, where the side length is 16m for normal regions and 32m for VarRegions. They also each store one value per square meter.
 
+The data is compressed using discrete cosine transformation. The following subsections explain how to retrieve the original data.
 
+### Encoding
+Multi byte values are encoded in little endian fashion.
+TODO: Describe partial values (u10) somewhere.
+
+#### patch_group_header
+```text
++------------+------------+------------+------------+
+| stride                  | patch_size | layer_type |
+| 16 bit                  | 8 bit      | 8 bit      |
++------------+------------+------------+------------+
+```
+
+- One instance per sequence of patches (i.e. per message), at the very beginning.
+
+#### patch_header
+```text
++----------------+-----------------+--------+-------------+-------------+
+| quantity_wbits | dc_offset [f32] | range  | patch_y     | patch_x     |
+| 8 bit          | 32 bit          | 16 bit | 5 or 16 bit | 5 or 16 bit |
++----------------+-----------------+--------+-------------+-------------+
+```
+
+
+Here the encoding of the patch
+Different layers are encoded differently.
+
+For the LAND and AURORA_LAND layers a variant of DCT (discrete cosine transform) is used.
+
+TODO: expand
+
+ TODO: move to right place
 Each surface entity describes a square shape region.
 A surface can have up to 8 optional neighbors in all directions (N, NE, E, SE, S, SW, W, NW).
 
@@ -59,33 +91,9 @@ L = meters_per_grid
 One more row and column are stored in the north and the east to serve as a buffer, to bridge the gap
 rendering adjacent surface entities, as indicated in the drawing.
 
-
-## Parameters
-The following parameters are going to be used in the description of the encoding of surface data:
-
-TODO: Improve this table and remove everything not needed later.
-
-In the Rust code the following parameters are used:
-
-| Name (in spec)        | LL viewer             | description |
-| --------------------- | --------------------- | ----------- |
-| patches_per_edge      | mPatchesPerEdge       | Number of patches on one side of a region. 16 or 32 depending on region size. |
-| patches_per_region    | mNumberOfPatches      | patches_per_edge * patches_per_edge |
-
-
-Other variables are used in the code, however ideally they can be expressed in terms of patches_per_edge, like it was already done for patches_per_region.
-
-| Name (in spec)        | LL viewer             | Description |
-| --------------------- | --------------------- | ----------- |
-|                       | grids_per_region_edge | region_size_x |
-|                       | grids_per_patch_edge  | WORLD_PATCH_SIZE = 32 |
-
-TODO: Figure out what mGridsPerEdge is
-→ value provided by LLSurface::create(S32 grids_per_edge, ...) however it's unclear who even calls this function.
-
-| cell_count_per_edge  | mGridsPerEdge         | M in the above drawing. |
-| cell_width           | mMetersPerGrid        | Length of one grid cell. `meters_per_grid = width / (grids_per_edge - 1)`  |
-| surface_width        | width, mMetersPerEdge | Length of the surface into one direction in meters. |
+# Sources
+- newview/llsurface.{cpp, h}
+- newview/llviewerregion.cpp (LLViewerRegion::LLViewerRegion)
 
 TODO: 
 
@@ -98,19 +106,4 @@ TODO: there are other sources according to the OpenSim wiki also:
     CrossRegion event message: add integers 'RegionSizeX' and 'RegionSizeY' to 'RegionData' section.
     TeleportFinish event message: add integers 'RegionSizeX' and 'RegionSizeY' to 'Info' section.
     EstablishAgentCommunication event message: add integers 'region-size-x' and 'region-size-y'. 
-
-mPatchesPerEdge = (mGridsPerEdge - 1) / mGridsPerPatchEdge;
-| min_z                | mMinZ               | Minimum z for this region (during the session) |
-| max_z                | mMaxZ               | Maximum z for this region (during the session) |
-
-## Encoding
-Different layers are encoded differently.
-
-For the LAND and AURORA_LAND layers a variant of DCT (discrete cosine transform) is used.
-
-TODO: expand
-
-# Sources
-- newview/llsurface.{cpp, h}
-- newview/llviewerregion.cpp (LLViewerRegion::LLViewerRegion)
 
