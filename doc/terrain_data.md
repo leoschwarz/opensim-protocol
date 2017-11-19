@@ -77,12 +77,13 @@ Followed by a sequence of up to patch_size² patch_value instances.
 #### Tables
 The following matrices of size patch_size×patch_size are needed when decoding.
 
-```text
+```
+patch_dequantize, patch_icosines: Matrix<f32, patch_size, patch_size>;
 patch_dequantize[i, j] = 1. + 2. * (i+j) for 0 ≤ (i,j) < patch_size;
 patch_icosines[i, j] = cos( (2. * i + 1.) * j * PI/(2. * size) );
 ```
 
-`decopy_matrix` is filled with fields numbered in a snake movement as in this sketch:
+`decopy_matrix: Matrix<usize, patch_size, patch_size>` is filled with fields numbered in a snake movement as in this sketch:
 ```text
 +-+-+-+
 |0|2|3|
@@ -94,7 +95,46 @@ patch_icosines[i, j] = cos( (2. * i + 1.) * j * PI/(2. * size) );
 ```
 
 #### Decompress patch
+```text
+patch_in: Matrix<u32, patch_size, patch_size>;
+patch_out: Matrix<f32, patch_size, patch_size>;
 
+block: Matrix<f32, patch_size, patch_size>;
+block[k] = patch_in[decopy_matrix[k]] * patch_dequantize[k]; for 0 <= k < patch_size²
+
+idct_patch(block, patch_size);
+
+mult: f32 = (F32)patch_range / (F32)(1 << quant);
+addval: f32 = (F32)patch_range / 2. + dc_offset
+for (j=0; j < patch_size; j++)
+    for (i=0; i < patch_size; ++i)
+        patch[j*stride + i] = block[j*size + i] * mult + addval;
+```
+
+Main decoder:
+
+```
+idct_patch(mut block, patch_size)
+    temp: Matrix<f32, patch_size, patch_size> = {0};
+    for (i=0; i<patch_size; ++i)
+        idct_column(block, temp, i)
+    for (i=0; i<patch_size; ++i)
+        idct_row(temp, block, i)
+
+idct_column(data_in, mut data_out, column)
+    for (n=0; n<patch_size; ++n)
+        total: f32 = sqrt(2.)/2. * data_in[column, 0]
+        for (x=1; x<patch_size; ++x)
+            total += data_in[column, x] * patch_icosines[n, x]
+        data_out[column, n] = total;
+
+idct_row(data_in, mut data_out, row)
+    for (n=0; n<patch_size; ++n)
+        total: f32 = sqrt(2.)/2. * data_in[0, row];
+        for (x=1; x<patch_size; ++x)
+            total += data_in[x, row] * patch_icosines[n, x]
+        data_out[n, row] = total * 2. / patch_size
+```
 
 TODO: move to right place and expand/correct
 Each surface entity describes a square shape region.
