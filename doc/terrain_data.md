@@ -24,7 +24,8 @@ The following types of layers are known:
 ## Land and VarLand
 These layers encode a heightmap of the region, where there is one height value for each square of sidelength 1 meter. (TODO: I'm not sure yet how these values per square are to be mapped to a 3D representation. Are these values elevations of the point in the center of the squaremeter? And how is the grid to be interpolated?)
 
-The data is first split into square shaped patches, aligned in a regular grid over the region, where the side length is 16m for normal regions and 32m for VarRegions. They also each store one value per square meter.
+The data is first split into square shaped patches, aligned in a regular grid over the region, where the side length is 16m for normal regions and can be either 16m or 32m (patch_size field in group header) for VarRegions. They also each store one value per square meter.
+TODO: I have not seen yet data where a VarRegion was actually encoded using 32m patches. So far there have only been 16m patches for both sizes, nevertheless the bitwidth of the patch_x and patch_y fields in the patch_header differ for Land and VarLand type data.
 
 The data is compressed using discrete cosine transformation. The following subsections explain how to retrieve the original data.
 
