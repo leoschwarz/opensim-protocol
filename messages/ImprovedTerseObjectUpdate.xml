@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="ImprovedTerseObjectUpdate" frequency_class="high" frequency_number="15" trusted="true" compression="unencoded">
+    <block name="RegionData" quantity="single">
+        <field name="RegionHandle" type="U64">
+            <doc>TODO</doc>
+        </field>
+        <field name="TimeDilation" type="U16">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <block name="ObjectData" quantity="variable">
+        <field name="Data" type="Variable 1">
+            <doc>
+                In sequential fashion the following fields are encoded.
+
+                | bytes | field            | type        | description |
+                | ----- | ---------------- | ----------- | ----------- |
+                | 4     | localid          | u32         | should be the same as client.localid |
+                | 1     | state            | u8          | TODO |
+                | 1     | collision_exists | bool        | If 0 the next field is not specified (zero bytes), if 1 read as usual. |
+                | 16?   | collision_plane  | Vector4 f32 | |
+                | 12    | position         | Vector3 f32 | |
+                | 6     | velocity         | Vector3 u16f [-128;128] | |
+                | 6     | acceleration     | Vector3 u16f [-64;64] | |
+                | 8     | rotation (theta) | Quat4 u16f [-1;1] | |
+                | 6     | angular vel. (omega) | Vector3 u16f [-64;64] | |
+
+                u16f: Means that the data is encoded as u16 (0-255), and is to be mapped
+                      into the f32 range specified in square brackets afterwards.
+                      Note that here we have to be careful that we set the value to zero,
+                      if `abs(fval) &lt; (upper-lower) as f32 / 255`, so exact zeros can
+                      be decoded.
+            </doc>
+        </field>
+        <field name="TextureEntry" type="Variable 2">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <doc>
+        A terse object update is sent, when a transformation matrix, velocity or acceleration of an object changes, but the rest does not change.
+
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>OpenMetaverse/ObjectManager.cs</source>
+    </sources>
+</message>
