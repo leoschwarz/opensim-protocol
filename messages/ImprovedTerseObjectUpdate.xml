@@ -51,41 +51,44 @@
                 | Color      | Color4 (4)         | RGBA value. |
                 | RepeatU    | f32 (4)            | TODO |
                 | RepeatV    | f32 (4)            | TODO |
-                | OffsetU    | f32 (2) *TODO      | TODO |
-                | OffsetV    | f32 (2) *TODO      | TODO |
-                | Rotation   | f32 (2) *TODO      | TODO |
+                | OffsetU    | f32 (2) *A         | TODO |
+                | OffsetV    | f32 (2) *A         | TODO |
+                | Rotation   | f32 (2) *B         | TODO |
                 | Material   | u8 (1)             | TODO |
                 | Media      | u8 (1)             | TODO |
-                | Glow       | f32 (1) *TODO      | TODO |
+                | Glow       | f32 (1) *C         | TODO |
                 | MaterialID | UUID (16)          | TODO, note this value can also be missing like texture |
 
-                The first 16 bytes of this field encode the UUID of the default texture.
+                f32 encoding:
+                ============
+                - A: read_i16::&lt;LE&gt;() / 32767.0f;
+                - B: read_u16::&lt;LE&gt;() / 32768.0f * 2π;
+                - C: read_u8() / 255.0f;
 
-                Data is packed in so called face bitfields which can be decoded using
-                the following helper function. Since multiple such bitfields are grouped
-                in arrays (end is indicated by the helper function exists value equaling
-                false) they are referred to as FBArray[type] above.
+                Array structure:
+                ===============
+                - encode: default value for faces without an explicitly specified value
+                - repeat
+                -- encode: faces bit field
+                --- if bit is 1 set the face property to the following value otherwise ignore
+                --- if the whole bitset is zero, end of array is reached.
+                -- encode: value
 
-                TODO: Actually the encoding of arrays is a bit more intricate,
-                      and also there are differences for some of the properties.
+                Arrays are preceeded with a default value for all unspecified faces,
+                and then followed by values for a selection of faces.
+
+                Faces bit field:
 
                 ```text
-                ReadFaceBitfield(in reader, out u32 face_bits) -> (bytes_read, exists) {
-                    face_bits := 0;
-                    bytes_read := 0;
-                    do {
-                        byte := reader.read_byte();
-                        face_bits := (face_bits &lt;&lt; 7) | b &amp; 0x7f;
-                        bytes_read += 7;
-                    } while (b &amp; 0x80) != 0;
-                    return (bytes_read, face_bits != 0);
-                }
+                +--------+     +--------+--------+
+                |1XXXXXXX| ... |1XXXXXXX|0XXXXXXX|
+                +--------+     +--------+--------+
                 ```
-
-
-
-                
-                TODO Inspect: OpenMetaverse/TextureEntry.cs FromBytes
+                - The value is obtained by gluing together the X bits in the same order as above,
+                  (assuming zero padding on the left side) then interpreting this as a little endian
+                  u32 number.
+                - Note that there can be even zero bytes with a 1 at the beginning.
+                - Bits refer right to left to faces 0, 1, 2, etc.
             </doc>
         </field>
     </block>
@@ -96,5 +99,6 @@
     <sources>
         <source>Template File</source>
         <source>OpenMetaverse/ObjectManager.cs</source>
+        <source>OpenMetaverse/TextureEntry.cs</source>
     </sources>
 </message>
