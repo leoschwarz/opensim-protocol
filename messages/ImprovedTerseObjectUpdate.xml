@@ -61,18 +61,18 @@
 
                 f32 encoding:
                 ============
-                - A: read_i16::&lt;LE&gt;() / 32767.0f;
-                - B: read_u16::&lt;LE&gt;() / 32768.0f * 2π;
-                - C: read_u8() / 255.0f;
+                - A: `read_i16::&lt;LE&gt;() / 32767.0f`
+                - B: `read_u16::&lt;LE&gt;() / 32768.0f * 2π`
+                - C: `read_u8() / 255.0f`
 
                 Array structure:
                 ===============
                 - encode: default value for faces without an explicitly specified value
                 - repeat
-                -- encode: faces bit field
-                --- if bit is 1 set the face property to the following value otherwise ignore
-                --- if the whole bitset is zero, end of array is reached.
-                -- encode: value
+                    - encode: faces bit field
+                        - if bit is 1 set the face property to the following value otherwise ignore
+                        - if the whole bitset is zero, end of array is reached.
+                    - encode: value
 
                 Arrays are preceeded with a default value for all unspecified faces,
                 and then followed by values for a selection of faces.
