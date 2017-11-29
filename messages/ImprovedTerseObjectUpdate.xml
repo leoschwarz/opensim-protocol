@@ -34,19 +34,29 @@
         </field>
         <field name="TextureEntry" type="Variable 2">
             <doc>
-                The first 16 bytes of the data are the texture_id.
-                (TODO: If the length is shorter than this, the OpenMetaverse code does not
-                       fail but actually indicates an absence of a texture.)
+                The first 16 bytes of this field encode the UUID of the default texture.
+                If this fields value is even shorter than 16 bytes, the OpenMetaverse code
+                did not fail but report an absence of value, so probably we should do
+                the same thing. (TODO: Decide on that.)
 
-                Then follows the actual texture data:
+                A TextureEntry specifies the properties of up to 32 faces.
 
+                Then follows a binary encoding (described further below) of multiple arrays
+                (one array per property) for each property. The properties are:
 
-                | bytes    | field | type | description |
-                | -------- | 
-                | 16       | default_texture| UUID | TextureID of the default texture. |
-                | variable | face_textures | FBArray[UUID] | TextureIDs of the faces. |
-                | variable | face_colors | FBArray[Color4
-
+                | Property   |
+                | ---------- |
+                | Texture    | 
+                | Color      |
+                | RepeatU    |
+                | RepeatV    |
+                | OffsetU    |
+                | OffsetV    |
+                | Rotation   |
+                | Material   |
+                | Media      |
+                | Glow       |
+                | MaterialID | 
 
 
                 Data is packed in so called face bitfields which can be decoded using
@@ -54,7 +64,8 @@
                 in arrays (end is indicated by the helper function exists value equaling
                 false) they are referred to as FBArray[type] above.
 
-                TODO: Actually the encoding of arrays is a bit more intricate.
+                TODO: Actually the encoding of arrays is a bit more intricate,
+                      and also there are differences for some of the properties.
 
                 ```text
                 ReadFaceBitfield(in reader, out u32 face_bits) -> (bytes_read, exists) {
@@ -68,6 +79,7 @@
                     return (bytes_read, face_bits != 0);
                 }
                 ```
+
 
 
                 
