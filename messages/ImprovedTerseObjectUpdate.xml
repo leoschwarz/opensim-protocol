@@ -34,30 +34,32 @@
         </field>
         <field name="TextureEntry" type="Variable 2">
             <doc>
-                The first 16 bytes of this field encode the UUID of the default texture.
-                If this fields value is even shorter than 16 bytes, the OpenMetaverse code
+                If this field's value is even shorter than 16 bytes, the OpenMetaverse code
                 did not fail but report an absence of value, so probably we should do
                 the same thing. (TODO: Decide on that.)
 
                 A TextureEntry specifies the properties of up to 32 faces.
+                Each of the properties is encoded for all specified faces as an array,
+                packed according to the following rules, and the arrays follow directly
+                after each other.
 
-                Then follows a binary encoding (described further below) of multiple arrays
-                (one array per property) for each property. The properties are:
+                These properties are specified (in this order).
 
-                | Property   |
-                | ---------- |
-                | Texture    | 
-                | Color      |
-                | RepeatU    |
-                | RepeatV    |
-                | OffsetU    |
-                | OffsetV    |
-                | Rotation   |
-                | Material   |
-                | Media      |
-                | Glow       |
-                | MaterialID | 
+                | Property   | Value Type (Bytes) | Description |
+                | ---------- | ------------------ | ----------- |
+                | Texture    | UUID (16)          | The texture ID for this face. |
+                | Color      | Color4 (4)         | RGBA value. |
+                | RepeatU    | f32 (4)            | TODO |
+                | RepeatV    | f32 (4)            | TODO |
+                | OffsetU    | f32 (2) *TODO      | TODO |
+                | OffsetV    | f32 (2) *TODO      | TODO |
+                | Rotation   | f32 (2) *TODO      | TODO |
+                | Material   | u8 (1)             | TODO |
+                | Media      | u8 (1)             | TODO |
+                | Glow       | f32 (1) *TODO      | TODO |
+                | MaterialID | UUID (16)          | TODO, note this value can also be missing like texture |
 
+                The first 16 bytes of this field encode the UUID of the default texture.
 
                 Data is packed in so called face bitfields which can be decoded using
                 the following helper function. Since multiple such bitfields are grouped
