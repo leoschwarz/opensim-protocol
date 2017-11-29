@@ -33,7 +33,46 @@
             </doc>
         </field>
         <field name="TextureEntry" type="Variable 2">
-            <doc>TODO</doc>
+            <doc>
+                The first 16 bytes of the data are the texture_id.
+                (TODO: If the length is shorter than this, the OpenMetaverse code does not
+                       fail but actually indicates an absence of a texture.)
+
+                Then follows the actual texture data:
+
+
+                | bytes    | field | type | description |
+                | -------- | 
+                | 16       | default_texture| UUID | TextureID of the default texture. |
+                | variable | face_textures | FBArray[UUID] | TextureIDs of the faces. |
+                | variable | face_colors | FBArray[Color4
+
+
+
+                Data is packed in so called face bitfields which can be decoded using
+                the following helper function. Since multiple such bitfields are grouped
+                in arrays (end is indicated by the helper function exists value equaling
+                false) they are referred to as FBArray[type] above.
+
+                TODO: Actually the encoding of arrays is a bit more intricate.
+
+                ```text
+                ReadFaceBitfield(in reader, out u32 face_bits) -> (bytes_read, exists) {
+                    face_bits := 0;
+                    bytes_read := 0;
+                    do {
+                        byte := reader.read_byte();
+                        face_bits := (face_bits &lt;&lt; 7) | b &amp; 0x7f;
+                        bytes_read += 7;
+                    } while (b &amp; 0x80) != 0;
+                    return (bytes_read, face_bits != 0);
+                }
+                ```
+
+
+                
+                TODO Inspect: OpenMetaverse/TextureEntry.cs FromBytes
+            </doc>
         </field>
     </block>
     <doc>
