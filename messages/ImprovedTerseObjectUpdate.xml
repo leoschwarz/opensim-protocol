@@ -15,7 +15,7 @@
 
                 | bytes | field            | type        | description |
                 | ----- | ---------------- | ----------- | ----------- |
-                | 4     | localid          | u32         | should be the same as client.localid |
+                | 4     | local_id         | u32         | should be the same as client.local_id |
                 | 1     | state            | u8          | TODO |
                 | 1     | collision_exists | bool        | If 0 the next field is not specified (zero bytes), if 1 read as usual. |
                 | 16?   | collision_plane  | Vector4 f32 | |
