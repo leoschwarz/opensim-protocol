@@ -11,20 +11,36 @@ The default encoding for textures is JPEG 2000, however it's possible that textu
 | DXT      | .mip, .dxt           |
 | PNG      | .png                 |
 
-## Fetching
-There are two different ways in which textures are fetched from a simulator, either through HTTP
-or llUDP.
+## Texture types
+There are 3 kinds of textures:
+
+- Normal: Normal in-world object textures
+- Baked: Avatar textures
+- ServerBaked: Server baked avatar textures
+
+## Retrieval
+There are two different ways in which textures are fetched from a simulator, either through HTTP or llUDP.
 
 ### HTTP
-The request url is constructed according to:
+TODO: Is the texture id specified with hyphens or does it not matter?
+A texture with the id `texture_id` can be retrieved via HTTP from the URL `base_url + "/?texture_id=" + texture_id.hex`.
+
+where
+`base_url := region->getViewerAssetUrl() or else region->getHttpUrl()`
 
 TODO: This is not yet finished because we have to read the capabilities from the region.
 
-base_url := region->getViewerAssetUrl() or else region->getHttpUrl()
-if not empty (base_url):
-    request_url := base_url + "/?texture_id=" + texture_id
+### llUDP
+- Some shading information and a specification of the texture to be used is provided in `*ObjectUpdate` messages. (It's also included in the `ObjectProperties` message.
+- The mechanism for retrieving the texture data from the server is implemented in the `*Xfer*` messages.
 
-### UDP
+Remarks:
+- The OpenMetaverse code waits 15s if Xfer content data is received before a relevant header was sent, before it discards the received data.
+- Even according to the OpenMetaverse code: the Xfer system is "almost deprecated", so maybe it makes sense to first implement the HTTP texture service, and then see if this is needed at all.
+
+## Default textures
+TODO: e.g. how to retrieve ground and skymap textures?
+They are retrieved like all other textures, and their ids are specified in some special message by the sim.
 
 ## Points raised by inspecting current implementations
 - Texture fetching is probably the most relevant part for bandwidth throttling in the whole
@@ -66,8 +82,9 @@ enum FTType
 - Research what kind of issue BUG-3323/SH-4375 is and what they are trying to fix with the 32 MB heuristic?
 - Figure out where to get the url or object handle/id to retrieve the textures from. (Region data/udp messages/or where)
 - Accessible listing of sources.
+- What kind of textures are these even? I've found cubemaps, but are there also single 2D textures or how is this managed?
 
 # Sources:
 - indra/newview/lltexturefetch.{cpp,h} (actually the cpp file in the firestorm viewer is very well documented! figure out who did it to give credit)
 - llimage/llimageworker.{cpp,h} (not so much documented, but important because it describes some kind of image decoding)
-
+- OpenMetaverse/TexturePipeline.cs: Contains a full texture request pipeline.
