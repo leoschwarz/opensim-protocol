@@ -99,6 +99,8 @@
     <doc>
         Camera and movement info about an agent sent from viewer to simulator.
 
+        Sent up to 10 times per second, but must be sent at least every now and then.
+
         TODO:
         /// AgentUpdate - Camera info sent from viewer to simulator
 /// or, more simply, two axes and compute cross product
