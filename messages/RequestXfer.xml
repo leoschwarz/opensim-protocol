@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RequestXfer" frequency_class="low" frequency_number="156" trusted="false" compression="zerocoded">
+    <block name="XferID" quantity="single">
+        <field name="ID" type="U64">
+            <doc>TODO</doc>
+        </field>
+        <field name="Filename" type="Variable 1">
+            <doc>Filename of the requested asset.</doc>
+        </field>
+        <field name="FilePath" type="U8">
+            <doc>TODO</doc>
+        </field>
+        <field name="DeleteOnCompletion" type="BOOL">
+            <doc>If this is true this will delete the asset from the server after retrieving it.</doc>
+        </field>
+        <field name="UseBigPackets" type="BOOL">
+            <doc>Whether to use big transfer packets. (TODO: What does this mean, how is this implemented in the llUDP stack?)</doc>
+        </field>
+        <field name="VFileID" type="LLUUID">
+            <doc>If the filename is empty, this should specify the UUID of the requested file.</doc>
+        </field>
+        <field name="VFileType" type="S16">
+            <doc>If the filename is empty this should be the asset type.</doc>
+        </field>
+    </block>
+    <doc>
+        This message can be sent from the viewer to the sim to request initiating a Xfer.
+
+        A file can be either requested by specifying its filename or its UUID.
+        In the later case the `VFileType` has to be specified, otherwise the filetype is
+        determined according to its extension.
+
+        | Asset type  | Code | Ext | Description |
+        | ----------  | ---- | --- | ----------- |
+        | Unknown     | -1   | | Unknown asset type |
+        | Texture     | 0    | Texture asset, stored in JPEG2000 J2C stream format |
+        | Sound       | 1    | | Sound asset |
+        | CallingCard | 2    | | Calling card for another avatar |
+        | Landmark    | 3    | | Link to a location in world |
+        | [obsolete]  | 4    | | |
+        | Clothing    | 5    | | Collection of textures and parameters that can be  worn by an avatar |
+        | Object      | 6    | | Primitive that can contain textures, sounds, scripts and more |
+        | Notecard    | 7    | | Notecard asset |
+        | Folder      | 8    | | Holds a collection of inventory items |
+        | RootFolder  | 9    | | Root inventory folder |
+        | LSLText     | 10   | | Linden scripting language script |
+        | LSLBytecode | 11   | | LSO bytecode for a script |
+        | TextureTGA  | 12   | | Uncompressed TGA texture |
+        | Bodypart    | 13   | | Collection of textures and shape parameters that can be worn |
+        | TrashFolder | 14   | | Trash folder |
+        | SnapshotFolder | 15 | | Snapshot folder |
+        | LostAndFoundFolder | 16 | | Lost and found folder |
+        | SoundWAV | 17 | | Uncompressed sound |
+        | ImageTGA | 18 | | Uncompressed TGA non-square image, not to be used as a texture |
+        | ImageJPEG | 19 | | Compressed JPEG non-square image, not to be used as a texture |
+        | Animation | 20 | | Animation |
+        | Gesture | 21 | | Sequence of animations, sounds, chat, and pauses |
+        | Simstate | 22 | | Simstate file |
+        | FavoriteFolder | 23 | | Contains landmarks for favorites |
+        | Link | 24 | | Asset is a link to another inventory item |
+        | LinkFolder | 25 | | Asset is a link to another inventory folder |
+        | EnsembleStart | 26 | | Beginning of the range reserved for ensembles |
+        | EnsembleEnd | 45 | | End of the range reserved for ensembles |
+        | CurrentOutfitFolder | 46 | | Folder containing inventory links to wearables and attachments that are part of the current outfit |
+        | OutfitFolder | 47 | | Folder containing inventory items or links to inventory items of wearables and attachments together make a full outfit |
+        | MyOutfitsFolder | 48 | | Root folder for the folders of type OutfitFolder |
+        | Mesh | 49 | | Linden mesh format |
+        | Inbox | 50 | | Marketplace direct delivery inbox ("Received Items") |
+        | Outbox | 51 | | Marketplace direct delivery outbox |
+        | BasicRoot | 51 | | |
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>OpenMetaverse/AssetManager.cs</source>
+        <source>OpenMetaverse/Enums.cs</source>
+    </sources>
+</message>

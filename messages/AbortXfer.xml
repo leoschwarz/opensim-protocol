@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AbortXfer" frequency_class="low" frequency_number="157" trusted="false" compression="unencoded">
+	<block name="XferID" quantity="single">
+		<field name="ID" type="U64">
+			<doc>TODO</doc>
+		</field>
+		<field name="Result" type="S32">
+			<doc>TODO</doc>
+		</field>
+	</block>
+	<doc>
+		TODO:
+		/// AbortXfer
+	</doc>
+	<sources>
+		<source>Template File</source>
+	</sources>
+</message>
