@@ -11,6 +11,10 @@ On success the sim returns a LLSD map (String, URI) specifying the endpoints for
 # Capabilities
 There are many capabilities with different purposes, which right now I cannot cover all here (TODO). Also avoid documenting deprecated capabilities, for example why are there `GetMesh` and `GetMesh2`?
 
+The main URL to retrive the capabilities from (seed caps) is:
+- LoginResponse
+- EstablishAgentCommunication message: SeedCapability as string. (TODO, this is the case when neighboring sims request an agent to make a connection to it.)
+
 ## GetTexture
 See textures.md for more information on how textures are retrieved over HTTP, this essentially specifies the base URI for said retrieval.
 
