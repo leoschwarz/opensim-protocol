@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="AgentMovementComplete" frequency_class="low" frequency_number="250" trusted="false" compression="unencoded">
+    <block name="AgentData" quantity="single">
+        <field name="AgentID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the sender.</doc>
+        </field>
+        <field name="SessionID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="session_id"/></doc>
+        </field>
+    </block>
+    <block name="Data" quantity="single">
+        <field name="Position" type="LLVector3">
+            <doc>Exact position of the avatar.</doc>
+        </field>
+        <field name="LookAt" type="LLVector3">
+            <doc>Direction in which the camera is oriented.</doc>
+        </field>
+        <field name="RegionHandle" type="U64">
+            <doc>TODO</doc>
+        </field>
+        <field name="Timestamp" type="U32">
+            <doc>Unix epoch timestamp.</doc>
+        </field>
+    </block>
+    <block name="SimData" quantity="single">
+        <field name="ChannelVersion" type="Variable 2">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <doc>
+        This is one of the very first packets sent from the sim to the viewer on connection,
+        to provide the viewer with detailed information of its position.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>
