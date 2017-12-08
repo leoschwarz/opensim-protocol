@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CoarseLocationUpdate" frequency_class="medium" frequency_number="6" trusted="true" compression="unencoded">
+    <block name="Location" quantity="variable">
+        <field name="X" type="U8">
+            <doc>
+                X coordinate in the region.
+
+                TODO: How is this handled in VarRegion?
+            </doc>
+        </field>
+        <field name="Y" type="U8">
+            <doc>
+                Y coordinate in the region.
+
+                TODO: How is this handled in VarRegion?
+            </doc>
+        </field>
+        <field name="Z" type="U8">
+            <doc>
+                Z coordinate divided by 4. If z>1020m then this is set to 0.
+            </doc>
+        </field>
+    </block>
+    <block name="Index" quantity="single">
+        <field name="You" type="S16">
+            <doc>
+                The index of the viewer agent in the location list. (0 indexed.)
+
+                If this is not present in the location list, it is set to -1.
+            </doc>
+        </field>
+        <field name="Prey" type="S16">
+            <doc>
+                If the viewer is tracking or following somebody, this index value
+                points to that agent.
+
+                If this is not present in the location list, it is set to -1.
+            </doc>
+        </field>
+    </block>
+    <block name="AgentData" quantity="variable">
+        <field name="AgentID" type="LLUUID">
+            <doc><doc-include target="common/fields.xml" item="agent_id"/></doc>
+        </field>
+    </block>
+    <doc>
+        The CoarseLocationUpdate message is sent to notify the viewer of
+        the location of mappable objects in the region. 1 meter resolution is
+        sufficient for this. The index block is used to show where you are,
+        and where someone you are tracking is located. They are -1 if not
+        applicable.
+
+        This is usually used only for the minimap of the region.
+        Its behavior is to always drop all current data and only use the new one
+        for the minimap once such a message arrives.
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>http://wiki.secondlife.com/wiki/CoarseLocationUpdate</source>
+    </sources>
+</message>
