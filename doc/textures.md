@@ -16,19 +16,18 @@ There are 3 kinds of textures:
 
 - Normal: Normal in-world object textures
 - Baked: Avatar textures
-- ServerBaked: Server baked avatar textures
+- ServerBaked: Server baked avatar textures (TODO: is this also used for other textures? Because apparently it's all that the AssetManager returns when using the GetTexture cap.)
 
 ## Retrieval
 There are two different ways in which textures are fetched from a simulator, either through HTTP or llUDP.
 
 ### HTTP
-TODO: Is the texture id specified with hyphens or does it not matter?
-A texture with the id `texture_id` can be retrieved via HTTP from the URL `base_url + "/?texture_id=" + texture_id.hex`.
+A texture with the id `texture_id` can be retrieved via HTTP from the URL `base_url + "/?texture_id=" + texture_id.to_string_with_hyphens()`.
 
-where
+where (TODO)
 `base_url := region->getViewerAssetUrl() or else region->getHttpUrl()`
 
-TODO: This is not yet finished because we have to read the capabilities from the region.
+either ViewerAsset cap (if available) or falling back to GetTexture cap. (TODO: What's the difference between the two.)
 
 ### llUDP
 - Some shading information and a specification of the texture to be used is provided in `*ObjectUpdate` messages. (It's also included in the `ObjectProperties` message.
