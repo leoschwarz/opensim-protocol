@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="CompletePingCheck" frequency_class="high" frequency_number="2" trusted="false" compression="unencoded">
+    <block name="PingID" quantity="single">
+        <field name="PingID" type="U8">
+            <doc>The ID of the ping to reply to.</doc>
+        </field>
+    </block>
+    <doc>
+        Response to a StartPingCheck message.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>
