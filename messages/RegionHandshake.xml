@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionHandshake" frequency_class="low" frequency_number="148" trusted="true" compression="zerocoded">
+    <block name="RegionInfo" quantity="single">
+        <field name="RegionFlags" type="U32">
+            <doc>TODO</doc>
+        </field>
+        <field name="SimAccess" type="U8">
+            <doc>TODO</doc>
+        </field>
+        <field name="SimName" type="Variable 1">
+            <doc>Name of the sim.</doc>
+        </field>
+        <field name="SimOwner" type="LLUUID">
+            <doc>ID of the sim owner.</doc>
+        </field>
+        <field name="IsEstateManager" type="BOOL">
+            <doc>Whether the client is the estate manager of this sim.</doc>
+        </field>
+        <field name="WaterHeight" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="BillableFactor" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="CacheID" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainBase0" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainBase1" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainBase2" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainBase3" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainDetail0" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainDetail1" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainDetail2" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainDetail3" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainStartHeight00" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainStartHeight01" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainStartHeight10" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainStartHeight11" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainHeightRange00" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainHeightRange01" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainHeightRange10" type="F32">
+            <doc>TODO</doc>
+        </field>
+        <field name="TerrainHeightRange11" type="F32">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <block name="RegionInfo2" quantity="single">
+        <field name="RegionID" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <block name="RegionInfo3" quantity="single">
+        <field name="CPUClassID" type="S32">
+            <doc>TODO</doc>
+        </field>
+        <field name="CPURatio" type="S32">
+            <doc>TODO</doc>
+        </field>
+        <field name="ColoName" type="Variable 1">
+            <doc>TODO</doc>
+        </field>
+        <field name="ProductSKU" type="Variable 1">
+            <doc>TODO</doc>
+        </field>
+        <field name="ProductName" type="Variable 1">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <doc>
+        First message sent to viewer after sim has received the UseCircuitCode message.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>
