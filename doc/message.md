@@ -2,11 +2,10 @@
 Messages describe the encoding and structure of information passed through individual packets. There is a multitude of packets for various aspects of the client-server interaction, however they all share the same fundamental structure.
 
 ## TODO
-* In this documentation we are developing our own format to provide appropriate and extensive documentation for all the messages of the protocol. Right now the (XML) format is not developed yet and tooling will yet have to be made.
 * Information on serialization of the messages.
 
 ## Message number
-Every message type has a specific message number, identifying the message and its layout.
+Every message begins with a message number, identifying the message type and its layout.
 It's either 1, 2 or 4 bytes long, identified by so called frequencies in the Linden message template.
 The bytes are sent in big endian order.
 
