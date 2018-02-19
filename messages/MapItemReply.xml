@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MapItemReply" frequency_class="low" frequency_number="411" trusted="true" compression="unencoded">
+    <block name="AgentData" quantity="single">
+        <field name="AgentID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the sender.</doc>
+        </field>
+        <field name="Flags" type="U32">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <block name="RequestData" quantity="single">
+        <field name="ItemType" type="U32">
+            <doc>
+                Possible values and correspondation:
+
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Extra</th>
+                        <th>Extra2</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Telehub</td>
+                        <td></td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>PgEvent</td>
+                        <td>PG rated event</td>
+                        <td>-</td>
+                        <td>See `ContentRating`.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>MatureEvent</td>
+                        <td>Mature rated event</td>
+                        <td>-</td>
+                        <td>See `ContentRating`.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Popular</td>
+                        <td>Popular location</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>AgentLocations</td>
+                        <td>Locations of avatar groups in a region</td>
+                        <td>Avatar count</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>LandForSale</td>
+                        <td></td>
+                        <td>Size of region.</td>
+                        <td>Price of region.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Classified</td>
+                        <td>Classified ad</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>AdultEvent</td>
+                        <td>Adult rated event</td>
+                        <td>-</td>
+                        <td>See `ContentRating`.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>AdultLandForSale</td>
+                        <td></td>
+                        <td>Size of region.</td>
+                        <td>Price of region.</td>
+                    </tr>
+                </table>
+
+                ContentRating:
+
+                - 0: Event is PG rated.
+                - 1: Event is Mature rated.
+                - 2: Event is Adult rated.
+            </doc>
+        </field>
+    </block>
+    <block name="Data" quantity="variable">
+        <field name="X" type="U32">
+            <doc>Absolute, global x coordinate of the item.</doc>
+        </field>
+        <field name="Y" type="U32">
+            <doc>Absolute, global y coordinate of the item.</doc>
+        </field>
+        <field name="ID" type="LLUUID">
+            <doc>TODO</doc>
+        </field>
+        <field name="Extra" type="S32">
+            <doc>
+                See ItemType for a table of meanings of this field.
+            </doc>
+        </field>
+        <field name="Extra2" type="S32">
+            <doc>
+                See ItemType for a table of meanings of this field.
+            </doc>
+        </field>
+        <field name="Name" type="Variable 1">
+            <doc>Name of the item.</doc>
+        </field>
+    </block>
+    <doc>
+        TODO:
+        /// sim -&gt; viewer
+    </doc>
+    <sources>
+        <source>Template File</source>
+        <source>OpenMetaverse/~/GridManager.cs</source>
+    </sources>
+</message>
