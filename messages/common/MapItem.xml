@@ -2,88 +2,88 @@
 <strings xmlns="https://leoschwarz.github.io/opensim-protocol/schema/StringsSchema.xsd">
     <string id="item_type">
         <![CDATA[
-        Possible values and correspondation:
+Possible values and correspondation:
 
-        <table>
-            <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Extra*</th>
-                <th>Extra2*</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Telehub</td>
-                <td></td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>PgEvent</td>
-                <td>PG rated event</td>
-                <td>-</td>
-                <td>See `ContentRating`.</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>MatureEvent</td>
-                <td>Mature rated event</td>
-                <td>-</td>
-                <td>See `ContentRating`.</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Popular</td>
-                <td>Popular location</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>AgentLocations</td>
-                <td>Locations of avatar groups in a region</td>
-                <td>Avatar count</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>LandForSale</td>
-                <td></td>
-                <td>Size of region.</td>
-                <td>Price of region.</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Classified</td>
-                <td>Classified ad</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>AdultEvent</td>
-                <td>Adult rated event</td>
-                <td>-</td>
-                <td>See `ContentRating`.</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>AdultLandForSale</td>
-                <td></td>
-                <td>Size of region.</td>
-                <td>Price of region.</td>
-            </tr>
-        </table>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Extra*</th>
+        <th>Extra2*</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Telehub</td>
+        <td></td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>PgEvent</td>
+        <td>PG rated event</td>
+        <td>-</td>
+        <td>See `ContentRating`.</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>MatureEvent</td>
+        <td>Mature rated event</td>
+        <td>-</td>
+        <td>See `ContentRating`.</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Popular</td>
+        <td>Popular location</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>AgentLocations</td>
+        <td>Locations of avatar groups in a region</td>
+        <td>Avatar count</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>LandForSale</td>
+        <td></td>
+        <td>Size of region.</td>
+        <td>Price of region.</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Classified</td>
+        <td>Classified ad</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>AdultEvent</td>
+        <td>Adult rated event</td>
+        <td>-</td>
+        <td>See `ContentRating`.</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>AdultLandForSale</td>
+        <td></td>
+        <td>Size of region.</td>
+        <td>Price of region.</td>
+    </tr>
+</table>
 
-        *: only relevant for reply.
+*: only relevant for reply.
 
-        ContentRating:
+ContentRating:
 
-        - 0: Event is PG rated.
-        - 1: Event is Mature rated.
-        - 2: Event is Adult rated.
+- 0: Event is PG rated.
+- 1: Event is Mature rated.
+- 2: Event is Adult rated.
         ]]>
     </string>
 </strings>
