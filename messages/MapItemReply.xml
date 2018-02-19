@@ -104,7 +104,7 @@
             <doc>Absolute, global y coordinate of the item.</doc>
         </field>
         <field name="ID" type="LLUUID">
-            <doc>TODO</doc>
+            <doc>Landsale ID, if items are land deals.</doc>
         </field>
         <field name="Extra" type="S32">
             <doc>
@@ -121,8 +121,8 @@
         </field>
     </block>
     <doc>
-        TODO:
-        /// sim -&gt; viewer
+        Messages sent from the simulator to the viewer, carrying various pieces
+        of information to be displayed in the grid map.
     </doc>
     <sources>
         <source>Template File</source>
