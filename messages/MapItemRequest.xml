@@ -22,7 +22,7 @@
             <doc><doc-include target="common/MapItem.xml" item="item_type"/></doc>
         </field>
         <field name="RegionHandle" type="U64">
-            <doc><doc-include taregt="common/MapItem.xml" item="region_handle"/></doc>
+            <doc><doc-include target="common/MapItem.xml" item="region_handle"/></doc>
         </field>
     </block>
     <doc>
