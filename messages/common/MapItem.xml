@@ -1,5 +1,14 @@
 <?xml version="1.0"?>
 <strings xmlns="https://leoschwarz.github.io/opensim-protocol/schema/StringsSchema.xsd">
+    <!-- TODO: What happens for VarRegions? -->
+    <string id="region_handle">
+        Combines the global x and y coordinates (subtract modulo 256 to get the correct corner) of a region into a single value, i.e.
+
+        ```
+        let (c_x, c_y) = (x,y) - ((x,y) % 256);
+        let handle = c_x &lt;&lt; | c_y;
+        ```
+    </string>
     <string id="item_type">
         <![CDATA[
 Possible values and correspondation:
