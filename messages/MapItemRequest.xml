@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="MapItemRequest" frequency_class="low" frequency_number="410" trusted="false" compression="unencoded">
+    <block name="AgentData" quantity="single">
+        <field name="AgentID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="agent_id">Agent id</doc-link> of the sender.</doc>
+        </field>
+        <field name="SessionID" type="LLUUID">
+            <doc><doc-link target="common/fields.xml" item="session_id"/></doc>
+        </field>
+        <field name="Flags" type="U32">
+            <doc>TODO</doc>
+        </field>
+        <field name="EstateID" type="U32">
+            <doc>TODO</doc>
+        </field>
+        <field name="Godlike" type="BOOL">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <block name="RequestData" quantity="single">
+        <field name="ItemType" type="U32">
+            <doc><doc-include target="common/MapItem.xml" item="item_type"/></doc>
+        </field>
+        <field name="RegionHandle" type="U64">
+            <doc>TODO</doc>
+        </field>
+    </block>
+    <doc>
+        TODO:
+        /// viewer -&gt; sim
+/// This message is sent up from the viewer to get a list
+/// of the items of a particular type on the map.
+/// Used for Telehubs, Agents, Events, Popular Places, etc.
+/// Returns: MapBlockReply
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>
