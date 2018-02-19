@@ -11,6 +11,7 @@
     <block name="RequestData" quantity="single">
         <field name="ItemType" type="U32">
             <doc>
+                <![CDATA[
                 Possible values and correspondation:
 
                 <table>
@@ -91,6 +92,7 @@
                 - 0: Event is PG rated.
                 - 1: Event is Mature rated.
                 - 2: Event is Adult rated.
+                ]]>
             </doc>
         </field>
     </block>
