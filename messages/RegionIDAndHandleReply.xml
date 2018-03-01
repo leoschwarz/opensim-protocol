@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionIDAndHandleReply" frequency_class="low" frequency_number="310" trusted="true" compression="unencoded">
+    <block name="ReplyBlock" quantity="single">
+        <field name="RegionID" type="LLUUID">
+            <doc>The UUID of the region that was looked up.</doc>
+        </field>
+        <field name="RegionHandle" type="U64">
+            <doc>The region handle of that region.</doc>
+        </field>
+    </block>
+    <doc>
+        Response to a `RegionHandleRequest` message.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>

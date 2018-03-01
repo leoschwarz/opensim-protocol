@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message xmlns="https://leoschwarz.github.io/opensim-protocol/util/MessageSchema.xsd" name="RegionHandleRequest" frequency_class="low" frequency_number="309" trusted="false" compression="unencoded">
+    <block name="RequestBlock" quantity="single">
+        <field name="RegionID" type="LLUUID">
+            <doc>The UUID of the region to be looked up.</doc>
+        </field>
+    </block>
+    <doc>
+        Request the region handle of a region specified by its UUID.
+
+        The reply to this message is a `RegionIDAndHandleReply` message.
+
+        (TODO: Is this really the case?)
+        Used by viewer for determining the location of a landmark,
+        and by simulators for teleport targets.
+    </doc>
+    <sources>
+        <source>Template File</source>
+    </sources>
+</message>

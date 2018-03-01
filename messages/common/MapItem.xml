@@ -6,7 +6,7 @@
 
         ```
         let (c_x, c_y) = (x,y) - ((x,y) % 256);
-        let handle = c_x &lt;&lt; | c_y;
+        let handle = c_x &lt;&lt; 32 | c_y;
         ```
     </string>
     <string id="item_type">
