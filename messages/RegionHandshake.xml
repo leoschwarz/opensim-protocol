@@ -76,7 +76,7 @@
     </block>
     <block name="RegionInfo2" quantity="single">
         <field name="RegionID" type="LLUUID">
-            <doc>TODO</doc>
+            <doc>The unique ID of the region.</doc>
         </field>
     </block>
     <block name="RegionInfo3" quantity="single">
