@@ -53,41 +53,44 @@
 
                 Flags (encoded as 32 bit integer, in the encoding column the bit number from least significant to most significant bit is listed for each flag):
 
-                | Encoding | Flag            | Description                                                   | SL keybinding         |
-                |----------|-----------------|---------------------------------------------------------------|-----------------------|
-                | 0x0      | EMPTY           | TODO                                                          |                       |
-                | 1        | MOVE_FWD_POS    | Move forward                                                  | W/Up arrow            |
-                | 2        | MOVE_FWD_NEG    | Move backward                                                 | s/down arrow          |
-                | 3        | MOVE_LEFT_POS   | Move left                                                     | shift-(a/left arrow)  |
-                | 4        | MOVE_LEFT_NEG   | Move right                                                    | shift-(d/right arrow) |
-                | 5        | MOVE_UP_POS     | not flying: jump; flying: move up                             | e                     |
-                | 6        | MOVE_UP_NEG     | not flying: croutch; flying: move down                        | c                     |
-                | 7        |                 | unused                                                        |                       |
-                | 8        |                 | unused                                                        |                       |
-                | 9        |                 | unused                                                        |                       |
-                | 10       |                 | unused                                                        |                       |
-                | 11       | FAST_FWD        | OR-ed with agent_control_fwd_* if the keyboard is being used  | todo                  |
-                | 12       | FAST_LEFT       | OR-ed with agent_control_left_* if the keyboard is being used | todo                  |
-                | 13       | FAST_UP         | OR-ed with agent_control_up_* if the keyboard is being used   | todo                  |
-                | 14       | FLY             | Fly                                                           |                       |
-                | 15       | STOP            | TODO                                                          |                       |
-                | 16       | FINISH_ANIM     | Finish the current animation                                  |                       |
-                | 17       | STAND_UP        | Stand up from the ground or a prim seat                       |                       |
-                | 18       | SIT_ON_GROUND   | Sit on the ground at the current location                     |                       |
-                | 19       | MOUSELOOK       |                                                               |                       |
-                | 20       |                 | legacy                                                        |                       |
-                | 21       |                 | legacy                                                        |                       |
-                | 22       |                 | legacy                                                        |                       |
-                | 23       |                 | legacy                                                        |                       |
-                | 24       |                 | legacy                                                        |                       |
-                | 25       |                 | legacy                                                        |                       |
-                | 26       | TURN_LEFT       |                                                               |                       |
-                | 27       | TURN_RIGHT      |                                                               |                       |
-                | 28       | AWAY            | Set when the avatar is idled or set to away. Note that the away animation is activated separately from setting this flag. |  |
-                | 29       | LBUTTON_DOWN    |                                                               |                       |
-                | 30       | LBUTTON_UP      |                                                               |                       |
-                | 31       | ML_LBUTTON_DOWN |                                                               |                       |
-                | 32       | ML_LBUTTON_UP   |                                                               |                       |
+                <![CDATA[
+                <table>
+                    <tr><th>Encoding</th><th>Flag</th><th>Description</th><th>SL Keybinding</th></tr>
+                    <tr><td>0</td><td>EMPTY</td><td>TODO</td><td></td></tr>
+                    <tr><td>1</td><td>MOVE_FWD_POS</td><td>Move forward</td><td>W/Up arrow</td></tr>
+                    <tr><td>2</td><td>MOVE_FWD_NEG</td><td>Move backward</td><td>s/down arrow</td></tr>
+                    <tr><td>3</td><td>MOVE_LEFT_POS</td><td>Move left</td><td>shift-(a/left arrow)</td></tr>
+                    <tr><td>4</td><td>MOVE_LEFT_NEG</td><td>Move right</td><td>shift-(d/right arrow)</td></tr>
+                    <tr><td>5</td><td>MOVE_UP_POS</td><td>not flying: jump; flying: move up</td><td>e</td></tr>
+                    <tr><td>6</td><td>MOVE_UP_NEG</td><td>not flying: croutch; flying: move down</td><td>c</td></tr>
+                    <tr><td>7</td><td></td><td>unused</td><td></td></tr>
+                    <tr><td>8</td><td></td><td>unused</td><td></td></tr>
+                    <tr><td>9</td><td></td><td>unused</td><td></td></tr>
+                    <tr><td>10</td><td></td><td>unused</td><td></td></tr>
+                    <tr><td>11</td><td>FAST_FWD</td><td>OR-ed with agent_control_fwd_* if the keyboard is being used</td><td>todo</td></tr>
+                    <tr><td>12</td><td>FAST_LEFT</td><td>OR-ed with agent_control_left_* if the keyboard is being used</td><td>todo</td></tr>
+                    <tr><td>13</td><td>FAST_UP</td><td>OR-ed with agent_control_up_* if the keyboard is being used</td><td>todo</td></tr>
+                    <tr><td>14</td><td>FLY</td><td>Fly</td><td></td></tr>
+                    <tr><td>15</td><td>STOP</td><td>TODO</td><td></td></tr>
+                    <tr><td>16</td><td>FINISH_ANIM</td><td>Finish the current animation</td><td></td></tr>
+                    <tr><td>17</td><td>STAND_UP</td><td>Stand up from the ground or a prim seat</td><td></td></tr>
+                    <tr><td>18</td><td>SIT_ON_GROUND</td><td>Sit on the ground at the current location</td><td></td></tr>
+                    <tr><td>19</td><td>MOUSELOOK</td><td></td><td></td></tr>
+                    <tr><td>20</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>21</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>22</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>23</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>24</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>25</td><td></td><td>legacy</td><td></td></tr>
+                    <tr><td>26</td><td>TURN_LEFT</td><td></td><td></td></tr>
+                    <tr><td>27</td><td>TURN_RIGHT</td><td></td><td></td></tr>
+                    <tr><td>28</td><td>AWAY</td><td>Set when the avatar is idled or set to away. Note that the away animation is activated separately from setting this flag.</td><td></td></tr>
+                    <tr><td>29</td><td>LBUTTON_DOWN</td><td></td><td></td></tr>
+                    <tr><td>30</td><td>LBUTTON_UP</td><td></td><td></td></tr>
+                    <tr><td>31</td><td>ML_LBUTTON_DOWN</td><td></td><td></td></tr>
+                    <tr><td>32</td><td>ML_LBUTTON_UP</td><td></td><td></td></tr>
+                </table>
+                ]]>
             </doc>
         </field>
         <field name="Flags" type="U8">
