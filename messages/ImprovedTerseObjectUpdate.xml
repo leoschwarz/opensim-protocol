@@ -13,17 +13,25 @@
             <doc>
                 In sequential fashion the following fields are encoded.
 
-                | bytes | field            | type        | description |
-                | ----- | ---------------- | ----------- | ----------- |
-                | 4     | local_id         | u32         | should be the same as client.local_id |
-                | 1     | state            | u8          | TODO |
-                | 1     | collision_exists | bool        | If 0 the next field is not specified (zero bytes), if 1 read as usual. |
-                | 16?   | collision_plane  | Vector4 f32 | |
-                | 12    | position         | Vector3 f32 | |
-                | 6     | velocity         | Vector3 u16f [-128;128] | |
-                | 6     | acceleration     | Vector3 u16f [-64;64] | |
-                | 8     | rotation (theta) | Quat4 u16f [-1;1] | |
-                | 6     | angular vel. (omega) | Vector3 u16f [-64;64] | |
+                <![CDATA[
+                <table>
+                <tr>
+                    <th>bytes</th>
+                    <th>field</th>
+                    <th>type</th>
+                    <th>description</th>
+                </tr>
+                <tr><td>4</td><td>local_id</td><td>u32</td><td>should be the same as `client.local_id`</td></tr>
+                <tr><td>1</td><td>state</td><td>u8</td><td>TODO</td></tr>
+                <tr><td>1</td><td>collision_exists</td><td>bool</td><td>If 0 the next field is not specified (zero bytes), if 1 read as usual.</td></tr>
+                <tr><td>16?</td><td>collision_plane</td><td>Vector4 f32</td><td></td></tr>
+                <tr><td>12</td><td>position</td><td>Vector3 f32</td><td></td></tr>
+                <tr><td>6</td><td>velocity</td><td>Vector3 u16f [-128;128]</td><td></td></tr>
+                <tr><td>6</td><td>acceleration</td><td>Vector3 u16f [-64;64]</td><td></td></tr>
+                <tr><td>8</td><td>rotation (theta)</td><td>Quat4 u16f [-1;1]</td><td></td></tr>
+                <tr><td>6</td><td>angular vel. (omega)</td><td>Vector3 u16f [-64;64]</td><td></td></tr>
+                </table>
+                ]]>
 
                 u16f: Means that the data is encoded as u16 (0-255), and is to be mapped
                       into the f32 range specified in square brackets afterwards.
@@ -45,19 +53,26 @@
 
                 These properties are specified (in this order).
 
-                | Property   | Value Type (Bytes) | Description |
-                | ---------- | ------------------ | ----------- |
-                | Texture    | UUID (16)          | The texture ID for this face. |
-                | Color      | Color4 (4)         | RGBA value. |
-                | RepeatU    | f32 (4)            | TODO |
-                | RepeatV    | f32 (4)            | TODO |
-                | OffsetU    | f32 (2) *A         | TODO |
-                | OffsetV    | f32 (2) *A         | TODO |
-                | Rotation   | f32 (2) *B         | TODO |
-                | Material   | u8 (1)             | TODO |
-                | Media      | u8 (1)             | TODO |
-                | Glow       | f32 (1) *C         | TODO |
-                | MaterialID | UUID (16)          | TODO, note this value can also be missing like texture |
+                <![CDATA[
+                <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Value Type (Bytes)></th>
+                    <th>Description</th>
+                </tr>
+                <tr><td>Texture</td><td>UUID (16)</td><td>The texture ID for this face.</td></tr>
+                <tr><td>Color</td><td>Color4 (4)</td><td>RGBA value.</td></tr>
+                <tr><td>RepeatU</td><td>f32 (4)</td><td>TODO</td></tr>
+                <tr><td>RepeatV</td><td>f32 (4)</td><td>TODO</td></tr>
+                <tr><td>OffsetU</td><td>f32 (2) *A</td><td>TODO</td></tr>
+                <tr><td>OffsetV</td><td>f32 (2) *A</td><td>TODO</td></tr>
+                <tr><td>Rotation</td><td>f32 (2) *B</td><td>TODO</td></tr>
+                <tr><td>Material</td><td>u8 (1)</td><td>TODO</td></tr>
+                <tr><td>Media</td><td>u8 (1)</td><td>TODO</td></tr>
+                <tr><td>Glow</td><td>f32 (1) *C</td><td>TODO</td></tr>
+                <tr><td>MaterialID</td><td>UUID (16)</td><td>TODO, note this value can also be missing like texture</td></tr>
+                </table>
+                ]]>
 
                 f32 encoding:
                 ============
